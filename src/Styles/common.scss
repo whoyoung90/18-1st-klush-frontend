@@ -1,0 +1,26 @@
+@import url(“https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap”);
+@import "./reset.scss";
+$lushFont: “Archivo Black”, sans-serif;
+$lushBlack: #000000;
+$lushWhite: #ffffff;
+$lushGrey: #f2f2f2;
+$elseGrey: #8f8f8f;
+$categoryBlack: #333333;
+$newLabelBackground: #007a29;
+$veganLabelBackground: #92ac00;
+$soldOutLabelBackground: #ff8a00;
+* {
+  box-sizing: border-box;
+  font-family: “notokrR”, Malgun Gothic, “맑은 고딕“, AppleGothic, Dotum, “돋움“,
+    sans-serif;
+}
+input {
+  border: none;
+  outline: none;
+}
+button {
+  outline: none;
+}
+button:hover {
+  cursor: pointer;
+}
