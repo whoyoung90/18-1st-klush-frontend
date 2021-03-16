@@ -1,0 +1,79 @@
+{
+  "category": "perfume",
+  "categoryName": "퍼퓸",
+  "categoryDesc": "자연과 음악, 시가 주는 영감으로 빚어낸 특별한 향기",
+  "categoryImg": "https://images.unsplash.com/photo-1557827983-012eb6ea8dc1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fGx1c2h8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+  "subCategoryList": [
+    "전체",
+    "보디스프레이",
+    "코어 레인지",
+    "솔리드 퍼퓸",
+    "르네상스 퍼퓸",
+    "퍼퓸 라이브러리"
+  ],
+  "products": [
+    {
+      "productImg": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyZnVtZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+      "productName": "Bleu De chanel",
+      "productHashTag": ["스테디셀러", "재구매가", "숲속자연의향기"],
+      "productLabel": ["NEW", "VEGAN"],
+      "productPrice": "200000"
+    },
+    {
+      "productImg": "https://images.unsplash.com/photo-1561997835-49889d0e0355?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8cGVyZnVtZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "productName": "Calvin Klein be",
+      "productHashTag": ["묵직하고강인한향기"],
+      "productLabel": ["NEW"],
+      "productPrice": "120000"
+    },
+    {
+      "productImg": "https://images.unsplash.com/photo-1586821559174-c90d1eba8c1d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzEwfHxwZXJmdW1lfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "productName": "Purell advanced",
+      "productHashTag": ["대용량", "고혹그자체", "새로움을찾는다면"],
+      "productLabel": ["품절"],
+      "productPrice": "3000000"
+    },
+    {
+      "productImg": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyZnVtZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+      "productName": "Bleu De chanel",
+      "productHashTag": ["스테디셀러", "재구매가", "숲속자연의향기"],
+      "productLabel": ["NEW", "VEGAN", "NEW", "VEGAN", "NEW", "VEGAN"],
+      "productPrice": "200000"
+    },
+    {
+      "productImg": "https://images.unsplash.com/photo-1561997835-49889d0e0355?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8cGVyZnVtZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "productName": "Calvin Klein be",
+      "productHashTag": ["묵직하고강인한향기"],
+      "productLabel": ["NEW"],
+      "productPrice": "120000"
+    },
+    {
+      "productImg": "https://images.unsplash.com/photo-1586821559174-c90d1eba8c1d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzEwfHxwZXJmdW1lfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "productName": "Purell advanced",
+      "productHashTag": ["대용량", "고혹그자체", "새로움을찾는다면"],
+      "productLabel": ["품절"],
+      "productPrice": "3000000"
+    },
+    {
+      "productImg": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyZnVtZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+      "productName": "Bleu De chanel",
+      "productHashTag": ["스테디셀러", "재구매가", "숲속자연의향기"],
+      "productLabel": ["NEW", "VEGAN"],
+      "productPrice": "200000"
+    },
+    {
+      "productImg": "https://images.unsplash.com/photo-1561997835-49889d0e0355?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8cGVyZnVtZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "productName": "Calvin Klein be",
+      "productHashTag": ["묵직하고강인한향기"],
+      "productLabel": ["NEW"],
+      "productPrice": "120000"
+    },
+    {
+      "productImg": "https://images.unsplash.com/photo-1586821559174-c90d1eba8c1d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzEwfHxwZXJmdW1lfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "productName": "Purell advanced",
+      "productHashTag": ["대용량", "고혹그자체", "새로움을찾는다면"],
+      "productLabel": ["품절"],
+      "productPrice": "3000000"
+    }
+  ]
+}
