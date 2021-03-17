@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { BiShoppingBag, BiHeart } from "react-icons/bi";
 import ProductLabel from "./Components/ProductLabel/ProductLabel";
 import ProductHashTag from "./Components/ProductHashTag/ProductHashTag";
@@ -17,15 +18,16 @@ class Product extends Component {
       return result.reverse().join("");
     }
   };
+
   render() {
     const { productInfo } = this.props;
     return (
-      <div className="productListContainer">
+      <Link className="productListContainer" to="/product_detail">
         <div className="productImgContainer">
           <img
             className="productImg"
             src={productInfo.productImg}
-            alt="productImg"
+            alt={productInfo.productName}
           />
           <div className="hoverIcons">
             <BiHeart />
@@ -46,7 +48,7 @@ class Product extends Component {
             })}
         </div>
         <div className="productPrice">{this.printPrice()} &#8361;</div>
-      </div>
+      </Link>
     );
   }
 }

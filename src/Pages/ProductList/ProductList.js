@@ -38,11 +38,13 @@ class ProductList extends Component {
           categoryName={categoryName}
           categoryDesc={categoryDesc}
         />
-        <ProductContainer
-          categoryName={categoryName}
-          subCategoryList={subCategoryList}
-          products={products}
-        />
+        {products && (
+          <ProductContainer
+            categoryName={categoryName}
+            subCategoryList={subCategoryList}
+            products={products}
+          />
+        )}
       </div>
     );
   }
