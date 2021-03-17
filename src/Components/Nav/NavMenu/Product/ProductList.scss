@@ -1,0 +1,15 @@
+@import "./Product.scss";
+
+.productList {
+  padding: 30px 10px;
+
+  li {
+    padding-top: 20px;
+
+    a {
+      color: #aeaeae;
+      display: table-row;
+      margin: 20px;
+    }
+  }
+}

@@ -1,64 +1,31 @@
 import React, { Component } from "react";
-import AllMenu from "./AllMenu";
 import { Link } from "react-router-dom";
+import Product from "./NavMenu/Product/Product";
+import LushIntro from "./NavMenu/LushIntro/LushIntro";
 import "./Nav.scss";
 
 class Nav extends Component {
-  constructor() {
-    super();
-    this.state = {
-      open: false,
-    };
-  }
-
-  handleMouseHover = () => {
-    this.setState({ open: !this.state.open });
-  };
-
   render() {
     return (
       <div className="nav">
         <div className="lushLogo">LUSH</div>
         <ul className="clickMenu">
-          <AllMenu />
-          <li
-            onMouseOver={this.handleMouseHover}
-            onMouseLeave={this.handleMouseHover}
-          >
-            <Link to="#">러쉬 소개</Link>
-            {this.state.open && (
-              <ul className="allMenu">
-                <li>
-                  <Link to="#">베쓰</Link>
-                  <ul>
-                    <li>
-                      <Link to="#">베쓰 밤</Link>
-                    </li>
-                    <li>
-                      <Link to="#">버블 바</Link>
-                    </li>
-                    <li>
-                      <Link to="#">배쓰 오일</Link>
-                    </li>
-                    <li>
-                      <Link to="#">펀</Link>
-                    </li>
-                    <li>
-                      <Link to="#">젤리 밤</Link>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            )}
+          <Product />
+          <LushIntro />
+          <li className="dropDown">
+            <Link className="navIntro" to="#">
+              매장 안내
+            </Link>
           </li>
-          <li>
-            <Link to="#">매장 안내</Link>
+          <li className="dropDown">
+            <Link className="navIntro" to="#">
+              스파
+            </Link>
           </li>
-          <li>
-            <Link to="#">스파</Link>
-          </li>
-          <li>
-            <Link to="#">이벤트</Link>
+          <li className="dropDown">
+            <Link className="navIntro" to="#">
+              이벤트
+            </Link>
           </li>
         </ul>
         <ul className="clickButton">
