@@ -4,6 +4,9 @@ import SubCategory from "./Components/SubCategory/SubCategory";
 import "./ContentHeader.scss";
 
 class ContentHeader extends Component {
+  checkSelect = e => {
+    console.log(e.target.value);
+  };
   render() {
     const { categoryName, subCategoryList, products } = this.props;
     return (
@@ -11,7 +14,12 @@ class ContentHeader extends Component {
         <header className="headerContent">
           <div className="headerLeftColumn">{categoryName}</div>
           <div className="headerRightColumn">
-            <select name="filter" id="radio" className="productShowFilter">
+            <select
+              name="filter"
+              id="radio"
+              className="productShowFilter"
+              onChange={this.checkSelect}
+            >
               <option value="recommendation">추천순</option>
               <option value="bestSeller">판매인기순</option>
               <option value="price">낮은가격순</option>

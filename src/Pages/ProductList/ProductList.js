@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import ContentHeader from "./Components/ContentHeader/ContentHeader";
-import Product from "./Components/Product/Product";
+import ImageContainer from "./Components/ImageContainer/ImageContainer";
+import ProductContainer from "./Components/ProductContainer/ProductContainer";
 
 import "./ProductList.scss";
 
@@ -33,28 +33,16 @@ class ProductList extends Component {
       products,
     } = this.state.listData;
     return (
-      <div>
-        <header className="imgContainer">
-          <span className="imgContainerTitle">{categoryName}</span>
-          <span className="imgContainerDesc">{categoryDesc}</span>
-        </header>
-        <div className="productContainer">
-          <div className="productContent">
-            {this.state.listData.subCategoryList && (
-              <ContentHeader
-                categoryName={categoryName}
-                subCategoryList={subCategoryList}
-                products={products}
-              />
-            )}
-            <div className="contentList">
-              {products &&
-                products.map((product, idx) => {
-                  return <Product key={idx} productInfo={product} />;
-                })}
-            </div>
-          </div>
-        </div>
+      <div className="ProductListPage">
+        <ImageContainer
+          categoryName={categoryName}
+          categoryDesc={categoryDesc}
+        />
+        <ProductContainer
+          categoryName={categoryName}
+          subCategoryList={subCategoryList}
+          products={products}
+        />
       </div>
     );
   }

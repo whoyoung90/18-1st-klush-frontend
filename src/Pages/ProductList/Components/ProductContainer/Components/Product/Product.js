@@ -6,15 +6,18 @@ import ProductHashTag from "./Components/ProductHashTag/ProductHashTag";
 import "./Product.scss";
 
 class Product extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      isHover: false,
-    };
-  }
+  printPrice = () => {
+    let result = this.props.productInfo.productPrice.split("").reverse();
+    if (result.length > 3) {
+      for (let i = 0; i < result.length; i++) {
+        if ((i + 1) % 3 === 0 && i !== result.length - 1) {
+          result[i + 1] += ",";
+        }
+      }
+      return result.reverse().join("");
+    }
+  };
   render() {
-    const { isHover } = this.state;
     const { productInfo } = this.props;
     return (
       <div className="productListContainer">
@@ -24,7 +27,7 @@ class Product extends Component {
             src={productInfo.productImg}
             alt="productImg"
           />
-          <div className={isHover ? "hoverIconsAble" : "hoverIconsDisable"}>
+          <div className="hoverIcons">
             <BiHeart />
             <BiShoppingBag />
           </div>
@@ -42,7 +45,7 @@ class Product extends Component {
               return <ProductHashTag key={idx} hashTag={hashTag} />;
             })}
         </div>
-        <div className="productPrice">{productInfo.productPrice} &#8361;</div>
+        <div className="productPrice">{this.printPrice()} &#8361;</div>
       </div>
     );
   }
