@@ -1,0 +1,28 @@
+@import "../../../../../../../../Styles/common.scss";
+
+.contentHeader {
+  display: flex;
+  flex-direction: column;
+
+  .headerColumn {
+    display: flex;
+    justify-content: space-between;
+
+    .columnLeft {
+      font-size: 34px;
+      font-weight: 600;
+    }
+    .columnRight {
+      .icons {
+        margin-left: 10px;
+        font-size: 25px;
+        color: $elseGrey;
+      }
+    }
+  }
+  .hashTagColumn {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: $elseGrey;
+  }
+}

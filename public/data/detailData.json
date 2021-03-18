@@ -1,0 +1,40 @@
+{
+  "productOrder": {
+    "direction": ["홈", "러쉬", "베쓰", "베쓰 밤"],
+    "mainImg": "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    "subImages": [
+      "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    ],
+    "name": "험프티 덤프티",
+    "hashTags": ["스테디셀러", "뒤돌아보는향", "재구매각"],
+    "reviewCount": 891,
+    "price": 50000
+  },
+  "productDetail": {
+    "category": "베쓰 밤",
+    "name": "험프티 덤프티",
+    "enName": "Humpty Dumpty",
+    "mainImg": "https://images.unsplash.com/photo-1505528638251-3ef301e4988e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60",
+    "mainReview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "reviewAuthor": "썸머",
+    "description": "험프티 덤프티와 멋진 시간을 보낼 시간! 채식주의 험프티는 달콤한 베르가못을 품고 있답니다. 달콤한 꿀 욕조에서 헤어나오지 못하실 걸요?",
+    "tip": "욕조에 떨어뜨리기 전 반으로 쪼개보세요. 귀여운 계란이 숨어있답니다!",
+    "middleImg": "https://images.unsplash.com/photo-1550407665-942ceef4bf37?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    "ingredient": ["베르가못 오일", "오렌지 오일"],
+    "allIngredient": "소듐바이카보네이트,시트릭애씨드,티타늄디옥사이드,향료, 베르가모트오일,오렌지오일,시트로넬올,제라니올,리모넨, 리날룰,황색203호레이크,다이프로필렌글라이콜, 정제수,포타슘바이타트레이트,소듐코코-설페이트,코카미도프로필베타인, 청색1호,청색1호레이크",
+    "ingredientImg": [
+      "https://images.unsplash.com/photo-1585349279412-518db7ec7bed?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8b3JhbmdlfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      "https://images.unsplash.com/photo-1583774083960-3675150d3e5a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDd8fGNpdHJ1cyUyMGJlcmdhbWlhfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+    ],
+    "footerImg": "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    "footerHashTag": [
+      "쓰레기없데이",
+      "이스터에디션",
+      "베쓰밤",
+      "BathBomb",
+      "HumptyDumpty",
+      "험프티덤프티"
+    ]
+  }
+}
