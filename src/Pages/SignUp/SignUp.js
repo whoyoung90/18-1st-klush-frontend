@@ -82,27 +82,26 @@ class SignUp extends Component {
       passwordValue,
       name,
       phoneVlaue,
-      addressValue,
+      nickname,
     } = this.state;
-    //    console.log("회원가입 정보 전송");
-    fetch("http://10.58.2.56:8888/user/sign-up", {
+    fetch("http://10.58.6.247:8000/user/signup", {
       method: "POST",
       body: JSON.stringify({
         email: emailValue,
         password: passwordValue,
         name: name,
-        phoneVlaue: phoneVlaue,
-        addressValue: addressValue,
+        phone_number: phoneVlaue,
+        nickname: nickname,
       }),
     })
       .then(res => res.json())
       .then(res => {
-        console.log("연결");
-        if (res.message === "SUCCESS") {
+        console.log(res);
+        if (res.message === "회원가입 되었습니다.") {
           alert("회원가입 성공");
           this.props.history.push("/login");
         } else {
-          alert("필수사항 입력 부탁");
+          alert("회원가입 실패");
         }
       });
   };
@@ -256,7 +255,7 @@ class SignUp extends Component {
                     <div className="textFieldPhone">
                       <input
                         type="text"
-                        name="phoneValue"
+                        name="phoneVlaue"
                         className="text"
                         onChange={handleInputChange}
                       ></input>
