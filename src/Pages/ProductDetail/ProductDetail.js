@@ -41,6 +41,11 @@ class ProductDetail extends Component {
             <Order
               mainImgSrc={productOrder.mainImg}
               mainImgName={productOrder.name}
+              subImages={productOrder.subImages}
+              productPrice={productOrder.price}
+              reviewCount={productOrder.reviewCount}
+              hashTags={productOrder.hashTags}
+              weight={productOrder.weight}
             />
           )}
         </div>

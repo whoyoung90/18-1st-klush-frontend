@@ -1,15 +1,24 @@
 {
   "productOrder": {
+    "id": 123,
     "direction": ["홈", "러쉬", "베쓰", "베쓰 밤"],
     "mainImg": "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
     "subImages": [
+      "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
       "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
       "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
     ],
     "name": "험프티 덤프티",
     "hashTags": ["스테디셀러", "뒤돌아보는향", "재구매각"],
     "reviewCount": 891,
-    "price": 50000
+    "price": 50000,
+    "weight": "90g"
   },
   "productDetail": {
     "category": "베쓰 밤",

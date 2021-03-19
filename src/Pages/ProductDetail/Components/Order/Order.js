@@ -7,11 +7,28 @@ import "./Order.scss";
 
 class Order extends Component {
   render() {
-    const { mainImgSrc, mainImgName } = this.props;
+    const {
+      mainImgSrc,
+      mainImgName,
+      subImages,
+      productPrice,
+      reviewCount,
+      hashTags,
+      weight,
+    } = this.props;
     return (
       <div className="orderContainer">
-        <OrderImg mainImgSrc={mainImgSrc} mainImgName={mainImgName} />
-        <OrderContent />
+        <OrderImg
+          mainImgSrc={mainImgSrc}
+          mainImgName={mainImgName}
+          subImages={subImages}
+        />
+        <OrderContent
+          productPrice={productPrice}
+          reviewCount={reviewCount}
+          hashTags={hashTags}
+          weight={weight}
+        />
       </div>
     );
   }

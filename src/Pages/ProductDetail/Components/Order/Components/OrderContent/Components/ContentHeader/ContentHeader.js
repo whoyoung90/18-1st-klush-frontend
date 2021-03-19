@@ -5,6 +5,7 @@ import "./ContentHeader.scss";
 
 class ContentHeader extends Component {
   render() {
+    const { hashTags } = this.props;
     return (
       <div className="contentHeader">
         <div className="headerColumn">
@@ -14,7 +15,9 @@ class ContentHeader extends Component {
             <BiHeart className="icons" />
           </div>
         </div>
-        <div className="hashTagColumn">#베쓰밤 #금빛입욕</div>
+        <div className="hashTagColumn">
+          {hashTags.map(tag => "#" + tag + " ")}
+        </div>
       </div>
     );
   }

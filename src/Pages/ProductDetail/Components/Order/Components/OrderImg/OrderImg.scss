@@ -1,16 +1,42 @@
 @import "../../../../../../Styles/common.scss";
 
 .imgContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 380px;
   overflow: hidden;
-  img {
+
+  .mainImage {
     width: 100%;
     height: 380px;
   }
+
   .subImgContainer {
-    width: 100%;
-    height: 70px;
+    display: flex;
+    align-items: center;
     margin-top: 22px;
-    border: 1px black solid;
+
+    .subImgSlider {
+      display: flex;
+      align-content: center;
+      width: 350px;
+      height: 70px;
+      overflow-x: scroll;
+    }
+
+    .subImgSlider::-webkit-scrollbar {
+      display: none; /* Chrome, Safari and Opera */
+    }
+
+    .subImgSlider {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+
+    .sliderArrow {
+      font-weight: 800;
+      color: $elseGrey;
+    }
   }
 }
