@@ -4,20 +4,22 @@ import "./DropUserMenu.scss";
 
 class DropUserMenu extends Component {
   render() {
+    const NAV_USER_LIST = [
+      { key: "/login", value: "로그인" },
+      { key: "/signup", value: "회원가입" },
+      { key: "#", value: "스카우트" },
+      { key: "#", value: "고객센터" },
+    ];
+
     return (
       <div className="dropUserMenu">
-        <li>
-          <Link to="#">로그인</Link>
-        </li>
-        <li>
-          <Link to="#">회원가입</Link>
-        </li>
-        <li>
-          <Link to="#">스카우트</Link>
-        </li>
-        <li>
-          <Link to="#">고객센터</Link>
-        </li>
+        {NAV_USER_LIST.map(function (obj) {
+          return (
+            <li>
+              <Link to={obj.key}>{obj.value}</Link>
+            </li>
+          );
+        })}
       </div>
     );
   }

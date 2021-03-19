@@ -12,9 +12,9 @@ class LushIntro extends Component {
   }
 
   componentDidMount() {
-    fetch("/data/lushIntroList.json")
+    fetch("/data/productList.json")
       .then(res => res.json())
-      .then(res => this.setState({ dropDownn: res.data }));
+      .then(res => this.setState({ dropDown: res.intro }));
   }
 
   render() {

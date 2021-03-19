@@ -13,10 +13,10 @@ class ProductList extends Component {
             {title}
           </Link>
         </li>
-        {items.map(itemsList => (
+        {items.map(el => (
           <li>
             <Link className="items" to="#">
-              {itemsList}
+              {el}
             </Link>
           </li>
         ))}

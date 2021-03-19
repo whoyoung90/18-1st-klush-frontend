@@ -22,7 +22,7 @@ class Product extends Component {
 
     return (
       <li className="dropDown">
-        <Link className="navIntro" to="#">
+        <Link className="navIntro" to="/product_list">
           제품
         </Link>
         <div className="dropDownMenu">
