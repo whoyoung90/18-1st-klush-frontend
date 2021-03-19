@@ -14,7 +14,7 @@ class Member extends Component {
               id="id"
               name="email"
               placeholder="이메일"
-              onChange={this.handleOnChange}
+              onChange={this.props.handleOnChange}
             />
             <FaUserAlt className="inputIcon" />
           </div>
@@ -24,7 +24,7 @@ class Member extends Component {
               id="password"
               name="password"
               placeholder="비밀번호"
-              onChange={this.handleOnChange}
+              onChange={this.props.handleOnChange}
             />
             <FaLock className="inputIcon" />
           </div>
@@ -33,7 +33,11 @@ class Member extends Component {
           <input type="checkbox" className="checkBox" />
           <label for="checkBox">아이디 저장</label>
         </div>
-        <button className="btnLogin" type="submit" onClick={this.loginSubmit}>
+        <button
+          className="btnLogin"
+          type="submit"
+          onClick={this.props.loginSubmit}
+        >
           <em>로그인 </em>
         </button>
         <div className="loginMenu">

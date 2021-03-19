@@ -19,26 +19,35 @@ class Login extends Component {
   };
   loginSubmit = e => {
     e.preventDefault();
+    const { email, password } = this.state;
     const idCheck = /^[A-Za-z0-9][A-Za-z0-9._-]+[@]{1}[a-z]+[.]{1}[a-z]{1,4}$/;
     if (!this.state.email) {
-      alert("아이디를 입력해주세요");
-    } else if (!idCheck.test(this.state.email)) {
-      alert("입력된 아이디은(는) 잘못된 형식입니다.");
-    } else if (this.state.password === "") {
+      alert("이메일을 입력해주세요");
+    } else if (!idCheck.test(email)) {
+      alert("입력된 이메일은(는) 잘못된 형식입니다.");
+    } else if (password === "") {
       alert("패스워드를 입력해주세요");
       return;
     }
-    // fetch("http://10.58.23.162:80000/user/login", {
-    //   method: "POST",
-    //   body: JSON.stringify({
-    //     username: this.state.email,
-    //     password: this.state.password,
-    //   }),
-    // })
-    //   .then(res => res.json())
-    //   .then(res => {
-    //     console.log(res);
-    //   });
+    fetch("http://10.58.23.162:8000/user/login", {
+      method: "POST",
+      body: JSON.stringify({
+        username: this.state.email,
+        password: this.state.password,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        if (res.token) {
+          console.log("성공");
+          localStorage.setItem("token", res.token);
+          alert("성공");
+          this.props.history.push("/signup");
+        } else {
+          alert("실패");
+        }
+      });
   };
   render() {
     const { email, password, currentId } = this.state;
@@ -64,8 +73,18 @@ class Login extends Component {
               </ul>
             </div>
             <form className="loginForm">
-              {currentId === 1 && <Member />}
-              {currentId === 2 && <NonMember />}
+              {currentId === 1 && (
+                <Member
+                  loginSubmit={this.loginSubmit}
+                  handleOnChange={this.handleOnChange}
+                />
+              )}
+              {currentId === 2 && (
+                <NonMember
+                  loginSubmit={this.loginSubmit}
+                  handleOnChange={this.handleOnChange}
+                />
+              )}
             </form>
           </div>
         </section>
