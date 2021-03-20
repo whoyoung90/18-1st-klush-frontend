@@ -40,7 +40,7 @@
       .cartTitle {
         font-size: 28px;
         font-weight: 700;
-        padding: 0 0 15px;
+        padding: 0 0 18px;
         border-bottom: 1px solid $lushBlack;
       }
       .cartTable {
@@ -89,12 +89,9 @@
         tbody {
           tr {
             td {
+              height: 0px;
               border-bottom: 1px solid #e7e7e7;
-              padding: 33px 18px 20px;
-            }
-            .tableCheck {
-              vertical-align: top;
-              position: absolute;
+              padding: 26px 18px;
             }
             .productInfo {
               .productItem {
@@ -119,22 +116,22 @@
               }
             }
             .itemCount {
-              .countBox {
-                width: 120px;
-                height: 40px;
-                margin: auto;
-                border: 1px solid #e7e7e7;
-                margin-bottom: 10px;
-                display: flex;
-                align-items: center;
-                input {
-                  width: 33%;
-                }
-                button {
-                  width: 33%;
-                  background: transparent;
-                  outline: none;
-                  border: none;
+              .countQuantity {
+                .countBox {
+                  width: 120px;
+                  height: 40px;
+                  border: 1px solid #e7e7e7;
+                  display: flex;
+                  align-items: center;
+                  input {
+                    width: 33%;
+                  }
+                  button {
+                    width: 33%;
+                    background: transparent;
+                    outline: none;
+                    border: none;
+                  }
                 }
               }
             }
