@@ -3,8 +3,8 @@ import CartItem from "./CartItem";
 
 class CartList extends Component {
   render() {
-    const { productData, decreaseItem, increaseItem } = this.props;
-    console.log(productData);
+    const { productData, handleDecrement, handleIncrement } = this.props;
+
     return (
       <table className="cartTable">
         <thead>
@@ -31,15 +31,15 @@ class CartList extends Component {
           {productData.map(item => {
             return (
               <CartItem
-                productData={item}
+                productData={item} // item도 매개변수로 전달 !! item 파일에서 일하고 productData 다시 돌려받자
                 id={item.id}
                 img={item.img}
                 name={item.name}
                 category={item.category}
                 quantity={item.quantity}
                 price={item.price}
-                decreaseItem={decreaseItem}
-                increaseItem={increaseItem}
+                handleDecrement={handleDecrement}
+                handleIncrement={handleIncrement}
               />
             );
           })}

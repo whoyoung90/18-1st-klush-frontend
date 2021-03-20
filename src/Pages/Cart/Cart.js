@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "./Cart.scss";
 import CartList from "./components/CartList";
+import CartPrice from "./components/CartPrice";
 
+// 배송비 3만 이상이면 free
 class Cart extends Component {
   constructor() {
     super();
@@ -16,16 +18,31 @@ class Cart extends Component {
       .then(res => res.json())
       .then(res => this.setState({ productData: res }));
   }
-  decreaseItem = () => {
-    console.log("감소 중");
+
+  handleDecrement = item => {
+    console.log(`감소하려고 한 아이템 수량:  ${item.quantity}`);
+    const productData = [...this.state.productData];
+    const index = productData.indexOf(item);
+    const quantity = productData[index].quantity - 1;
+    productData[index].quantity = quantity < 1 ? 1 : quantity;
+    this.setState({ productData });
+    console.log(this.state);
   };
-  increaseItem = () => {
-    console.log("증가중");
+  handleIncrement = item => {
+    console.log(`증가하려고 한 아이템 수량:  ${item.quantity}`);
+    const productData = [...this.state.productData];
+    const index = productData.indexOf(item);
+    productData[index].quantity++;
+    this.setState({ productData });
+    console.log(this.state);
+  };
+  handleDelete = () => {
+    alert("선택하신 3개상품을 장바구니에서 삭제 하시겠습니까?");
   };
 
   render() {
     const { productData } = this.state;
-    const { decreaseItem, increaseItem } = this;
+    const { handleDecrement, handleIncrement } = this;
     return (
       <div className="cart">
         <div className="container">
@@ -46,18 +63,12 @@ class Cart extends Component {
               <h3 className="cartTitle">제품</h3>
               <CartList
                 productData={productData}
-                decreaseItem={decreaseItem}
-                increaseItem={increaseItem}
+                handleDecrement={handleDecrement}
+                handleIncrement={handleIncrement}
               />
             </div>
           </form>
-          <div className="calcAmount">
-            <p>
-              <span className="calcDetail">3개</span>
-              <span className="calcDelivery">2500원</span>
-              <span className="calcTotal">3만원</span>
-            </p>
-          </div>
+          <CartPrice productData={productData} />
           <div className="bottomButton">
             <div className="buttonSub">
               <button className="btnDelete">삭제 하기</button>

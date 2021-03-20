@@ -3,55 +3,66 @@ import React, { Component } from "react";
 class CartItem extends Component {
   render() {
     const {
+      item,
       category,
       id,
       img,
       name,
       price,
       quantity,
-      increaseItem,
-      decreaseItem,
+      productData,
+      handleIncrement,
+      handleDecrement,
     } = this.props;
-    console.log(name);
-    console.log(category);
+
     return (
       <tr>
         <td className="tableCheck">
           <input type="checkbox" className="checkbox" />
           <label for="checkbox"></label>
         </td>
-        <td className="listItem productInfo">
+
+        <td className="productInfo">
+          <span className="productPicture">
+            <div>
+              <img src={img} />
+            </div>
+          </span>
           <div className="productItem">
-            <span className="productPicture">
-              <a href="#">
-                <img src={img}></img>
-              </a>
-            </span>
             <div className="productText">
               <p className="itemName">{name} </p>
               <p className="itemCategory">{category} </p>
             </div>
           </div>
         </td>
-        <td className=" listItem itemCount">
+        <td className="itemCount">
           <div className="countQuantity">
             <div className="countBox">
-              <button className="btnDecrease" onClick={() => decreaseItem}>
+              <button
+                className="btnDecrease"
+                type="button"
+                onClick={() => handleDecrement(this.props.productData)}
+              >
                 -
               </button>
               <span>{quantity}</span>
-              <button className="btnIncrease" onClick={() => increaseItem}>
+
+              <button
+                className="btnIncrease"
+                type="button"
+                onClick={() => handleIncrement(productData)}
+              >
                 +
               </button>
             </div>
           </div>
         </td>
         <td className="itemPrice">
-          <strong className="price">{price} </strong>
+          <strong className="price">{price}</strong>
         </td>
         <td className="itemBenefits"></td>
         <td className="itemTotalPrice">
-          {(price * quantity).toLocaleString()}
+          {(price * quantity).toLocaleString()}원
         </td>
         <td></td>
       </tr>
