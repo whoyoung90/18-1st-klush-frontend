@@ -2,6 +2,18 @@ import React, { Component } from "react";
 
 class CartItem extends Component {
   render() {
+    const {
+      category,
+      id,
+      img,
+      name,
+      price,
+      quantity,
+      increaseItem,
+      decreaseItem,
+    } = this.props;
+    console.log(name);
+    console.log(category);
     return (
       <tr>
         <td className="tableCheck">
@@ -12,36 +24,35 @@ class CartItem extends Component {
           <div className="productItem">
             <span className="productPicture">
               <a href="#">
-                <img
-                  src="https://images.unsplash.com/photo-1585349279412-518db7ec7bed?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8b3JhbmdlfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-                  width="60"
-                ></img>
+                <img src={img}></img>
               </a>
             </span>
             <div className="productText">
-              <p className="itemName">로즈 아르간</p>
-              <p className="itemCategory">보디 컨디셔너</p>
+              <p className="itemName">{name} </p>
+              <p className="itemCategory">{category} </p>
             </div>
           </div>
         </td>
         <td className=" listItem itemCount">
           <div className="countQuantity">
             <div className="countBox">
-              <button className="btnDecrease" onClick={this.decreaseItem}>
+              <button className="btnDecrease" onClick={() => decreaseItem}>
                 -
               </button>
-              <input type="text"></input>
-              <button className="btnIncrease" onClick={this.increaseItem}>
+              <span>{quantity}</span>
+              <button className="btnIncrease" onClick={() => increaseItem}>
                 +
               </button>
             </div>
           </div>
         </td>
         <td className="itemPrice">
-          <strong className="price">\21,000</strong>
+          <strong className="price">{price} </strong>
         </td>
         <td className="itemBenefits"></td>
-        <td className="itemTotalPrice"></td>
+        <td className="itemTotalPrice">
+          {(price * quantity).toLocaleString()}
+        </td>
         <td></td>
       </tr>
     );

@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "img": "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    "name": "험프티 덤프티",
+    "category": "배쓰밤",
+    "quantity": 5,
+    "price": "10,000"
+  },
+  {
+    "id": 2,
+    "img": "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    "name": "두번째 덤프티",
+    "category": "배쓰밤",
+    "quantity": 2,
+    "price": "13,000"
+  },
+  {
+    "id": 3,
+    "img": "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    "name": "세번째 덤프티",
+    "category": "배쓰밤",
+    "quantity": 1,
+    "price": "9,000"
+  },
+  {
+    "id": 4,
+    "img": "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+    "name": "네번째 덤프티",
+    "category": "배쓰밤",
+    "quantity": 5,
+    "price": "2,000"
+  }
+]

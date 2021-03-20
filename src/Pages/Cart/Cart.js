@@ -9,21 +9,23 @@ class Cart extends Component {
       productData: [],
     };
   }
-
-  decreaseItem = e => {};
-  increaseItem = e => {};
   componentDidMount() {
-    fetch("data/cartData.json")
+    fetch("http://localhost:3000/data/cartData.json", {
+      method: "GET",
+    })
       .then(res => res.json())
-      .then(res =>
-        this.setState({
-          productData: res,
-        })
-      );
+      .then(res => this.setState({ productData: res }));
   }
+  decreaseItem = () => {
+    console.log("감소 중");
+  };
+  increaseItem = () => {
+    console.log("증가중");
+  };
+
   render() {
     const { productData } = this.state;
-    console.log(productData.length);
+    const { decreaseItem, increaseItem } = this;
     return (
       <div className="cart">
         <div className="container">
@@ -42,7 +44,11 @@ class Cart extends Component {
           <form className="itemCart" method="post">
             <div className="cartContainer">
               <h3 className="cartTitle">제품</h3>
-              <CartList />
+              <CartList
+                productData={productData}
+                decreaseItem={decreaseItem}
+                increaseItem={increaseItem}
+              />
             </div>
           </form>
           <div className="calcAmount">

@@ -1,7 +1,10 @@
 import React, { Component } from "react";
+import CartItem from "./CartItem";
 
 class CartList extends Component {
   render() {
+    const { productData, decreaseItem, increaseItem } = this.props;
+    console.log(productData);
     return (
       <table className="cartTable">
         <thead>
@@ -25,7 +28,21 @@ class CartList extends Component {
           </tr>
         </thead>
         <tbody>
-          <CartList />
+          {productData.map(item => {
+            return (
+              <CartItem
+                productData={item}
+                id={item.id}
+                img={item.img}
+                name={item.name}
+                category={item.category}
+                quantity={item.quantity}
+                price={item.price}
+                decreaseItem={decreaseItem}
+                increaseItem={increaseItem}
+              />
+            );
+          })}
         </tbody>
       </table>
     );
