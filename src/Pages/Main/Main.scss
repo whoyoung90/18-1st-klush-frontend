@@ -1,1 +1,92 @@
-.
+@import "../../Styles/common.scss";
+
+.main {
+  padding-top: 100px;
+  width: 100%;
+
+  .mainImg {
+    img {
+      width: 1200px;
+    }
+  }
+  .itemWrap {
+    padding: 80px 0 120px;
+
+    h2 {
+      margin-bottom: 25px;
+      font-size: 42px;
+      line-height: 44px;
+      font-family: $lushFont;
+    }
+
+    .myItem {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      scroll-behavior: smooth;
+      width: 900px;
+
+      .myList {
+        width: 30%;
+        text-align: center;
+        margin-right: 20px;
+
+        .myItemList {
+          display: flex;
+          flex-direction: column;
+          text-decoration: none;
+
+          .myImg {
+            width: 300px;
+            flex: 0 0 auto;
+          }
+
+          .imgTitle {
+            line-height: 22px;
+            font-size: 18px;
+            color: $lushBlack;
+            font-weight: bold;
+          }
+
+          .imgHash {
+            line-height: 20px;
+            font-size: 14px;
+            color: $elseGrey;
+          }
+        }
+
+        .cost {
+          line-height: 22px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+    .listButton {
+      width: 900px;
+      text-align: center;
+      margin-top: 30px;
+
+      .button {
+        margin-right: 30px;
+
+        .dot {
+          width: 12px;
+        }
+      }
+    }
+  }
+
+  .tableWrap {
+    position: relative;
+    display: table;
+
+    .leftTable {
+      display: table-cell;
+    }
+
+    .rightTable {
+      position: absolute;
+    }
+  }
+}
