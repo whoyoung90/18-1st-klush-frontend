@@ -1,0 +1,72 @@
+@import "../../../Styles/common.scss";
+tr {
+  td {
+    text-align: center;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 41px 18px;
+  }
+  .productInfo {
+    display: flex;
+    position: relative;
+
+    .productPicture {
+      display: flex;
+      margin-left: 20px;
+      align-items: center;
+
+      img {
+        top: 17px;
+        position: absolute;
+        width: 70px;
+      }
+    }
+    .productItem {
+      display: flex;
+      padding: 20px 15px;
+
+      .productText {
+        padding-left: 95px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 15px;
+        width: 100%;
+
+        .itemName {
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 8px;
+        }
+        .itemCategory {
+          color: $elseGrey;
+        }
+      }
+    }
+  }
+  .itemCount {
+    .countQuantity {
+      .countBox {
+        margin: 0 auto;
+        width: 120px;
+        height: 40px;
+        border: 1px solid #e7e7e7;
+        display: flex;
+        align-items: center;
+        input {
+          font-size: 16px;
+          text-align: center;
+          width: 33%;
+        }
+        button {
+          font-size: 16px;
+          width: 33%;
+          background: transparent;
+          outline: none;
+          border: none;
+        }
+      }
+    }
+  }
+  .itemPrice {
+  }
+}

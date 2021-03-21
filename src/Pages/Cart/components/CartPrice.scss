@@ -1,0 +1,30 @@
+.calcAmount {
+  text-align: center;
+  font-size: 18px;
+
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 19px 0;
+
+    .calcDetail,
+    .calcDelivery,
+    .calcTotal {
+      display: flex;
+      margin-right: 10px;
+    }
+
+    .calcDetail {
+      p {
+        margin-right: 20px;
+        em {
+          padding-left: 8px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

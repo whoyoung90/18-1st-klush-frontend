@@ -1,0 +1,47 @@
+@import "../../../Styles/common.scss";
+.cartTable {
+  thead {
+    tr {
+      th {
+        padding: 15px 0;
+        color: #969896;
+        font-weight: bold;
+        font-size: 13.5px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .formCheck {
+        display: absolute;
+        padding: 10px 18px;
+
+        label {
+          position: relative;
+          cursor: pointer;
+          text-indent: -9999px;
+        }
+      }
+
+      .productDetail {
+        width: 440px;
+      }
+      .productCount {
+        width: 200px;
+      }
+      .productPrice {
+        width: 150px;
+      }
+      .productBenefits {
+        width: 70px;
+      }
+      .productTotalPrice {
+        width: 150px;
+      }
+      .productShipPrice {
+        width: 150px;
+      }
+    }
+  }
+  tbody {
+  }
+}

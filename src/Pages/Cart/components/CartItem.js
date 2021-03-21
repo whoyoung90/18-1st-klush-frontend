@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./CartItem.scss";
 class CartItem extends Component {
   render() {
     const {
@@ -16,7 +16,7 @@ class CartItem extends Component {
       handleDecrement,
       handleSelect,
     } = this.props;
-    const { itemPrice } = price * quantity;
+
     return (
       <tr>
         <td className="tableCheck">

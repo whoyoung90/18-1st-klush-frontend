@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CartItem from "./CartItem";
+import "./CartList.scss";
 
 class CartList extends Component {
   render() {
@@ -8,7 +9,6 @@ class CartList extends Component {
       handleDecrement,
       handleIncrement,
       handleSelect,
-      isChecked,
     } = this.props;
 
     return (
@@ -44,7 +44,7 @@ class CartList extends Component {
                 category={item.category}
                 quantity={item.quantity}
                 price={item.price}
-                isChecked={isChecked}
+                isChecked={item.isChecked}
                 handleDecrement={handleDecrement}
                 handleIncrement={handleIncrement}
                 handleSelect={handleSelect}

@@ -11,7 +11,8 @@ class Cart extends Component {
     super();
     this.state = {
       productData: [],
-      sumPrice: 0,
+      itemPrice: 0,
+      totalPrice: 0,
       isAllChecked: false,
     };
   }
@@ -45,8 +46,9 @@ class Cart extends Component {
     this.setState({ productData: checkData });
   };
 
+  // select 된걸로 수정하자
   handleDelete = item => {
-    alert(`선택하신 ${item.count}개상품을 장바구니에서 삭제 하시겠습니까?`);
+    alert(`선택하신 ${item.length}개상품을 장바구니에서 삭제 하시겠습니까?`);
   };
 
   handleSelectAll = event => {
@@ -56,13 +58,20 @@ class Cart extends Component {
   };
 
   handleSelect = event => {
-    const { isChecked, productData } = this.state;
+    const { productData } = this.state;
     if (event.target.checked === true) {
       console.log("클릭됨");
       this.setState({ isChecked: false });
     } else {
       console.log("해제");
     }
+  };
+
+  handleCalcPrice = item => {
+    const itemPrice = this.state.productData.map(item => {
+      return item.price * item.quantity;
+    });
+    this.setState({ itemPrice });
   };
 
   render() {
@@ -73,7 +82,11 @@ class Cart extends Component {
       handleDelete,
       handleSelect,
     } = this;
-    const selectProducts = productData.filter(product => product.quantity);
+    //    const {selectProducts = productData.filter(product => product.isChecked);
+    const itemPrice = this.state.productData.map(item => {
+      return item.price * item.quantity;
+    });
+    const { totalPrice } = itemPrice.reduce((a, b) => a + b, 0);
     return (
       <div className="cart">
         <div className="container">
@@ -104,10 +117,14 @@ class Cart extends Component {
           <CartPrice
             productData={productData}
             quantity={productData.quantity}
+            totalPrice={totalPrice}
           />
           <div className="bottomButton">
             <div className="buttonSub">
-              <button className="btnDelete" onClick={handleDelete}>
+              <button
+                className="btnDelete"
+                onClick={() => handleDelete(productData)}
+              >
                 삭제 하기
               </button>
               <button className="btnSave">찜하기</button>

@@ -1,15 +1,17 @@
 import React, { Component } from "react";
+import "./CartPrice.scss";
 
 class cartPrice extends Component {
   render() {
+    const { totalPrice } = this.props;
     return (
       <div className="calcAmount">
         <p>
           <span className="calcDetail">
+            <p>총 3 개의 금액</p>
             <p>
-              총<p></p>개의 금액
+              ￦<em>106000</em>
             </p>
-            <strong>106.000</strong>원
           </span>
           <span className="addIcon">+</span>
           <span className="calcDelivery">
@@ -20,7 +22,7 @@ class cartPrice extends Component {
           </span>
           <span className="calcTotal">
             <p>
-              총 주문금액 <strong>108,500</strong>원
+              총 주문금액 <strong> {totalPrice}</strong>원
             </p>
           </span>
         </p>
