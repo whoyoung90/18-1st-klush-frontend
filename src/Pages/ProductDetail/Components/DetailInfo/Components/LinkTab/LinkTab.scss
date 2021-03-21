@@ -1,0 +1,36 @@
+@import "../../../../../../Styles/common.scss";
+
+.linkTab {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 47px;
+  margin-bottom: 20px;
+
+  .tabBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: $elseGrey;
+    border: 1px solid $lushGrey;
+    border-bottom: 1px solid $lushBlack;
+
+    &:nth-child(2) {
+      border-left: none;
+      border-right: none;
+    }
+
+    &:visited,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+  .focusBtn {
+    color: $lushBlack;
+    border: 1px solid $lushBlack !important;
+    border-bottom: none !important;
+  }
+}

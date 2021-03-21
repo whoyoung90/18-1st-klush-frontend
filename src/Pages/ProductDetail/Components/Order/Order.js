@@ -15,6 +15,7 @@ class Order extends Component {
       reviewCount,
       hashTags,
       weight,
+      name,
     } = this.props;
     return (
       <div className="orderContainer">
@@ -28,6 +29,7 @@ class Order extends Component {
           reviewCount={reviewCount}
           hashTags={hashTags}
           weight={weight}
+          name={name}
         />
       </div>
     );

@@ -71,7 +71,7 @@ class OrderContent extends Component {
 
   checkEnter = e => {
     if (e.key === "Enter") {
-      if (!e.target.value) {
+      if (!Number(e.target.value)) {
         alert("상품 수량을 정확히 입력해 주세요!");
         e.target.value = "1";
       }
@@ -94,10 +94,10 @@ class OrderContent extends Component {
 
   render() {
     const { price, countNum, totalPrice } = this.state;
-    const { reviewCount, hashTags, weight } = this.props;
+    const { reviewCount, hashTags, weight, name } = this.props;
     return (
       <div className="contentContainer">
-        <ContentHeader hashTags={hashTags} />
+        <ContentHeader hashTags={hashTags} name={name} />
         <div className="devideLine" />
         <ContentBody
           price={this.printPrice(String(price))}

@@ -15,6 +15,7 @@ class ContentBody extends Component {
       checkEnter,
       onChangeCountNum,
     } = this.props;
+
     return (
       <div className="contentBody">
         <div className="reviewColumn">{reviewCount}개의 후기 보기</div>

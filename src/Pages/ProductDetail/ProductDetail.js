@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Direction from "./Components/Direction/Direction";
 import Order from "./Components/Order/Order";
+import DetailInfo from "./Components/DetailInfo/DetailInfo";
 
 import "./ProductDetail.scss";
 
@@ -37,8 +38,9 @@ class ProductDetail extends Component {
                 })}
             </div>
           </header>
-          {this.state.productData && (
+          {productOrder && (
             <Order
+              name={productOrder.name}
               mainImgSrc={productOrder.mainImg}
               mainImgName={productOrder.name}
               subImages={productOrder.subImages}
@@ -46,6 +48,12 @@ class ProductDetail extends Component {
               reviewCount={productOrder.reviewCount}
               hashTags={productOrder.hashTags}
               weight={productOrder.weight}
+            />
+          )}
+          {productDetail && (
+            <DetailInfo
+              reviewCount={productOrder.reviewCount}
+              productDetail={productDetail}
             />
           )}
         </div>

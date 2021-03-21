@@ -5,11 +5,11 @@ import "./ContentHeader.scss";
 
 class ContentHeader extends Component {
   render() {
-    const { hashTags } = this.props;
+    const { hashTags, name } = this.props;
     return (
       <div className="contentHeader">
         <div className="headerColumn">
-          <div className="columnLeft">골든 에그</div>
+          <div className="columnLeft">{name}</div>
           <div className="columnRight">
             <BiShareAlt className="icons" />
             <BiHeart className="icons" />
