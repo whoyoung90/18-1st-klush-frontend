@@ -8,6 +8,7 @@ class CartList extends Component {
       handleDecrement,
       handleIncrement,
       handleSelect,
+      isChecked,
     } = this.props;
 
     return (
@@ -20,7 +21,6 @@ class CartList extends Component {
                   type="checkbox"
                   id="allCheck"
                   className="allCheck"
-                  checked
                 ></input>
                 <label for="allCheck"> </label>
               </span>
@@ -44,6 +44,7 @@ class CartList extends Component {
                 category={item.category}
                 quantity={item.quantity}
                 price={item.price}
+                isChecked={isChecked}
                 handleDecrement={handleDecrement}
                 handleIncrement={handleIncrement}
                 handleSelect={handleSelect}

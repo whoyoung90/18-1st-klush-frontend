@@ -11,15 +11,21 @@ class CartItem extends Component {
       price,
       quantity,
       productData,
+      isChecked,
       handleIncrement,
       handleDecrement,
       handleSelect,
     } = this.props;
-
+    const { itemPrice } = price * quantity;
     return (
       <tr>
         <td className="tableCheck">
-          <input type="checkbox" className="checkbox" />
+          <input
+            type="checkbox"
+            className="checkbox"
+            checked={productData.isChecked}
+            onClick={e => handleSelect(e)}
+          />
           <label for="checkbox"></label>
         </td>
 
@@ -42,7 +48,7 @@ class CartItem extends Component {
               <button
                 className="btnDecrease"
                 type="button"
-                onClick={() => handleDecrement(this.props.productData)}
+                onClick={() => handleDecrement(productData)}
               >
                 -
               </button>
@@ -59,11 +65,13 @@ class CartItem extends Component {
           </div>
         </td>
         <td className="itemPrice">
-          <strong className="price">{price}</strong>
+          <strong className="price">
+            {Math.floor(price).toLocaleString()}
+          </strong>
         </td>
         <td className="itemBenefits"></td>
         <td className="itemTotalPrice">
-          ${Number({ price } * { quantity }).toLocaleString()}원
+          {Math.floor(price * quantity).toLocaleString()}
         </td>
         <td></td>
       </tr>

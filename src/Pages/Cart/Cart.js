@@ -12,6 +12,7 @@ class Cart extends Component {
     this.state = {
       productData: [],
       sumPrice: 0,
+      isAllChecked: false,
     };
   }
   componentDidMount() {
@@ -23,7 +24,6 @@ class Cart extends Component {
   }
 
   handleDecrement = item => {
-    console.log(`감소하려고 한 아이템 수량:  ${item.quantity}`);
     const productData = [...this.state.productData];
     const index = productData.indexOf(item);
     const quantity = productData[index].quantity - 1;
@@ -31,7 +31,6 @@ class Cart extends Component {
     this.setState({ productData });
   };
   handleIncrement = item => {
-    console.log(`증가하려고 한 아이템 수량:  ${item.quantity}`);
     const productData = [...this.state.productData];
     const index = productData.indexOf(item);
     productData[index].quantity++;
@@ -50,17 +49,24 @@ class Cart extends Component {
     alert(`선택하신 ${item.count}개상품을 장바구니에서 삭제 하시겠습니까?`);
   };
 
-  handleSelectAll = () => {};
+  handleSelectAll = event => {
+    const productData = [...this.state.productData];
+    productData.map(item => item.isChecked === event.target.checked);
+    this.setState({ productData });
+  };
 
   handleSelect = event => {
-    console.log(event.target.checked);
-    // event.target.checked
-    //   ? (event.target.checked = false)
-    //   : (event.target.checked = true);
+    const { isChecked, productData } = this.state;
+    if (event.target.checked === true) {
+      console.log("클릭됨");
+      this.setState({ isChecked: false });
+    } else {
+      console.log("해제");
+    }
   };
 
   render() {
-    const { productData } = this.state;
+    const { productData, isChecked } = this.state;
     const {
       handleDecrement,
       handleIncrement,
@@ -91,6 +97,7 @@ class Cart extends Component {
                 handleDecrement={handleDecrement}
                 handleIncrement={handleIncrement}
                 handleSelect={handleSelect}
+                isChecked={isChecked}
               />
             </div>
           </form>
