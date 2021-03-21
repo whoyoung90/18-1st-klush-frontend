@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { BiShoppingBag, BiHeart } from "react-icons/bi";
 import ProductLabel from "./Components/ProductLabel/ProductLabel";
 import ProductHashTag from "./Components/ProductHashTag/ProductHashTag";
@@ -7,6 +7,10 @@ import ProductHashTag from "./Components/ProductHashTag/ProductHashTag";
 import "./Product.scss";
 
 class Product extends Component {
+  goToDetailPage = () => {
+    this.props.history.push(`/product_detail/${this.props.productInfo.id}`);
+  };
+
   printPrice = () => {
     let result = this.props.productInfo.productPrice.split("").reverse();
     if (result.length > 3) {
@@ -22,7 +26,7 @@ class Product extends Component {
   render() {
     const { productInfo } = this.props;
     return (
-      <Link className="productListContainer" to="/product_detail">
+      <div className="productListContainer" onClick={this.goToDetailPage}>
         <div className="productImgContainer">
           <img
             className="productImg"
@@ -48,9 +52,9 @@ class Product extends Component {
             })}
         </div>
         <div className="productPrice">{this.printPrice()} &#8361;</div>
-      </Link>
+      </div>
     );
   }
 }
 
-export default Product;
+export default withRouter(Product);
