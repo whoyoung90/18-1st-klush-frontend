@@ -3,7 +3,12 @@ import CartItem from "./CartItem";
 
 class CartList extends Component {
   render() {
-    const { productData, handleDecrement, handleIncrement } = this.props;
+    const {
+      productData,
+      handleDecrement,
+      handleIncrement,
+      handleSelect,
+    } = this.props;
 
     return (
       <table className="cartTable">
@@ -15,6 +20,7 @@ class CartList extends Component {
                   type="checkbox"
                   id="allCheck"
                   className="allCheck"
+                  checked
                 ></input>
                 <label for="allCheck"> </label>
               </span>
@@ -31,7 +37,7 @@ class CartList extends Component {
           {productData.map(item => {
             return (
               <CartItem
-                productData={item} // item도 매개변수로 전달 !! item 파일에서 일하고 productData 다시 돌려받자
+                productData={item}
                 id={item.id}
                 img={item.img}
                 name={item.name}
@@ -40,6 +46,7 @@ class CartList extends Component {
                 price={item.price}
                 handleDecrement={handleDecrement}
                 handleIncrement={handleIncrement}
+                handleSelect={handleSelect}
               />
             );
           })}

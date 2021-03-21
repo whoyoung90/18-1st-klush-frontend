@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import "./Cart.scss";
 import CartList from "./components/CartList";
 import CartPrice from "./components/CartPrice";
+import "./Cart.scss";
 
-// 배송비 3만 이상이면 free
+const SHIP_CHARGE = 2500;
+const MIN_PURCHASE = 30000;
+
 class Cart extends Component {
   constructor() {
     super();
     this.state = {
       productData: [],
+      sumPrice: 0,
     };
   }
   componentDidMount() {
@@ -26,7 +29,6 @@ class Cart extends Component {
     const quantity = productData[index].quantity - 1;
     productData[index].quantity = quantity < 1 ? 1 : quantity;
     this.setState({ productData });
-    console.log(this.state);
   };
   handleIncrement = item => {
     console.log(`증가하려고 한 아이템 수량:  ${item.quantity}`);
@@ -34,15 +36,38 @@ class Cart extends Component {
     const index = productData.indexOf(item);
     productData[index].quantity++;
     this.setState({ productData });
-    console.log(this.state);
   };
-  handleDelete = () => {
-    alert("선택하신 3개상품을 장바구니에서 삭제 하시겠습니까?");
+  handleAdd = item => {
+    // 체크박스가 선택되면 체크박스의 아이템의 요소를 체크박스 배열에 추가 (필요한가 ?) 나중에 질문
+    //    const checkData = [...this.state.productData];
+    const checkData = this.state.productData.filter(
+      product => product.checked === true
+    );
+    this.setState({ productData: checkData });
+  };
+
+  handleDelete = item => {
+    alert(`선택하신 ${item.count}개상품을 장바구니에서 삭제 하시겠습니까?`);
+  };
+
+  handleSelectAll = () => {};
+
+  handleSelect = event => {
+    console.log(event.target.checked);
+    // event.target.checked
+    //   ? (event.target.checked = false)
+    //   : (event.target.checked = true);
   };
 
   render() {
     const { productData } = this.state;
-    const { handleDecrement, handleIncrement } = this;
+    const {
+      handleDecrement,
+      handleIncrement,
+      handleDelete,
+      handleSelect,
+    } = this;
+    const selectProducts = productData.filter(product => product.quantity);
     return (
       <div className="cart">
         <div className="container">
@@ -65,13 +90,19 @@ class Cart extends Component {
                 productData={productData}
                 handleDecrement={handleDecrement}
                 handleIncrement={handleIncrement}
+                handleSelect={handleSelect}
               />
             </div>
           </form>
-          <CartPrice productData={productData} />
+          <CartPrice
+            productData={productData}
+            quantity={productData.quantity}
+          />
           <div className="bottomButton">
             <div className="buttonSub">
-              <button className="btnDelete">삭제 하기</button>
+              <button className="btnDelete" onClick={handleDelete}>
+                삭제 하기
+              </button>
               <button className="btnSave">찜하기</button>
             </div>
             <div className="buttonMain">

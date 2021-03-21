@@ -13,6 +13,7 @@ class CartItem extends Component {
       productData,
       handleIncrement,
       handleDecrement,
+      handleSelect,
     } = this.props;
 
     return (
@@ -45,7 +46,7 @@ class CartItem extends Component {
               >
                 -
               </button>
-              <span>{quantity}</span>
+              <input className="quantityCount" value={quantity} />
 
               <button
                 className="btnIncrease"
@@ -62,7 +63,7 @@ class CartItem extends Component {
         </td>
         <td className="itemBenefits"></td>
         <td className="itemTotalPrice">
-          {(price * quantity).toLocaleString()}원
+          ${Number({ price } * { quantity }).toLocaleString()}원
         </td>
         <td></td>
       </tr>
