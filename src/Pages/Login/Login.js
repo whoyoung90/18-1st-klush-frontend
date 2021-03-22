@@ -29,10 +29,10 @@ class Login extends Component {
       alert("패스워드를 입력해주세요");
       return;
     }
-    fetch("http://10.58.23.162:8000/user/login", {
+    fetch("http://10.58.3.238:8000/user/signin", {
       method: "POST",
       body: JSON.stringify({
-        username: this.state.email,
+        email: this.state.email,
         password: this.state.password,
       }),
     })
@@ -94,9 +94,3 @@ class Login extends Component {
 }
 
 export default Login;
-
-// const MEMBER_OBJ = {
-//   1: <Member />,
-//   2: <NonMember />,
-// };
-//const MEMBER_ARR = ["member", "NonMember"];
