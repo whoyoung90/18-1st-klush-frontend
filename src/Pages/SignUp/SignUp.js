@@ -14,6 +14,7 @@ const EMAIL_LIST = [
   "gmail.com",
   "icloud.com",
 ];
+
 const TABLE_ROW = {
   data: [
     {
