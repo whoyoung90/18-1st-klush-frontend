@@ -84,20 +84,19 @@ class SignUp extends Component {
       phoneVlaue,
       nickname,
     } = this.state;
-    fetch("http://10.58.6.247:8000/user/signup", {
+    fetch("http://10.58.3.238:8000/user/signup", {
       method: "POST",
       body: JSON.stringify({
         email: emailValue,
         password: passwordValue,
         name: name,
         phone_number: phoneVlaue,
-        nickname: nickname,
       }),
     })
       .then(res => res.json())
       .then(res => {
         console.log(res);
-        if (res.message === "회원가입 되었습니다.") {
+        if (res.message === "SUCCESS") {
           alert("회원가입 성공");
           this.props.history.push("/login");
         } else {
