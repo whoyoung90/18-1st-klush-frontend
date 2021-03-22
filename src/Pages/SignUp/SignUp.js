@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import DaumPostcode from "react-daum-postcode";
 import "./SignUp.scss";
 
+const WIDTH = 595;
+const HEIGHT = 450;
+
 class SignUp extends Component {
   state = {
     id: 1,
@@ -52,37 +55,32 @@ class SignUp extends Component {
 
   onCheck = e => {
     e.preventDefault();
+    const { emailValue, passwordValue } = this.state;
     const emailCheck = /^[A-Za-z0-9][A-Za-z0-9._-]+[@]{1}[a-z]+[.]{1}[a-z]{1,4}$/;
-    if (this.state.emailValue === "") {
+    if (!emailValue) {
       alert("이메일을 입력 해 주세요");
       return;
     }
-    if (!emailCheck.test(this.state.emailValue)) {
+    if (!emailCheck.test(emailValue)) {
       alert("이메일을 형식에 맞게 작성해 주세요");
       return;
     }
-    if (!this.state.passwordValue) {
+    if (!passwordValue) {
       alert("패스워드를 입력 하시오");
       return;
     }
-    if (!this.state.rePasswordValue) {
+    if (!passwordValue) {
       alert("비밀번호 확인을 입력 해 주세요");
       return;
     }
-    if (this.state.passwordValue.length < 10) {
+    if (passwordValue.length < 10) {
       alert("비밀번호 길이를 10자리 이상으로 입력해 주세요");
       return;
     }
     this.signUpFinish();
   };
   signUpFinish = () => {
-    const {
-      emailValue,
-      passwordValue,
-      name,
-      phoneVlaue,
-      nickname,
-    } = this.state;
+    const { emailValue, passwordValue, name, phoneVlaue } = this.state;
     fetch("http://10.58.3.238:8000/user/signup", {
       method: "POST",
       body: JSON.stringify({
@@ -97,7 +95,7 @@ class SignUp extends Component {
         console.log(res);
         if (res.message === "SUCCESS") {
           alert("회원가입 성공");
-          this.props.history.push("/login");
+          this.props.history.push("/main");
         } else {
           alert("회원가입 실패");
         }
@@ -105,8 +103,7 @@ class SignUp extends Component {
   };
   render() {
     const { isDaumPost, fullAddress, zoneCode } = this.state;
-    const width = 595;
-    const height = 450;
+
     const modalStyle = {
       position: "fixed",
       top: "100px",
@@ -313,8 +310,8 @@ class SignUp extends Component {
             <DaumPostcode
               onComplete={this.handleAddress}
               autoClose
-              width={width}
-              height={height}
+              width={WIDTH}
+              height={HEIGHT}
               style={modalStyle}
               isDaumPost={isDaumPost}
             />
