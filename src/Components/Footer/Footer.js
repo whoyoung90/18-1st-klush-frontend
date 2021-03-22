@@ -4,36 +4,33 @@ import "./Footer.scss";
 
 class Footer extends Component {
   render() {
-    const FOOTER_INFO = [
-      { key: "logoInfo", value: "고객센터" },
-      { key: "logoInfo", value: "1644-2357" },
-      { key: "logoInfo", value: "KlushGroup@klush.co.kr" },
-    ];
+    const FOOTER_INFO = ["고객센터", "02-521-8238", "KlushGroup@klush.co.kr"];
+
     const FOOTER_MENU = [
-      { key: "footerLink", value: "스카우트" },
-      { key: "footerLink", value: "회사소개" },
-      { key: "footerLink", value: "개인정보처리방침" },
-      { key: "footerLink", value: "영상정보관리지침" },
-      { key: "footerLink", value: "이용약관" },
-      { key: "footerLink", value: "고객센터" },
+      "스카우트",
+      "회사소개",
+      "개인정보처리방침",
+      "영상정보관리지침",
+      "이용약관",
+      "고객센터",
     ];
 
     return (
-      <footer className="footers">
+      <footer className="footerAll">
         <img src={footerImg} className="icons" />
         <ul className="footerLeftWrap">
           <a href="/main" className="footerLogo">
             KLUSH
           </a>
           {FOOTER_INFO.map(el => (
-            <li className={el.key}>{el.value}</li>
+            <li className="logoInfo">{el}</li>
           ))}
         </ul>
         <div className="footerRightWrap">
           <ul className="footerWrap">
             {FOOTER_MENU.map(el => (
-              <li className={el.key}>
-                <a href="#">{el.value}</a>
+              <li className="footerLink">
+                <a href="#">{el}</a>
               </li>
             ))}
           </ul>
