@@ -71,8 +71,8 @@ class OrderContent extends Component {
 
   checkEnter = e => {
     if (e.key === "Enter") {
-      if (!Number(e.target.value)) {
-        alert("상품 수량을 정확히 입력해 주세요!");
+      if (Number(e.target.value) > 20) {
+        alert("최대 선택 가능 수량은 20개 입니다!");
         e.target.value = "1";
       }
       this.setState(
@@ -87,9 +87,14 @@ class OrderContent extends Component {
   };
 
   onChangeCountNum = e => {
-    this.setState({
-      countNum: e.target.value,
-    });
+    if (!Number(e.target.value) && e.target.value !== "") {
+      alert("상품 수량은 숫자로 입력해 주세요!");
+      e.target.value = "1";
+    } else {
+      this.setState({
+        countNum: e.target.value,
+      });
+    }
   };
 
   render() {
