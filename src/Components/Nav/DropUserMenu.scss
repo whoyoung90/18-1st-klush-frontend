@@ -1,0 +1,37 @@
+@import "./Nav.scss";
+
+.dropUser {
+  position: relative;
+}
+
+.dropUserMenu {
+  display: none;
+}
+
+.dropUser:hover .dropUserMenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 200px;
+
+  a {
+    color: $lushBlack;
+  }
+
+  li {
+    padding: 0 10px;
+    text-align: center;
+    border-bottom: 1px solid #eaeaea;
+    line-height: 50px;
+    font-size: 12px;
+    background-color: $lushWhite;
+    &:hover {
+      background-color: $lushBlack;
+      a {
+        color: $lushWhite;
+      }
+    }
+  }
+}
