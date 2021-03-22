@@ -53,7 +53,6 @@ class SignUp extends Component {
   onCheck = e => {
     e.preventDefault();
     const emailCheck = /^[A-Za-z0-9][A-Za-z0-9._-]+[@]{1}[a-z]+[.]{1}[a-z]{1,4}$/;
-    console.log(this.state.passwordValue.length);
     if (this.state.emailValue === "") {
       alert("이메일을 입력 해 주세요");
       return;
