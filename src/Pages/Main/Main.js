@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import * as Config from "./Config";
-import Bath from "./Images/bath.png";
-import BathFun1 from "./Images/bath_fun1.jpg";
-import Campaign from "./Images/campaign.png";
-import BubbleBar from "./Images/bubbleBar.png";
-import Event from "./Images/event.png";
+import Slider from "react-slick";
+import MainSlide from "./MainSlide";
 import "./Main.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 class Main extends Component {
   constructor() {
@@ -19,45 +17,36 @@ class Main extends Component {
       .then(res => this.setState({ list: res }));
   }
   render() {
-    console.log(this.state.list);
+    const { list } = this.state;
+
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+    };
     return (
       <div className="main">
-        <div className="mainImg">
-          <img src={Bath} />
-        </div>
+        <MainSlide />
         <div className="itemWrap">
           <h2>나만 알고 싶은 KLUSH</h2>
-          <ul className="myItem">
-            {this.state.list.map(el => (
-              <li className="myList">
-                <a href="#" id={el.id} className="myItemList">
-                  <img className="myImg" src={el.src} />
-                  <span className="imgTitle">{el.imgTitle}</span>
-                  <span className="imgHash">{el.imgHash}</span>
-                </a>
+          <Slider className="myItem" {...settings}>
+            {list.map((el, idx) => (
+              <a href="#" key={idx} className="myItemList">
+                <img className="myImg" src={el.src} alt="newLabel" />
+                <div className="imgTitle">{el.imgTitle}</div>
+                <div className="imgHash">{el.imgHash}</div>
                 <div className="cost">${el.cost}</div>
-              </li>
+              </a>
             ))}
-          </ul>
-          <div className="listButton">
-            <a href="#num1" className="button">
-              <img className="dot" src={Config.dot} />
-            </a>
-            <a href="#num2" className="button">
-              <img className="dot" src={Config.dot} />
-            </a>
-          </div>
+          </Slider>
         </div>
         <div className="tableWrap">
-          <div className="leftTable">
-            <img src={Campaign} />
-          </div>
-          <div className="rightTable">
-            <a className="right1" href="/main">
-              <img src={BubbleBar} />
-            </a>
-            <img className="right2" src={Event} />
-          </div>
+          <img src="/Images/campaign.jpg" alt="campaign" />
+          <a href="/main">
+            <img src="/Images/bubbleBar.jpg" alt="bubbleBar" />
+          </a>
         </div>
       </div>
     );
