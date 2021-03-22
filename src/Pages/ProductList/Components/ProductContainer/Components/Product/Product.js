@@ -24,7 +24,7 @@ class Product extends Component {
   };
 
   render() {
-    const { productInfo } = this.props;
+    const { productInfo, clickModal } = this.props;
     return (
       <div className="productListContainer" onClick={this.goToDetailPage}>
         <div className="productImgContainer">
@@ -34,8 +34,18 @@ class Product extends Component {
             alt={productInfo.productName}
           />
           <div className="hoverIcons">
-            <BiHeart />
-            <BiShoppingBag />
+            <BiHeart
+              onClick={e => {
+                clickModal(e, "showHeartModal");
+              }}
+            />
+            {productInfo.id && (
+              <BiShoppingBag
+                onClick={e => {
+                  clickModal(e, "showCartModal", productInfo.id);
+                }}
+              />
+            )}
           </div>
         </div>
         <div className="labelColumn">

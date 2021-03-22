@@ -77,7 +77,7 @@ class ProductContainer extends Component {
 
   render() {
     const { productList } = this.state;
-    const { categoryName, subCategoryList, products } = this.props;
+    const { categoryName, subCategoryList, products, clickModal } = this.props;
     return (
       <div className="productContainer">
         <div className="productContent">
@@ -91,8 +91,14 @@ class ProductContainer extends Component {
           )}
           <div className="contentList">
             {productList &&
-              productList.map((product, idx) => {
-                return <Product key={idx} productInfo={product} />;
+              productList.map(product => {
+                return (
+                  <Product
+                    key={product.id}
+                    productInfo={product}
+                    clickModal={clickModal}
+                  />
+                );
               })}
           </div>
         </div>
