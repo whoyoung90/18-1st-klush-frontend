@@ -27,6 +27,7 @@ class ProductDetail extends Component {
 
   render() {
     const { productDetail, productOrder } = this.state.productData;
+
     return (
       <div className="productDetailPage">
         <div className="productDetailContainer">
