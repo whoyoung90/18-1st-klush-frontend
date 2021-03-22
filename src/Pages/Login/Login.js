@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Member from "./components/Member";
 import NonMember from "./components/NonMember";
+import { SIGN_IN_API } from "../../config.js";
 import "./Login.scss";
 
 class Login extends Component {
@@ -32,7 +33,7 @@ class Login extends Component {
       alert("패스워드를 입력해주세요");
       return;
     }
-    fetch("http://10.58.3.238:8000/user/signin", {
+    fetch(`${SIGN_IN_API}`, {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,
@@ -51,7 +52,7 @@ class Login extends Component {
         }
       });
   };
-  
+
   render() {
     const { email, password, currentId } = this.state;
     const { clickHandler } = this;
