@@ -5,6 +5,7 @@ import "./CartList.scss";
 class CartList extends Component {
   render() {
     const {
+      checkList,
       cartList,
       isAllChecked,
       handleDecrement,
@@ -40,6 +41,7 @@ class CartList extends Component {
           {cartList.map(item => {
             return (
               <CartItem
+                key={item.id}
                 cartList={item}
                 id={item.id}
                 img={item.img}
@@ -47,7 +49,7 @@ class CartList extends Component {
                 category={item.category}
                 quantity={item.quantity}
                 price={item.price}
-                isChecked={item.isChecked}
+                checkList={checkList}
                 handleDecrement={handleDecrement}
                 handleIncrement={handleIncrement}
                 handleSelect={handleSelect}

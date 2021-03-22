@@ -1,16 +1,19 @@
 import React, { Component } from "react";
+import { CHECK_IMG } from "../../../config";
 import "./CartItem.scss";
 class CartItem extends Component {
   render() {
     const {
       item,
       category,
+      key,
       id,
       img,
       name,
       price,
       quantity,
       cartList,
+      checkList,
       isChecked,
       handleIncrement,
       handleDecrement,
@@ -23,7 +26,9 @@ class CartItem extends Component {
           <input
             type="checkbox"
             className="checkbox"
-            onClick={e => handleSelect(cartList, e)}
+            onClick={() => handleSelect(cartList)}
+            id="checkbox"
+            checked={checkList[cartList.id - 1]}
           />
           <label for="checkbox" className="checked on "></label>
         </td>

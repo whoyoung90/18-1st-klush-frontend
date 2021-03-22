@@ -8,61 +8,29 @@ tr {
   }
   .tableCheck {
     position: relative;
-    // input {
-    //   position: absolute;
-    //   top: 2px;
-    //   left: 1px;
-    //   z-index: -1;
-    //   width: 13px;
-    //   height: 13px;
-    //   vertical-align: top;
-    // }
-    // input[type="checkbox"] {
-    // }
-    // input[type="checkbox"] + label span {
-    //   display: inline-block;
-    //   width: 19px;
-    //   height: 19px;
-    //   margin: -2px 10px 0 0;
-    //   vertical-align: middle;
-    //   background: url("https://postfiles.pstatic.net/MjAyMTAzMjFfNiAg/MDAxNjE2MzMzNjMwNDY2.osYud8Uct6dpp3g7PjrEjZw7wIvbg46OG5_GuCU1MBEg.-hdtkXaDQsc0NQbe0Dpr81hPHfExrRyoaKvM7SJjiZMg.PNG.maplesosser/image.png?type=w966")
-    //     left top no-repeat;
-    //   cursor: pointer;
-    // }
-    // input[type="checkbox"]:checked + label span {
-    //   background: red -19px top no-repeat;
-    // }
-    // position: relative;
-    // input {
-    //   position: absolute;
-    //   top: 2px;
-    //   left: 1px;
-    //   width: 15px;
-    //   height: 15px;
-    //   border: 1px solid #c5c5c5;
-    //   background-color: red;
 
-    input[type="checkbox"] {
-      //display: none;
-      padding-left: 23px;
-      background-repeat: no-repeat;
-    }
-    input[type="checkbox"] + label {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 2px solid #bcbcbc;
-    }
-    input[type="checkbox"]:checked + label {
-    }
-    label {
-      cursor: pointer;
-      padding: 0;
-    }
-    label:hover {
-      background-color: red;
-      background: url("https://postfiles.pstatic.net/MjAyMTAzMjFfNiAg/MDAxNjE2MzMzNjMwNDY2.osYud8Uct6dpp3g7PjrEjZw7wIvbg46OG5_GuCU1MBEg.-hdtkXaDQsc0NQbe0Dpr81hPHfExrRyoaKvM7SJjiZMg.PNG.maplesosser/image.png?type=w966");
-    }
+    // input[type="checkbox"] {
+    //   display: none;
+    //   padding-left: 23px;
+    //   background-repeat: no-repeat;
+    // }
+    // input[type="checkbox"] + label {
+    //   display: inline-block;
+    //   width: 20px;
+    //   height: 20px;
+    //   border: 2px solid #bcbcbc;
+    // }
+    // input[type="checkbox"]:checked + label {
+    //   background-color: #666666;
+    // }
+    // label {
+    //   cursor: pointer;
+    //   padding: 0;
+    // }
+    // label:hover {
+    //   background-color: red;
+    //   background: url("https://postfiles.pstatic.net/MjAyMTAzMjFfNiAg/MDAxNjE2MzMzNjMwNDY2.osYud8Uct6dpp3g7PjrEjZw7wIvbg46OG5_GuCU1MBEg.-hdtkXaDQsc0NQbe0Dpr81hPHfExrRyoaKvM7SJjiZMg.PNG.maplesosser/image.png?type=w966");
+    //}
   }
 
   .productInfo {

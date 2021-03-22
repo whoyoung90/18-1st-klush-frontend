@@ -5,8 +5,7 @@
     "name": "험프티 덤프티",
     "category": "배쓰밤",
     "quantity": 5,
-    "price": "10000",
-    "isChecked": true
+    "price": "10000"
   },
   {
     "id": 2,
@@ -14,8 +13,7 @@
     "name": "두번째 덤프티",
     "category": "볼",
     "quantity": 2,
-    "price": "13000",
-    "isChecked": false
+    "price": "13000" 
   },
   {
     "id": 3,
@@ -23,8 +21,7 @@
     "name": "세번째 덤프티",
     "category": "보디컨디셔너",
     "quantity": 1,
-    "price": "9000",
-    "isChecked": true
+    "price": "9000"
   },
   {
     "id": 4,
@@ -32,7 +29,7 @@
     "name": "네번째 덤프티",
     "category": "러쉬",
     "quantity": 5,
-    "price": "2000",
-    "isChecked": true
+    "price": "2000"
   }
 ]
+
