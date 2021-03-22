@@ -14,7 +14,7 @@ const EMAIL_LIST = [
   "gmail.com",
   "icloud.com",
 ];
-const TABLE_TABLE = {
+const TABLE_ROW = {
   data: [
     {
       name: "비밀번호",
@@ -230,7 +230,7 @@ class SignUp extends Component {
                     </div>
                   </td>
                 </tr>
-                {TABLE_TABLE.data.map(data => {
+                {TABLE_ROW.data.map(data => {
                   return (
                     <tr>
                       <th className="tableRow">
