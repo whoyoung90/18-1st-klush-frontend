@@ -1,3 +1,5 @@
+@import "../../../Styles/common.scss";
+
 .calcAmount {
   text-align: center;
   font-size: 18px;
@@ -14,16 +16,38 @@
     .calcDelivery,
     .calcTotal {
       display: flex;
+      align-items: center;
       margin-right: 10px;
+      em {
+        font-weight: bold;
+      }
     }
 
     .calcDetail {
-      p {
-        margin-right: 20px;
-        em {
-          padding-left: 8px;
-          font-weight: bold;
-        }
+      .detailCount {
+        padding-right: 20px;
+      }
+      em {
+        padding-left: 8px;
+      }
+    }
+    .addIcon {
+      margin: 0 20px;
+      font-weight: bold;
+    }
+    .Delivery {
+      margin-right: 23px;
+    }
+    .calcTotal {
+      font-weight: bold;
+      .resultSign {
+        margin: 0 23px;
+      }
+      .TotalPriceWon {
+        margin-right: 23px;
+      }
+      em {
+        font-size: 26px;
       }
     }
   }

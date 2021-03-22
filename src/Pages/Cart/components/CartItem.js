@@ -10,7 +10,7 @@ class CartItem extends Component {
       name,
       price,
       quantity,
-      productData,
+      cartList,
       isChecked,
       handleIncrement,
       handleDecrement,
@@ -23,10 +23,9 @@ class CartItem extends Component {
           <input
             type="checkbox"
             className="checkbox"
-            checked={productData.isChecked}
-            onClick={e => handleSelect(e)}
+            onClick={e => handleSelect(cartList, e)}
           />
-          <label for="checkbox"></label>
+          <label for="checkbox" className="checked on "></label>
         </td>
 
         <td className="productInfo">
@@ -48,7 +47,7 @@ class CartItem extends Component {
               <button
                 className="btnDecrease"
                 type="button"
-                onClick={() => handleDecrement(productData)}
+                onClick={() => handleDecrement(cartList)}
               >
                 -
               </button>
@@ -57,7 +56,7 @@ class CartItem extends Component {
               <button
                 className="btnIncrease"
                 type="button"
-                onClick={() => handleIncrement(productData)}
+                onClick={() => handleIncrement(cartList)}
               >
                 +
               </button>
@@ -66,12 +65,12 @@ class CartItem extends Component {
         </td>
         <td className="itemPrice">
           <strong className="price">
-            {Math.floor(price).toLocaleString()}
+            ￦ {Math.floor(price).toLocaleString()}
           </strong>
         </td>
         <td className="itemBenefits"></td>
         <td className="itemTotalPrice">
-          {Math.floor(price * quantity).toLocaleString()}
+          ￦ {Math.floor(price * quantity).toLocaleString()}
         </td>
         <td></td>
       </tr>

@@ -10,10 +10,10 @@ class Cart extends Component {
   constructor() {
     super();
     this.state = {
-      productData: [],
+      cartList: [],
       itemPrice: 0,
       totalPrice: 0,
-      isAllChecked: false,
+      isAllChecked: true,
     };
   }
   componentDidMount() {
@@ -21,29 +21,30 @@ class Cart extends Component {
       method: "GET",
     })
       .then(res => res.json())
-      .then(res => this.setState({ productData: res }));
+      .then(res => this.setState({ cartList: res }));
   }
 
   handleDecrement = item => {
-    const productData = [...this.state.productData];
-    const index = productData.indexOf(item);
-    const quantity = productData[index].quantity - 1;
-    productData[index].quantity = quantity < 1 ? 1 : quantity;
-    this.setState({ productData });
+    const cartList = [...this.state.cartList];
+    const index = cartList.indexOf(item);
+    const quantity = cartList[index].quantity - 1;
+    cartList[index].quantity = quantity < 1 ? 1 : quantity;
+    this.setState({ cartList });
   };
   handleIncrement = item => {
-    const productData = [...this.state.productData];
-    const index = productData.indexOf(item);
-    productData[index].quantity++;
-    this.setState({ productData });
+    const cartList = [...this.state.cartList];
+    const index = cartList.indexOf(item);
+    cartList[index].quantity++;
+    this.setState({ cartList });
   };
   handleAdd = item => {
     // 체크박스가 선택되면 체크박스의 아이템의 요소를 체크박스 배열에 추가 (필요한가 ?) 나중에 질문
-    //    const checkData = [...this.state.productData];
-    const checkData = this.state.productData.filter(
-      product => product.checked === true
-    );
-    this.setState({ productData: checkData });
+    //    const checkData = [...this.state.cartList];
+    const checkData = this.state.cartList
+      .filter
+      //     product => product.checked === true
+      ();
+    this.setState({ cartList: checkData });
   };
 
   // select 된걸로 수정하자
@@ -51,39 +52,52 @@ class Cart extends Component {
     alert(`선택하신 ${item.length}개상품을 장바구니에서 삭제 하시겠습니까?`);
   };
 
-  handleSelectAll = event => {
-    const productData = [...this.state.productData];
-    productData.map(item => item.isChecked === event.target.checked);
-    this.setState({ productData });
+  // 수정 필요
+  handleSelectAll = () => {
+    console.log("hiu");
+    const { cartList, isAllChecked } = this.state;
+    const tmpArr = cartList.map(item => {
+      isAllChecked ? (item.isChecked = false) : (item.isChecked = true);
+      return item;
+    });
+    this.setState({ cartList: tmpArr, isAllChecked: !isAllChecked });
   };
 
-  handleSelect = event => {
-    const { productData } = this.state;
-    if (event.target.checked === true) {
-      console.log("클릭됨");
-      this.setState({ isChecked: false });
+  handleSelect = (cartList, event) => {
+    console.log(event.target.checked);
+    const Tmp = this.state.cartList;
+    if (event.target.checked) {
+      console.log("클릭 상태");
+      this.setState();
+      cartList.isChecked = false;
+      console.log(Tmp);
     } else {
-      console.log("해제");
+      console.log("미클릭");
     }
+    const checkData = this.state.cartList.filter(
+      product => product.checked === true
+    );
+    //   console.log(checkData);
   };
 
   handleCalcPrice = item => {
-    const itemPrice = this.state.productData.map(item => {
+    const itemPrice = this.state.cartList.map(item => {
       return item.price * item.quantity;
     });
     this.setState({ itemPrice });
   };
 
   render() {
-    const { productData, isChecked } = this.state;
+    const { cartList, isChecked } = this.state;
     const {
       handleDecrement,
       handleIncrement,
       handleDelete,
       handleSelect,
+      handleSelectAll,
     } = this;
-    //    const {selectProducts = productData.filter(product => product.isChecked);
-    const itemPrice = this.state.productData.map(item => {
+    //    const {selectProducts = cartList.filter(product => product.isChecked);
+    const itemPrice = this.state.cartList.map(item => {
       return item.price * item.quantity;
     });
     const { totalPrice } = itemPrice.reduce((a, b) => a + b, 0);
@@ -106,24 +120,26 @@ class Cart extends Component {
             <div className="cartContainer">
               <h3 className="cartTitle">제품</h3>
               <CartList
-                productData={productData}
+                cartList={cartList}
+                isChecked={isChecked}
                 handleDecrement={handleDecrement}
                 handleIncrement={handleIncrement}
                 handleSelect={handleSelect}
-                isChecked={isChecked}
+                handleSelectAll={handleSelectAll}
               />
             </div>
           </form>
           <CartPrice
-            productData={productData}
-            quantity={productData.quantity}
+            cartList={cartList}
+            quantity={cartList.quantity}
             totalPrice={totalPrice}
+            itemPrice={itemPrice}
           />
           <div className="bottomButton">
             <div className="buttonSub">
               <button
                 className="btnDelete"
-                onClick={() => handleDelete(productData)}
+                onClick={() => handleDelete(cartList)}
               >
                 삭제 하기
               </button>

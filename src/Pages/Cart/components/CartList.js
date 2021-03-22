@@ -5,10 +5,12 @@ import "./CartList.scss";
 class CartList extends Component {
   render() {
     const {
-      productData,
+      cartList,
+      isAllChecked,
       handleDecrement,
       handleIncrement,
       handleSelect,
+      handleSelectAll,
     } = this.props;
 
     return (
@@ -21,6 +23,7 @@ class CartList extends Component {
                   type="checkbox"
                   id="allCheck"
                   className="allCheck"
+                  onClick={() => handleSelectAll()}
                 ></input>
                 <label for="allCheck"> </label>
               </span>
@@ -34,10 +37,10 @@ class CartList extends Component {
           </tr>
         </thead>
         <tbody>
-          {productData.map(item => {
+          {cartList.map(item => {
             return (
               <CartItem
-                productData={item}
+                cartList={item}
                 id={item.id}
                 img={item.img}
                 name={item.name}
