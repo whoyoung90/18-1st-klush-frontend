@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import "./Login.scss";
 import Member from "./components/Member";
 import NonMember from "./components/NonMember";
+import "./Login.scss";
+
 class Login extends Component {
   state = {
     email: "",
@@ -25,7 +26,7 @@ class Login extends Component {
       alert("이메일을 입력해주세요");
     } else if (!idCheck.test(email)) {
       alert("입력된 이메일은(는) 잘못된 형식입니다.");
-    } else if (password === "") {
+    } else if (!password) {
       alert("패스워드를 입력해주세요");
       return;
     }
@@ -40,18 +41,17 @@ class Login extends Component {
       .then(res => {
         console.log(res);
         if (res.token) {
-          console.log("성공");
           localStorage.setItem("token", res.token);
-          alert("성공");
+          alert("로그인 성공");
           this.props.history.push("/signup");
         } else {
-          alert("실패");
+          alert("로그인 실패");
         }
       });
   };
   render() {
     const { email, password, currentId } = this.state;
-
+    const { clickHandler } = this;
     return (
       <div className="login">
         <section>
@@ -61,13 +61,10 @@ class Login extends Component {
           <div className="loginBox">
             <div className="loginSort">
               <ul className="tabs">
-                <li className="Selected" onClick={() => this.clickHandler(1)}>
+                <li className="Selected" onClick={() => clickHandler(1)}>
                   <span>회원</span>
                 </li>
-                <li
-                  className="nonSelected"
-                  onClick={() => this.clickHandler(2)}
-                >
+                <li className="nonSelected" onClick={() => clickHandler(2)}>
                   <span>비회원</span>
                 </li>
               </ul>
