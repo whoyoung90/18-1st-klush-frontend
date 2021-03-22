@@ -1,7 +1,7 @@
 [
   {
     "id": "num1",
-    "src": "{BathFun1}",
+    "src": "BathFun1",
     "imgTitle": "더레트로 키트",
     "imgHash": ["#인형키트", "#베스트향기"],
     "cost": 14000
