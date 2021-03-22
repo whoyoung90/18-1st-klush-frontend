@@ -4,16 +4,17 @@ import "./Footer.scss";
 
 class Footer extends Component {
   render() {
-    const FOOTER_INFO = ["고객센터", "02-521-8238", "KlushGroup@klush.co.kr"];
-
-    const FOOTER_MENU = [
-      "스카우트",
-      "회사소개",
-      "개인정보처리방침",
-      "영상정보관리지침",
-      "이용약관",
-      "고객센터",
-    ];
+    const FOOTER = {
+      Info: ["고객센터", "02-521-8238", "KlushGroup@klush.co.kr"],
+      Menu: [
+        "스카우트",
+        "회사소개",
+        "개인정보처리방침",
+        "영상정보관리지침",
+        "이용약관",
+        "고객센터",
+      ],
+    };
 
     return (
       <footer className="footerAll">
@@ -22,13 +23,13 @@ class Footer extends Component {
           <a href="/main" className="footerLogo">
             KLUSH
           </a>
-          {FOOTER_INFO.map(el => (
+          {FOOTER.Info.map(el => (
             <li className="logoInfo">{el}</li>
           ))}
         </ul>
         <div className="footerRightWrap">
           <ul className="footerWrap">
-            {FOOTER_MENU.map(el => (
+            {FOOTER.Menu.map(el => (
               <li className="footerLink">
                 <a href="#">{el}</a>
               </li>
