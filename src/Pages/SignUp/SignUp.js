@@ -1,18 +1,55 @@
 import React, { Component } from "react";
 import DaumPostcode from "react-daum-postcode";
+import { SIGN_UP_API } from "../../config.js";
 import "./SignUp.scss";
 
 const WIDTH = 595;
 const HEIGHT = 450;
-
+const EMAIL_LIST = [
+  "naver.com",
+  "hanmail.net ",
+  "daum.net ",
+  "nate.com ",
+  "hotmail.com ",
+  "gmail.com",
+  "icloud.com",
+];
+const TABLE_TABLE = {
+  data: [
+    {
+      name: "비밀번호",
+      type: "password",
+      text: "passwordValue",
+      token: "■",
+    },
+    {
+      name: "비밀번호 확인",
+      type: "password",
+      text: "rePasswordValue",
+      token: "■",
+    },
+    {
+      name: "이름",
+      type: "text",
+      text: "nameValue",
+      token: "■",
+    },
+    {
+      name: "닉네임",
+      type: "text",
+      text: "nickName",
+      token: "",
+    },
+  ],
+};
 class SignUp extends Component {
   state = {
     id: 1,
     emailValue: "",
     passwordValue: "",
     rePasswordValue: "",
-    name: "",
-    nickname: "",
+    nameValue: "",
+    nickName: "",
     phoneVlaue: "",
     addressValue: "",
     isSubmitClicked: false,
@@ -55,38 +92,58 @@ class SignUp extends Component {
 
   onCheck = e => {
     e.preventDefault();
-    const { emailValue, passwordValue } = this.state;
+    const {
+      emailValue,
+      passwordValue,
+      rePasswordValue,
+      nameValue,
+      phoneVlaue,
+    } = this.state;
+    const { signUpFinish } = this;
     const emailCheck = /^[A-Za-z0-9][A-Za-z0-9._-]+[@]{1}[a-z]+[.]{1}[a-z]{1,4}$/;
     if (!emailValue) {
-      alert("이메일을 입력 해 주세요");
+      alert("이메일을 입력 해 주세요.");
       return;
     }
     if (!emailCheck.test(emailValue)) {
-      alert("이메일을 형식에 맞게 작성해 주세요");
+      alert("이메일을 형식에 맞게 작성해 주세요.");
       return;
     }
     if (!passwordValue) {
-      alert("패스워드를 입력 하시오");
-      return;
-    }
-    if (!passwordValue) {
-      alert("비밀번호 확인을 입력 해 주세요");
+      alert("패스워드를 입력 하세요.");
       return;
     }
     if (passwordValue.length < 10) {
-      alert("비밀번호 길이를 10자리 이상으로 입력해 주세요");
+      alert("비밀번호 길이는 10자리 이상과 특수문자 1개를 포함해 주세요.");
       return;
     }
-    this.signUpFinish();
+    if (!rePasswordValue) {
+      alert("비밀번호 확인을 입력 해 주세요.");
+      return;
+    }
+    if (passwordValue !== rePasswordValue) {
+      alert("비밀번호와 비밀번호 확인이 틀립니다.");
+      return;
+    }
+    if (!nameValue) {
+      alert("이름을 입력 해주세요.");
+      return;
+    }
+    if (!phoneVlaue) {
+      alert("휴대폰 번호를 입력해 주세요.");
+      return;
+    }
+    signUpFinish();
   };
+
   signUpFinish = () => {
-    const { emailValue, passwordValue, name, phoneVlaue } = this.state;
-    fetch("http://10.58.3.238:8000/user/signup", {
+    const { emailValue, passwordValue, nameValue, phoneVlaue } = this.state;
+    fetch(`${SIGN_UP_API}`, {
       method: "POST",
       body: JSON.stringify({
         email: emailValue,
         password: passwordValue,
-        name: name,
+        name: nameValue,
         phone_number: phoneVlaue,
       }),
     })
@@ -112,7 +169,7 @@ class SignUp extends Component {
       border: "1px solid #000000",
       overflow: "hidden",
     };
-    const { handleInputChange, onCheck } = this;
+    const { handleInputChange, handleOpenPost, onCheck, handleAddress } = this;
     return (
       <div className="signUp">
         <form className="join" method="post">
@@ -156,19 +213,15 @@ class SignUp extends Component {
                         className="textEmail"
                         name="emailValue"
                         onChange={handleInputChange}
-                      ></input>
+                      />
 
                       <select className="email">
                         <option value="insert" selected="selected">
                           직접입력
                         </option>
-                        <option value="naver">naver.com</option>
-                        <option value="hanmail">hanmail.net</option>
-                        <option value="daum">daum.net</option>
-                        <option value="nate">nate.com</option>
-                        <option value="hotmail">hotmail.com</option>
-                        <option value="gmail">gmail.com</option>
-                        <option value="icloud">icloud.com</option>
+                        {EMAIL_LIST.map(name => {
+                          return <option value="naver">{name}</option>;
+                        })}
                       </select>
                       <input type="checkBox" className="checkBox" />
                       <label for="checkBox" className="label">
@@ -177,70 +230,26 @@ class SignUp extends Component {
                     </div>
                   </td>
                 </tr>
-                <tr>
-                  <th className="tableRow">
-                    <div className="token">■</div>
-                    <div> 비밀번호</div>
-                  </th>
-                  <td>
-                    <div className="textField">
-                      <input
-                        type="text"
-                        className="text"
-                        name="passwordValue"
-                        onChange={handleInputChange}
-                      ></input>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th className="tableRow">
-                    <div className="token">■</div>
-                    <div>비밀번호 확인</div>
-                  </th>
-                  <td>
-                    <div className="textField">
-                      <input
-                        type="text"
-                        className="text"
-                        name="rePasswordValue"
-                        onChange={handleInputChange}
-                      ></input>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th className="tableRow">
-                    <div className="token">■</div>
-                    <div>이름</div>
-                  </th>
-                  <td>
-                    <div className="textField">
-                      <input
-                        type="text"
-                        className="text"
-                        name="name"
-                        onChange={handleInputChange}
-                      ></input>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th className="tableRow">
-                    <div className="token"> </div>
-                    <div>닉네임</div>
-                  </th>
-                  <td>
-                    <div className="textField">
-                      <input
-                        type="text"
-                        name="nickname"
-                        className="text"
-                        onChange={handleInputChange}
-                      ></input>
-                    </div>
-                  </td>
-                </tr>
+                {TABLE_TABLE.data.map(data => {
+                  return (
+                    <tr>
+                      <th className="tableRow">
+                        <div className="token">{data.token}</div>
+                        <div> {data.name}</div>
+                      </th>
+                      <td>
+                        <div className="textField">
+                          <input
+                            type={data.type}
+                            className="text"
+                            name={data.text}
+                            onChange={handleInputChange}
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
                 <tr>
                   <th className="tableRow">
                     <div className="token">■</div>
@@ -277,7 +286,7 @@ class SignUp extends Component {
                         <input
                           type="button"
                           className="inputAddressButton"
-                          onClick={this.handleOpenPost}
+                          onClick={handleOpenPost}
                           value="우편번호 검색"
                         />
                       </div>
@@ -306,16 +315,16 @@ class SignUp extends Component {
           <button className="btnSignUp" onClick={onCheck}>
             회원가입
           </button>
-          {isDaumPost ? (
+          {isDaumPost && (
             <DaumPostcode
-              onComplete={this.handleAddress}
+              onComplete={handleAddress}
               autoClose
               width={WIDTH}
               height={HEIGHT}
               style={modalStyle}
               isDaumPost={isDaumPost}
             />
-          ) : null}
+          )}
         </div>
       </div>
     );
