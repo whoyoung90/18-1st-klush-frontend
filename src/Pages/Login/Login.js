@@ -15,9 +15,11 @@ class Login extends Component {
       [e.target.name]: e.target.value,
     });
   };
+
   clickHandler = id => {
     this.setState = { currentId: id };
   };
+
   loginSubmit = e => {
     e.preventDefault();
     const { email, password } = this.state;
@@ -49,6 +51,7 @@ class Login extends Component {
         }
       });
   };
+  
   render() {
     const { email, password, currentId } = this.state;
     const { clickHandler } = this;
