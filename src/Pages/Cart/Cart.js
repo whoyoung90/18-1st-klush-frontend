@@ -80,9 +80,6 @@ class Cart extends Component {
       checkList: changeCheck,
       itemList: tmp,
     });
-
-    //   const tmp = [{ ...this.state.cartList, checked: true }];
-    // });
   };
 
   handleCalcPrice = item => {
@@ -98,7 +95,6 @@ class Cart extends Component {
 
   render() {
     const { cartList, checkList, isAllChecked } = this.state;
-    // console.log(cartList[1].price);
     const {
       handleDecrement,
       handleIncrement,
