@@ -44,6 +44,59 @@ img {
       }
     }
   }
+
+  .calcAmount {
+    text-align: center;
+    font-size: 18px;
+
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #f2f2f2;
+      padding: 13px 0;
+
+      .calcDetail,
+      .calcDelivery,
+      .calcTotal {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        em {
+          font-weight: bold;
+        }
+      }
+
+      .calcDetail {
+        .detailCount {
+          padding-right: 20px;
+        }
+        em {
+          padding-left: 8px;
+        }
+      }
+      .addIcon {
+        margin: 0 20px;
+        font-weight: bold;
+      }
+      .Delivery {
+        margin-right: 23px;
+      }
+      .calcTotal {
+        font-weight: bold;
+        .resultSign {
+          margin: 0 23px;
+        }
+        .TotalPriceWon {
+          margin-right: 23px;
+        }
+        em {
+          font-size: 26px;
+        }
+      }
+    }
+  }
   .bottomButton {
     .buttonSub {
       margin-top: 20px;

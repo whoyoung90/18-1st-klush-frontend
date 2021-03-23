@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import CartList from "./components/CartList";
-import CartPrice from "./components/CartPrice";
 import "./Cart.scss";
 
 const SHIP_CHARGE = 2500;
@@ -11,9 +10,7 @@ class Cart extends Component {
     super();
     this.state = {
       cartList: [],
-      checkList: [true, false, true, false],
-      itemPrice: 0,
-      totalPrice: 0,
+      checkList: [],
       isAllChecked: true,
     };
   }
@@ -25,7 +22,7 @@ class Cart extends Component {
       .then(res =>
         this.setState({
           cartList: res,
-          //        checkList: new Array(res.length + 1).fill(true), // 인덱스 0번부터라 +1 해도되나?
+          checkList: new Array(res.length).fill(true),
         })
       );
   }
@@ -50,59 +47,83 @@ class Cart extends Component {
     this.setState({ cartList: checkData });
   };
 
-  // select 된걸로 수정하자
   handleDelete = item => {
+    const { cartList, checkList } = this.state;
     console.log(item);
-    alert(`선택하신 ${item.length}개상품을 장바구니에서 삭제 하시겠습니까?`);
+    const countItems = checkList.filter(check => check).length;
+    alert(`선택하신 ${countItems}개상품을 장바구니에서 삭제 하시겠습니까?`);
+    this.setState({ cartList });
   };
 
-  // 수정 필요
   handleSelectAll = () => {
-    console.log("hiu");
-    const { cartList, isAllChecked } = this.state;
-    const tmpArr = cartList.map(item => {
-      isAllChecked ? (item.isChecked = false) : (item.isChecked = true);
+    const { checkList, isAllChecked } = this.state;
+    const tmpArr = checkList.map(item => {
+      item = isAllChecked ? false : true;
       return item;
     });
-    this.setState({ cartList: tmpArr, isAllChecked: !isAllChecked });
-  };
-  handleDelete = shoppingData => {
-    // const tmpArr = this.state.shoppings.filter(
-    //   item => item.id !== shoppingData.id
-    // );
-    // this.setState({ shoppings: tmpArr });
+    this.setState({
+      checkList: tmpArr,
+      isAllChecked: !isAllChecked,
+    });
   };
 
   handleSelect = item => {
-    const { checkList } = this.state;
+    const { itemList, checkList } = this.state;
+    const tmp = [{ ...this.state.cartList, checked: true }];
+    console.log(tmp);
     const changeCheck = checkList.map((check, idx) => {
       if (idx === item.id - 1) check = !check;
       return check;
     });
-    this.setState({ checkList: changeCheck });
+
+    this.setState({
+      checkList: changeCheck,
+      itemList: tmp,
+    });
+
+    //   const tmp = [{ ...this.state.cartList, checked: true }];
+    // });
   };
 
   handleCalcPrice = item => {
-    const itemPrice = this.state.cartList.map(item => {
-      return item.price * item.quantity;
-    });
-    this.setState({ itemPrice });
+    const { cartList, checkList } = this.state;
+    let total = 0;
+    for (let i = 0; i < checkList.length; i++) {
+      if (checkList[i]) {
+        total += Number(cartList[i]["price"] * cartList[i]["quantity"]);
+      }
+    }
+    console.log(total);
   };
 
   render() {
-    const { cartList, checkList } = this.state;
+    const { cartList, checkList, isAllChecked } = this.state;
+    // console.log(cartList[1].price);
     const {
       handleDecrement,
       handleIncrement,
       handleDelete,
       handleSelect,
       handleSelectAll,
+      handleCalcPrice,
     } = this;
-    //    const {selectProducts = cartList.filter(product => product.isChecked);
-    const itemPrice = this.state.cartList.map(item => {
-      return item.price * item.quantity;
-    });
-    const { totalPrice } = itemPrice.reduce((a, b) => a + b, 0);
+
+    let total = 0;
+    for (let i = 0; i < checkList.length; i++) {
+      if (checkList[i]) {
+        total += Number(cartList[i]["price"] * cartList[i]["quantity"]);
+      }
+    }
+
+    // const {selectProducts = cartList.filter(product => product);
+    // const itemPrice = this.state.cartList.map(item => {
+    //   return item.price * item.quantity;
+    // });
+    //   const { totalPrice } = itemPrice.reduce((a, b) => a + b, 0);
+
+    // const deleveryPrice =
+    //checkList.length > 0 && checkList.filter(check => check).length>0&&cartList.filter;
+    const checkItemCount = checkList.filter(check => check === true).length;
     return (
       <div className="cart">
         <div className="container">
@@ -124,6 +145,7 @@ class Cart extends Component {
               <CartList
                 cartList={cartList}
                 checkList={checkList}
+                isAllChecked={isAllChecked}
                 handleDecrement={handleDecrement}
                 handleIncrement={handleIncrement}
                 handleSelect={handleSelect}
@@ -131,24 +153,43 @@ class Cart extends Component {
               />
             </div>
           </form>
-          <CartPrice
-            cartList={cartList}
-            quantity={cartList.quantity}
-            totalPrice={totalPrice}
-            itemPrice={itemPrice}
-          />
+          <div className="calcAmount">
+            <p>
+              <span className="calcDetail">
+                <p className="detailCount">
+                  총 <p>{checkItemCount}</p> 개의 금액
+                </p>
+                <em> ￦ {Math.floor(total).toLocaleString()}</em>
+              </span>
+              <span className="addIcon">+</span>
+              <span className="calcDelivery">
+                <p className="Delivery">배송비 </p>
+                <em> ￦ {Math.floor(0).toLocaleString()}</em>
+              </span>
+              <span className="calcTotal">
+                <p className="resultSign">=</p>
+                <p className="TotalPriceWon">총 주문금액 </p>
+                <em> ￦ {Math.floor(total).toLocaleString()}</em>
+              </span>
+            </p>
+          </div>
           <div className="bottomButton">
             <div className="buttonSub">
               <button
                 className="btnDelete"
-                onClick={() => handleDelete(cartList)}
+                onClick={() => handleDelete(checkList)}
               >
                 삭제 하기
               </button>
               <button className="btnSave">찜하기</button>
             </div>
             <div className="buttonMain">
-              <button className="btnMoreShopping">쇼핑 계속하기</button>
+              <button
+                className="btnMoreShopping"
+                onClick={() => handleCalcPrice(checkList)}
+              >
+                쇼핑 계속하기
+              </button>
               <button className="btnOrder">주문하기</button>
             </div>
           </div>

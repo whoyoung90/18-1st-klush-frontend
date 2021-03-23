@@ -4,22 +4,14 @@ import "./CartItem.scss";
 class CartItem extends Component {
   render() {
     const {
-      item,
-      category,
       key,
-      id,
-      img,
-      name,
-      price,
-      quantity,
+      rowSpan,
       cartList,
       checkList,
-      isChecked,
       handleIncrement,
       handleDecrement,
       handleSelect,
     } = this.props;
-
     return (
       <tr>
         <td className="tableCheck">
@@ -30,19 +22,19 @@ class CartItem extends Component {
             id="checkbox"
             checked={checkList[cartList.id - 1]}
           />
-          <label for="checkbox" className="checked on "></label>
+          <label for="checkbox" className="checked "></label>
         </td>
 
         <td className="productInfo">
           <span className="productPicture">
             <div>
-              <img src={img} />
+              <img src={cartList.img} />
             </div>
           </span>
           <div className="productItem">
             <div className="productText">
-              <p className="itemName">{name} </p>
-              <p className="itemCategory">{category} </p>
+              <p className="itemName">{cartList.name} </p>
+              <p className="itemCategory">{cartList.category} </p>
             </div>
           </div>
         </td>
@@ -56,7 +48,7 @@ class CartItem extends Component {
               >
                 -
               </button>
-              <input className="quantityCount" value={quantity} />
+              <input className="quantityCount" value={cartList.quantity} />
 
               <button
                 className="btnIncrease"
@@ -70,14 +62,14 @@ class CartItem extends Component {
         </td>
         <td className="itemPrice">
           <strong className="price">
-            ￦ {Math.floor(price).toLocaleString()}
+            ￦ {Math.floor(cartList.price).toLocaleString()}
           </strong>
         </td>
         <td className="itemBenefits"></td>
         <td className="itemTotalPrice">
-          ￦ {Math.floor(price * quantity).toLocaleString()}
+          ￦ {Math.floor(cartList.price * cartList.quantity).toLocaleString()}
         </td>
-        <td></td>
+        <td className="itemShipPrice" rowSpan={rowSpan}></td>
       </tr>
     );
   }

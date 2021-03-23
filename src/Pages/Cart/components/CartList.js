@@ -14,6 +14,7 @@ class CartList extends Component {
       handleSelectAll,
     } = this.props;
 
+    const tmp = checkList.lenght;
     return (
       <table className="cartTable">
         <thead>
@@ -25,6 +26,7 @@ class CartList extends Component {
                   id="allCheck"
                   className="allCheck"
                   onClick={() => handleSelectAll()}
+                  checked={isAllChecked}
                 ></input>
                 <label for="allCheck"> </label>
               </span>
@@ -38,17 +40,12 @@ class CartList extends Component {
           </tr>
         </thead>
         <tbody>
-          {cartList.map(item => {
+          {cartList.map((item, idx) => {
             return (
               <CartItem
+                rowspan={idx === 0 ? item.length : null}
                 key={item.id}
                 cartList={item}
-                id={item.id}
-                img={item.img}
-                name={item.name}
-                category={item.category}
-                quantity={item.quantity}
-                price={item.price}
                 checkList={checkList}
                 handleDecrement={handleDecrement}
                 handleIncrement={handleIncrement}

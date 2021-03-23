@@ -39,13 +39,14 @@ tr {
 
     .productPicture {
       display: flex;
-      margin-left: 20px;
+      margin-left: 5px;
       align-items: center;
 
       img {
-        top: 17px;
+        top: 23px;
         position: absolute;
-        width: 70px;
+        width: 115px;
+        height: 115px;
       }
     }
     .productItem {
@@ -53,7 +54,7 @@ tr {
       padding: 20px 15px;
 
       .productText {
-        padding-left: 95px;
+        padding-left: 125px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -61,12 +62,13 @@ tr {
         width: 100%;
 
         .itemName {
-          font-size: 18px;
+          font-size: 17px;
           font-weight: 600;
           margin-bottom: 8px;
         }
         .itemCategory {
           color: $elseGrey;
+          text-align: left;
         }
       }
     }
