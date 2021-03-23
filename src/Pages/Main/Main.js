@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import MainSlide from "./MainSlide";
 import "./Main.scss";
@@ -33,20 +34,20 @@ class Main extends Component {
           <h2>나만 알고 싶은 KLUSH</h2>
           <Slider className="myItem" {...settings}>
             {list.map((el, idx) => (
-              <a href="#" key={idx} className="myItemList">
+              <Link to="/main" key={idx} className="myItemList">
                 <img className="myImg" src={el.src} alt="newLabel" />
                 <div className="imgTitle">{el.imgTitle}</div>
                 <div className="imgHash">{el.imgHash}</div>
                 <div className="cost">${el.cost}</div>
-              </a>
+              </Link>
             ))}
           </Slider>
         </div>
         <div className="tableWrap">
           <img src="/Images/campaign.jpg" alt="campaign" />
-          <a href="/main">
+          <Link to="/main">
             <img src="/Images/bubbleBar.jpg" alt="bubbleBar" />
-          </a>
+          </Link>
         </div>
       </div>
     );
