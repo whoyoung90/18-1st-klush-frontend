@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import CartList from "./components/CartList";
 import "./Cart.scss";
 
-const SHIP_CHARGE = 2500;
 const MIN_PURCHASE = 30000;
 
 class Cart extends Component {
@@ -68,7 +67,7 @@ class Cart extends Component {
   };
 
   handleSelect = item => {
-    const { itemList, checkList } = this.state;
+    const { checkList } = this.state;
     const tmp = [{ ...this.state.cartList, checked: true }];
     console.log(tmp);
     const changeCheck = checkList.map((check, idx) => {
@@ -117,7 +116,8 @@ class Cart extends Component {
     // });
     //   const { totalPrice } = itemPrice.reduce((a, b) => a + b, 0);
 
-    // const deleveryPrice =
+    const deleveryPrice = total < MIN_PURCHASE ? 2500 : 0;
+    const payFee = total + deleveryPrice;
     //checkList.length > 0 && checkList.filter(check => check).length>0&&cartList.filter;
     const checkItemCount = checkList.filter(check => check === true).length;
     return (
@@ -160,12 +160,12 @@ class Cart extends Component {
               <span className="addIcon">+</span>
               <span className="calcDelivery">
                 <p className="Delivery">배송비 </p>
-                <em> ￦ {Math.floor(0).toLocaleString()}</em>
+                <em> ￦ {Math.floor(deleveryPrice).toLocaleString()}</em>
               </span>
               <span className="calcTotal">
                 <p className="resultSign">=</p>
                 <p className="TotalPriceWon">총 주문금액 </p>
-                <em> ￦ {Math.floor(total).toLocaleString()}</em>
+                <em> ￦ {Math.floor(payFee).toLocaleString()}</em>
               </span>
             </p>
           </div>

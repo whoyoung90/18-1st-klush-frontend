@@ -38,21 +38,5 @@
     "category": "비누",
     "quantity": 9,
     "price": "30000"
-  },
-  {
-    "id": 6,
-    "img": "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-    "name": "여섯번째 덤프티",
-    "category": "볼",
-    "quantity": 3,
-    "price": "3000"
-  },
-  {
-    "id": 7,
-    "img": "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-    "name": "일홉번째 덤프티",
-    "category": "로션",
-    "quantity": 5,
-    "price": "51000"
   }
 ]
