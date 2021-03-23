@@ -5,19 +5,22 @@ import "./DropUserMenu.scss";
 class DropUserMenu extends Component {
   render() {
     const NAV_USER_LIST = [
-      { key: "/login", value: "로그인" },
-      { key: "/signup", value: "회원가입" },
-      { key: "#", value: "스카우트" },
-      { key: "#", value: "고객센터" },
+      { path: "/login", value: "로그인" },
+      { path: "/signup", value: "회원가입" },
+      { path: "/main", value: "스카우트" },
+      { path: "#", value: "고객센터" },
     ];
 
     return (
       <div className="dropUserMenu">
-        {NAV_USER_LIST.map(function (obj) {
+        {NAV_USER_LIST.map((obj, idx) => {
+          console.log(obj.path);
           return (
-            <li>
-              <Link to={obj.key}>{obj.value}</Link>
-            </li>
+            <Link key={idx} className="userList">
+              <a className="userLink" to={obj.path}>
+                {obj.path}
+              </a>
+            </Link>
           );
         })}
       </div>

@@ -16,11 +16,11 @@
   right: 0;
   width: 200px;
 
-  a {
+  .userLink {
     color: $lushBlack;
   }
 
-  li {
+  .userList {
     padding: 0 10px;
     text-align: center;
     border-bottom: 1px solid #eaeaea;
@@ -29,7 +29,7 @@
     background-color: $lushWhite;
     &:hover {
       background-color: $lushBlack;
-      a {
+      .userLink {
         color: $lushWhite;
       }
     }
