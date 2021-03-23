@@ -15,7 +15,9 @@ class ModalButtons extends Component {
         <button
           className="confirm"
           onClick={
-            this.props.modalName === "showCartModal" ? this.props.putOnCart : ""
+            this.props.modalName === "showCartModal"
+              ? this.props.putOnCart
+              : null
           }
         >
           {this.props.rightBtn}

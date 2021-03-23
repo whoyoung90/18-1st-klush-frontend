@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import ImageContainer from "./Components/ImageContainer/ImageContainer";
 import ProductContainer from "./Components/ProductContainer/ProductContainer";
-import HeartModal from "./Components/HeartModal/HeartModal";
+import GeneralModal from "./Components/GeneralModal/GeneralModal";
 import CartModal from "./Components/CartModal/CartModal";
 
 import "./ProductList.scss";
@@ -13,8 +13,9 @@ class ProductList extends Component {
 
     this.state = {
       listData: {},
-      showHeartModal: false,
+      showGeneralModal: false,
       showCartModal: false,
+      dataSetName: "",
       productId: "",
       cartList: [],
       cartProductPrice: "",
@@ -45,21 +46,28 @@ class ProductList extends Component {
     this.setState(
       {
         productId: idNum,
+        dataSetName: e.target.dataset.name,
       },
       () => {
-        this.setState(
-          {
-            cartProductPrice: this.state.listData.products.filter(
-              product => product.id === this.state.productId
-            )[0].productPrice,
+        if (modal === "showCartModal") {
+          this.setState(
+            {
+              cartProductPrice: this.state.listData.products.filter(
+                product => product.id === this.state.productId
+              )[0].productPrice,
+              [modal]: !this.state[modal],
+            },
+            () => {
+              this.setState({
+                cartTotalPrice: this.printPrice(this.state.cartProductPrice),
+              });
+            }
+          );
+        } else {
+          this.setState({
             [modal]: !this.state[modal],
-          },
-          () => {
-            this.setState({
-              cartTotalPrice: this.printPrice(this.state.cartProductPrice),
-            });
-          }
-        );
+          });
+        }
       }
     );
   };
@@ -68,6 +76,13 @@ class ProductList extends Component {
     this.setState({
       [modal]: !this.state[modal],
       cartCountNum: "1",
+    });
+  };
+
+  goToGeneralModal = () => {
+    this.setState({
+      showGeneralModal: !this.state.showGeneralModal,
+      showCartModal: !this.state.showCartModal,
     });
   };
 
@@ -89,11 +104,12 @@ class ProductList extends Component {
         this.setState({
           cartCountNum: "1",
         });
+        this.goToGeneralModal();
       }
     );
   };
 
-  //for Count Box
+  //for Count Box productDetail의 countBox와 중복된 코드
   printPrice = a => {
     let result = a.split("").reverse();
     if (result.length > 3) {
@@ -171,17 +187,22 @@ class ProductList extends Component {
     } = this.state.listData;
 
     const {
-      showHeartModal,
+      showGeneralModal,
       showCartModal,
       productId,
       cartTotalPrice,
       cartCountNum,
+      dataSetName,
     } = this.state;
 
     return (
       <div className="productListPage">
-        {showHeartModal && (
-          <HeartModal productInfo={products} clickClose={this.clickClose} />
+        {showGeneralModal && (
+          <GeneralModal
+            productInfo={products}
+            clickClose={this.clickClose}
+            text={dataSetName}
+          />
         )}
         {showCartModal && Number(productId) && (
           <CartModal
