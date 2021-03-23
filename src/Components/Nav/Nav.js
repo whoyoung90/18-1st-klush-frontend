@@ -4,6 +4,7 @@ import * as Config from "./Config";
 import Product from "./NavMenu/Product/Product";
 import LushIntro from "./NavMenu/LushIntro/LushIntro";
 import DropUserMenu from "./DropUserMenu";
+import Modal from "./Modal";
 import "./Nav.scss";
 
 class Nav extends Component {
@@ -13,6 +14,14 @@ class Nav extends Component {
       modalOpen: false,
     };
   }
+
+  openModal = () => {
+    this.setState({ modalOpen: true });
+  };
+
+  closeModal = () => {
+    this.setState({ modalOpen: false });
+  };
 
   render() {
     const NAV_MENU = ["매장안내", "스파", "이벤트"];
@@ -35,7 +44,7 @@ class Nav extends Component {
         </ul>
         <ul className="clickButton">
           <li className="dropUser">
-            <Link className="dropLink" to="#">
+            <Link onClick={this.openModal} className="dropLink" to="#">
               <img src={Config.search} alt="search" />
             </Link>
           </li>
@@ -52,6 +61,13 @@ class Nav extends Component {
             <DropUserMenu />
           </li>
         </ul>
+        <Modal open={this.state.modalOpen} close={this.closeModal}>
+          <input
+            className="modalInput"
+            placeholder="오늘은 거품입욕 하는 날?"
+            type="text"
+          />
+        </Modal>
       </div>
     );
   }
