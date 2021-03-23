@@ -7,6 +7,13 @@ import DropUserMenu from "./DropUserMenu";
 import "./Nav.scss";
 
 class Nav extends Component {
+  constructor() {
+    super();
+    this.state = {
+      modalOpen: false,
+    };
+  }
+
   render() {
     const NAV_MENU = ["매장안내", "스파", "이벤트"];
 
@@ -39,10 +46,10 @@ class Nav extends Component {
             </Link>
           </li>
           <li className="dropUser">
-            <Link className="dropLink" to="login">
+            <Link className="dropLink" to="/login">
               <img src={Config.user} alt="user" />
-              <DropUserMenu />
             </Link>
+            <DropUserMenu />
           </li>
         </ul>
       </div>

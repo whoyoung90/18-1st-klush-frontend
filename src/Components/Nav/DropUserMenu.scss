@@ -2,35 +2,36 @@
 
 .dropUser {
   position: relative;
-}
 
-.dropUserMenu {
-  display: none;
-}
-
-.dropUser:hover .dropUserMenu {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 70px;
-  right: 0;
-  width: 200px;
-
-  .userLink {
-    color: $lushBlack;
+  .dropUserMenu {
+    display: none;
   }
 
-  .userList {
-    padding: 0 10px;
-    text-align: center;
-    border-bottom: 1px solid #eaeaea;
-    line-height: 50px;
-    font-size: 12px;
-    background-color: $lushWhite;
-    &:hover {
-      background-color: $lushBlack;
-      .userLink {
-        color: $lushWhite;
+  &:hover .dropUserMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+
+    .userLink {
+      display: block;
+      color: $lushBlack;
+    }
+
+    .userList {
+      padding: 0 10px;
+      text-align: center;
+      border-bottom: 1px solid #eaeaea;
+      line-height: 50px;
+      font-size: 12px;
+      background-color: $lushWhite;
+      &:hover {
+        background-color: $lushBlack;
+        .userLink {
+          color: $lushWhite;
+        }
       }
     }
   }
