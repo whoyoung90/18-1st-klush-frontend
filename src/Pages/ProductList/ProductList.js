@@ -16,6 +16,10 @@ class ProductList extends Component {
       showHeartModal: false,
       showCartModal: false,
       productId: "",
+      cartList: [],
+      cartProductPrice: "",
+      cartTotalPrice: "",
+      cartCountNum: "1",
     };
   }
 
@@ -37,16 +41,25 @@ class ProductList extends Component {
   }
 
   clickModal = (e, modal, idNum) => {
-    console.log("in Function", e.target.id);
     e.stopPropagation();
     this.setState(
       {
         productId: idNum,
       },
       () => {
-        this.setState({
-          [modal]: !this.state[modal],
-        });
+        this.setState(
+          {
+            cartProductPrice: this.state.listData.products.filter(
+              product => product.id === this.state.productId
+            )[0].productPrice,
+            [modal]: !this.state[modal],
+          },
+          () => {
+            this.setState({
+              cartTotalPrice: this.printPrice(this.state.cartProductPrice),
+            });
+          }
+        );
       }
     );
   };
@@ -54,7 +67,99 @@ class ProductList extends Component {
   clickClose = modal => {
     this.setState({
       [modal]: !this.state[modal],
+      cartCountNum: "1",
     });
+  };
+
+  putOnCart = () => {
+    this.setState(
+      {
+        cartList: [
+          ...this.state.cartList,
+          ...[
+            {
+              id: this.state.productId,
+              count: this.state.cartCountNum,
+              totalPrice: this.state.cartTotalPrice,
+            },
+          ],
+        ],
+      },
+      () => {
+        this.setState({
+          cartCountNum: "1",
+        });
+      }
+    );
+  };
+
+  //for Count Box
+  printPrice = a => {
+    let result = a.split("").reverse();
+    if (result.length > 3) {
+      for (let i = 0; i < result.length; i++) {
+        if ((i + 1) % 3 === 0 && i !== result.length - 1) {
+          result[i + 1] += ",";
+        }
+      }
+      return result.reverse().join("");
+    }
+  };
+
+  changePrice = () => {
+    let updatePrice = String(
+      Number(this.state.cartCountNum) * Number(this.state.cartProductPrice)
+    );
+    this.setState({
+      cartTotalPrice: this.printPrice(updatePrice),
+    });
+  };
+
+  plusBtn = () => {
+    this.setState(
+      {
+        cartCountNum: String(Number(this.state.cartCountNum) + 1),
+      },
+      () => {
+        this.changePrice();
+      }
+    );
+  };
+
+  minusBtn = () => {
+    if (this.state.cartCountNum > 1) {
+      this.setState(
+        {
+          cartCountNum: String(Number(this.state.cartCountNum) - 1),
+        },
+        () => {
+          this.changePrice();
+        }
+      );
+    }
+  };
+
+  onChangeCountNum = e => {
+    this.setState({
+      cartCountNum: e.target.value,
+    });
+  };
+
+  checkEnter = e => {
+    if (e.key === "Enter") {
+      if (Number(e.target.value) > 20) {
+        alert("최대 선택 가능 수량은 20개 입니다!");
+        e.target.value = "1";
+      }
+      this.setState(
+        {
+          cartCountNum: e.target.value,
+        },
+        () => {
+          this.changePrice();
+        }
+      );
+    }
   };
 
   render() {
@@ -64,7 +169,14 @@ class ProductList extends Component {
       subCategoryList,
       products,
     } = this.state.listData;
-    const { showHeartModal, showCartModal, productId } = this.state;
+
+    const {
+      showHeartModal,
+      showCartModal,
+      productId,
+      cartTotalPrice,
+      cartCountNum,
+    } = this.state;
 
     return (
       <div className="productListPage">
@@ -77,7 +189,14 @@ class ProductList extends Component {
               products.filter(product => product.id === Number(productId))[0]
             }
             productId={productId}
+            cartTotalPrice={cartTotalPrice}
+            cartCountNum={cartCountNum}
+            plusBtn={this.plusBtn}
+            minusBtn={this.minusBtn}
+            onChangeCountNum={this.onChangeCountNum}
+            checkEnter={this.checkEnter}
             clickClose={this.clickClose}
+            putOnCart={this.putOnCart}
           />
         )}
         <ImageContainer

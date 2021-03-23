@@ -1,16 +1,9 @@
 {
-  "category": "perfume",
-  "categoryName": "퍼퓸",
-  "categoryDesc": "자연과 음악, 시가 주는 영감으로 빚어낸 특별한 향기",
+  "category": "bath",
+  "categoryName": "배쓰",
+  "categoryDesc": "당신에게 향기로운 입욕을 선물합니다",
   "categoryImg": "https://images.unsplash.com/photo-1557827983-012eb6ea8dc1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fGx1c2h8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  "subCategoryList": [
-    "전체",
-    "보디스프레이",
-    "코어 레인지",
-    "솔리드 퍼퓸",
-    "르네상스 퍼퓸",
-    "퍼퓸 라이브러리"
-  ],
+  "subCategoryList": ["전체", "배쓰 밤", "버블 바", "배쓰 오일", "펀"],
   "products": [
     {
       "id": 1,

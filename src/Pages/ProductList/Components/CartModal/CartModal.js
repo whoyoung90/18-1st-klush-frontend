@@ -11,89 +11,29 @@ class CartModal extends Component {
 
     this.state = {
       cartProduct: "",
-      cartTotalPrice: "",
-      cartCountNum: "1",
     };
   }
 
   componentDidMount() {
     this.setState({
       cartProduct: this.props.productInfo,
-      cartTotalPrice: this.printPrice(this.props.productInfo.productPrice),
     });
   }
 
-  printPrice = a => {
-    let result = a.split("").reverse();
-    if (result.length > 3) {
-      for (let i = 0; i < result.length; i++) {
-        if ((i + 1) % 3 === 0 && i !== result.length - 1) {
-          result[i + 1] += ",";
-        }
-      }
-      return result.reverse().join("");
-    }
-  };
-
-  changePrice = () => {
-    let updatePrice = String(
-      Number(this.state.cartCountNum) *
-        Number(this.props.productInfo.productPrice)
-    );
-    this.setState({
-      cartTotalPrice: this.printPrice(updatePrice),
-    });
-  };
-
-  plusBtn = () => {
-    this.setState(
-      {
-        cartCountNum: String(Number(this.state.cartCountNum) + 1),
-      },
-      () => {
-        this.changePrice();
-      }
-    );
-  };
-
-  minusBtn = () => {
-    if (this.state.cartCountNum > 1) {
-      this.setState(
-        {
-          cartCountNum: String(Number(this.state.cartCountNum) - 1),
-        },
-        () => {
-          this.changePrice();
-        }
-      );
-    }
-  };
-
-  onChangeCountNum = e => {
-    this.setState({
-      cartCountNum: e.target.value,
-    });
-  };
-
-  checkEnter = e => {
-    if (e.key === "Enter") {
-      if (Number(e.target.value) > 20) {
-        alert("최대 선택 가능 수량은 20개 입니다!");
-        e.target.value = "1";
-      }
-      this.setState(
-        {
-          cartCountNum: e.target.value,
-        },
-        () => {
-          this.changePrice();
-        }
-      );
-    }
-  };
-
   render() {
-    const { cartProduct, cartTotalPrice, cartCountNum } = this.state;
+    const { cartProduct } = this.state;
+
+    const {
+      cartTotalPrice,
+      cartCountNum,
+      plusBtn,
+      minusBtn,
+      onChangeCountNum,
+      checkEnter,
+      clickClose,
+      putOnCart,
+    } = this.props;
+
     return (
       cartProduct && (
         <div className="cartModal modal">
@@ -102,7 +42,7 @@ class CartModal extends Component {
               <div className="headerTitle">장바구니 담기</div>
               <GrClose
                 className="closeIcon"
-                onClick={() => this.props.clickClose("showCartModal")}
+                onClick={() => clickClose("showCartModal")}
               />
             </div>
             <div className="headerBorder" />
@@ -123,20 +63,17 @@ class CartModal extends Component {
                 <div className="mainBorder" />
                 <div className="countContent">
                   <div className="cartCountBox">
-                    <button
-                      className="minus btnsElement"
-                      onClick={this.minusBtn}
-                    >
+                    <button className="minus btnsElement" onClick={minusBtn}>
                       -
                     </button>
                     <input
                       className="countNumScreen btnsElement"
                       type="text"
                       value={cartCountNum}
-                      onChange={this.onChangeCountNum}
-                      onKeyPress={this.checkEnter}
+                      onChange={onChangeCountNum}
+                      onKeyPress={checkEnter}
                     />
-                    <button className="plus btnsElement" onClick={this.plusBtn}>
+                    <button className="plus btnsElement" onClick={plusBtn}>
                       +
                     </button>
                   </div>
@@ -147,7 +84,8 @@ class CartModal extends Component {
             <div className="footerBorder" />
             <div className="cartFooter">
               <ModalButtons
-                clickClose={this.props.clickClose}
+                clickClose={clickClose}
+                putOnCart={putOnCart}
                 modalName="showCartModal"
                 leftBtn="취소하기"
                 rightBtn="담기"
