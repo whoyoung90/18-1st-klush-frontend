@@ -41,12 +41,13 @@ class ProductList extends Component {
       : (document.body.style.overflow = "unset");
   }
 
-  clickModal = (e, modal, idNum) => {
+  clickModal = (e, modal, idNum, text) => {
+    console.log(text);
     e.stopPropagation();
     this.setState(
       {
         productId: idNum,
-        dataSetName: e.target.dataset.name,
+        dataSetName: text,
       },
       () => {
         if (modal === "showCartModal") {

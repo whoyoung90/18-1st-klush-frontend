@@ -36,16 +36,14 @@ class Product extends Component {
           <div className="hoverIcons">
             <BiHeart
               onClick={e => {
-                clickModal(e, "showGeneralModal", productInfo.id);
+                clickModal(e, "showGeneralModal", productInfo.id, "찜 리스트");
               }}
-              data-name="찜 리스트"
             />
             {productInfo.id && (
               <BiShoppingBag
-                onClick={e => {
-                  clickModal(e, "showCartModal", productInfo.id);
-                }}
-                data-name="장바구니"
+                onClick={e =>
+                  clickModal(e, "showCartModal", productInfo.id, "장바구니")
+                }
               />
             )}
           </div>

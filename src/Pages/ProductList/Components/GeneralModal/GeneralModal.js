@@ -8,15 +8,15 @@ import "./GeneralModal.scss";
 class GeneralModal extends Component {
   render() {
     return (
-      <div className="heartModal modal">
-        <div className="heartMain">
-          <div className="heartMainHeader">
+      <div className="GeneralModal modal">
+        <div className="GeneralMain">
+          <div className="GeneralMainHeader">
             <GrClose
               className="closeIcon"
               onClick={() => this.props.clickClose("showGeneralModal")}
             />
           </div>
-          <div className="heartMainContent">
+          <div className="GeneralMainContent">
             <span className="mainText">
               {`상품이 ${this.props.text}에 담겼습니다.`}
             </span>

@@ -7,7 +7,7 @@
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.6);
 
-  .heartMain {
+  .GeneralMain {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -19,7 +19,7 @@
     padding: 20px;
     background-color: $lushWhite;
 
-    .heartMainHeader {
+    .GeneralMainHeader {
       display: flex;
       justify-content: flex-end;
 
@@ -33,7 +33,7 @@
       }
     }
 
-    .heartMainContent {
+    .GeneralMainContent {
       display: flex;
       flex-direction: column;
       justify-content: center;
