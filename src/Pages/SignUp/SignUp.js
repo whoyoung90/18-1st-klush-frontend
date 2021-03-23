@@ -153,7 +153,7 @@ class SignUp extends Component {
         console.log(res);
         if (res.message === "SUCCESS") {
           alert("회원가입 성공");
-          this.props.history.push("/main");
+          this.props.history.push("/login");
         } else {
           alert("회원가입 실패");
         }
