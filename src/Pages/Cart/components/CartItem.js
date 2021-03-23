@@ -12,8 +12,9 @@ class CartItem extends Component {
       handleDecrement,
       handleSelect,
     } = this.props;
+
     return (
-      <tr>
+      <tr key={key}>
         <td className="tableCheck">
           <input
             type="checkbox"

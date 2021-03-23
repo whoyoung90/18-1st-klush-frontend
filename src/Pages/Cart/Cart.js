@@ -13,6 +13,7 @@ class Cart extends Component {
       isAllChecked: true,
     };
   }
+
   componentDidMount() {
     fetch("http://localhost:3000/data/cartData.json", {
       method: "GET",
@@ -41,17 +42,25 @@ class Cart extends Component {
     this.setState({ cartList });
   };
 
-  handleAdd = item => {
-    const checkData = [...this.state.checkList];
-    this.setState({ cartList: checkData });
-  };
-
-  handleDelete = item => {
+  handleDelete = () => {
     const { cartList, checkList } = this.state;
-    console.log(item);
     const countItems = checkList.filter(check => check).length;
-    alert(`선택하신 ${countItems}개상품을 장바구니에서 삭제 하시겠습니까?`);
-    this.setState({ cartList });
+    //alert(`선택하신 ${countItems}개상품을 장바구니에서 삭제 하시겠습니까?`);
+    // const tmpArr = cartList.filter((d, idx) => {
+    //   return !checkList[idx];
+    // });
+    // const checkTmpArr = checkList.filter((d, idx) => {
+    //   return !checkList[idx];
+    // });
+    // this.setState(() => {
+    //   ({ cartList= tmpArr });
+    //   checkList = checkTmpArr;
+    // });
+
+    this.setState({
+      checkList: checkList.filter((d, idx) => !checkList[idx]),
+      cartList: cartList.filter((d, idx) => !checkList[idx]),
+    });
   };
 
   handleSelectAll = () => {
@@ -65,35 +74,36 @@ class Cart extends Component {
       isAllChecked: !isAllChecked,
     });
   };
+  handleCheckbox = () => {
+    const { checkList } = this.state;
+    let bool = true;
+    for (let i = 0; i < checkList.length; i++) {
+      if (!checkList[i]) bool = false;
+      this.setState({ isAllChecked: bool });
+    }
+  };
 
   handleSelect = item => {
     const { checkList } = this.state;
     const tmp = [{ ...this.state.cartList, checked: true }];
-    console.log(tmp);
     const changeCheck = checkList.map((check, idx) => {
       if (idx === item.id - 1) check = !check;
       return check;
     });
 
-    this.setState({
-      checkList: changeCheck,
-      itemList: tmp,
-    });
-  };
-
-  handleCalcPrice = item => {
-    const { cartList, checkList } = this.state;
-    let total = 0;
-    for (let i = 0; i < checkList.length; i++) {
-      if (checkList[i]) {
-        total += Number(cartList[i]["price"] * cartList[i]["quantity"]);
-      }
-    }
-    console.log(total);
+    this.setState(
+      {
+        checkList: changeCheck,
+        itemList: tmp,
+      },
+      () => this.handleCheckbox()
+    );
   };
 
   render() {
     const { cartList, checkList, isAllChecked } = this.state;
+    console.log(checkList);
+    console.log(cartList);
     const {
       handleDecrement,
       handleIncrement,
@@ -104,21 +114,15 @@ class Cart extends Component {
     } = this;
 
     let total = 0;
-    for (let i = 0; i < checkList.length; i++) {
+
+    for (let i = 0; i < cartList.length; i++) {
       if (checkList[i]) {
         total += Number(cartList[i]["price"] * cartList[i]["quantity"]);
       }
     }
 
-    // const {selectProducts = cartList.filter(product => product);
-    // const itemPrice = this.state.cartList.map(item => {
-    //   return item.price * item.quantity;
-    // });
-    //   const { totalPrice } = itemPrice.reduce((a, b) => a + b, 0);
-
     const deleveryPrice = total < MIN_PURCHASE ? 2500 : 0;
     const payFee = total + deleveryPrice;
-    //checkList.length > 0 && checkList.filter(check => check).length>0&&cartList.filter;
     const checkItemCount = checkList.filter(check => check === true).length;
     return (
       <div className="cart">
@@ -171,10 +175,7 @@ class Cart extends Component {
           </div>
           <div className="bottomButton">
             <div className="buttonSub">
-              <button
-                className="btnDelete"
-                onClick={() => handleDelete(checkList)}
-              >
+              <button className="btnDelete" onClick={() => handleDelete()}>
                 삭제 하기
               </button>
               <button className="btnSave">찜하기</button>
@@ -182,7 +183,7 @@ class Cart extends Component {
             <div className="buttonMain">
               <button
                 className="btnMoreShopping"
-                onClick={() => handleCalcPrice(checkList)}
+                onClick={() => handleCalcPrice()}
               >
                 쇼핑 계속하기
               </button>

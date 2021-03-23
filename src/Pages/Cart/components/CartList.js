@@ -28,7 +28,7 @@ class CartList extends Component {
                   onClick={() => handleSelectAll()}
                   checked={isAllChecked}
                 ></input>
-                <label for="allCheck"> </label>
+                <label for="allCheck"></label>
               </span>
             </th>
             <th className="productDetail">제품 정보</th>
@@ -40,10 +40,10 @@ class CartList extends Component {
           </tr>
         </thead>
         <tbody>
-          {cartList.map((item, idx) => {
+          {cartList.map(item => {
             return (
               <CartItem
-                rowspan={idx === 0 ? item.length : null}
+                rowspan={item.length}
                 key={item.id}
                 cartList={item}
                 checkList={checkList}
