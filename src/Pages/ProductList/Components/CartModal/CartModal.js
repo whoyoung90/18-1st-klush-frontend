@@ -75,6 +75,23 @@ class CartModal extends Component {
     });
   };
 
+  checkEnter = e => {
+    if (e.key === "Enter") {
+      if (Number(e.target.value) > 20) {
+        alert("최대 선택 가능 수량은 20개 입니다!");
+        e.target.value = "1";
+      }
+      this.setState(
+        {
+          cartCountNum: e.target.value,
+        },
+        () => {
+          this.changePrice();
+        }
+      );
+    }
+  };
+
   render() {
     const { cartProduct, cartTotalPrice, cartCountNum } = this.state;
     return (
@@ -117,6 +134,7 @@ class CartModal extends Component {
                       type="text"
                       value={cartCountNum}
                       onChange={this.onChangeCountNum}
+                      onKeyPress={this.checkEnter}
                     />
                     <button className="plus btnsElement" onClick={this.plusBtn}>
                       +
