@@ -30,7 +30,6 @@ class LinkTab extends Component {
 
 const TAB_OBJ = {
   detail: "상품상세정보",
-  review: "상품후기",
   delivery: "배송/교환 및 반품안내",
 };
 

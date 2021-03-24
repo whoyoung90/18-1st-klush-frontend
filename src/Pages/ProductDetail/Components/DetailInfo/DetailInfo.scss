@@ -1,4 +1,8 @@
+@import "../../../../Styles/common.scss";
+
 .detailInfo {
+  display: flex;
+  flex-direction: column;
   width: 100%;
 
   .infoTitleContainer {
@@ -11,6 +15,7 @@
     }
 
     .categoryName {
+      margin-top: 250px;
       font-size: 18px;
     }
 
@@ -20,8 +25,103 @@
     }
 
     .productEnName {
+      margin-bottom: 200px;
       font-size: 24px;
       font-weight: 600;
+    }
+  }
+
+  .infoImgContainer {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+
+    .infoMainImg {
+      width: 80%;
+      height: 500px;
+    }
+
+    .infoMainImgReview {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 480px;
+      padding: 50px;
+      background-color: $lushWhite;
+
+      .reviewHeader {
+        margin-bottom: 20px;
+        font-size: 28px;
+        font-weight: 600;
+      }
+      .reviewContent {
+        font-size: 20px;
+        line-height: 1.5em;
+      }
+    }
+  }
+
+  .infoProductDescContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .infoProductDesc {
+      width: 362px;
+      margin: 150px 0px;
+      font-size: 18px;
+      font-weight: 400;
+      text-align: center;
+      line-height: 1.8em;
+    }
+  }
+
+  .infoMiddleImg {
+    height: 450px;
+    margin-bottom: 200px;
+  }
+
+  .infoFooter {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    height: 750px;
+    padding: 80px 0px;
+    background-color: $lushGrey;
+
+    .infoFooterUse {
+      position: absolute;
+      left: 60px;
+      bottom: 80px;
+      width: 600px;
+      height: 500px;
+      padding: 60px;
+      padding-right: 90px;
+      background-color: $lushWhite;
+
+      .useTitle {
+        font-size: 35px;
+        font-weight: 800;
+        margin-bottom: 30px;
+      }
+
+      .useContent {
+        margin-bottom: 20px;
+        font-size: 20px;
+        line-height: 2em;
+        text-align: left;
+        color: $elseGrey;
+      }
+
+      .useHashTags {
+        font-size: 20px;
+        line-height: 2em;
+        color: #1ca24c;
+      }
+    }
+
+    .infoFooterImg {
+      width: 600px;
     }
   }
 }
