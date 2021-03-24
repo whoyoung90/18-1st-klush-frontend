@@ -1,0 +1,22 @@
+@import "./Product.scss";
+
+.productList {
+  padding: 30px 15px;
+
+  li {
+    padding-top: 20px;
+
+    .title {
+      color: $lushWhite;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .items {
+      display: table-row;
+      margin: 20px;
+      color: #aeaeae;
+      font-size: 14px;
+    }
+  }
+}

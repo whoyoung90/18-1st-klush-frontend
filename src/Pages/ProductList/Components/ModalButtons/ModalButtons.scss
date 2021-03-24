@@ -1,0 +1,25 @@
+@import "../../../../Styles/common.scss";
+
+.modalButtons {
+  display: flex;
+  width: 80%;
+
+  .continue,
+  .confirm {
+    width: 100%;
+    height: 54px;
+    margin: 10px;
+    font-size: 14px;
+    border: 1px solid $lushBlack;
+  }
+
+  .continue {
+    color: $lushBlack;
+    background-color: $lushWhite;
+  }
+
+  .confirm {
+    color: $lushWhite;
+    background-color: $lushBlack;
+  }
+}
