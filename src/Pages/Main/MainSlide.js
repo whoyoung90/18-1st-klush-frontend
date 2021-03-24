@@ -1,40 +1,47 @@
 import React, { Component } from "react";
 import "./Main.scss";
+const IMAGE = [
+  "/Images/trans1.jpg",
+  "/Images/trans2.png",
+  "/Images/trans3.png",
+];
 
 class MainSlide extends Component {
   constructor() {
     super();
     this.state = {
-      img: ["/Images/trans1.jpg", "/Images/trans2.png", "/Images/trans3.png"],
       selectedImg: "/Images/trans1.jpg",
+      intervalID: "",
+      index: 0,
     };
   }
-
-  timeChange = () => {
-    this.setState(prevState => {
-      if (prevState.selectedImg === this.state.img[0]) {
-        return {
-          selectedImg: this.state.img[1],
-        };
-      } else if (prevState.selectedImg === this.state.img[1]) {
-        return {
-          selectedImg: this.state.img[2],
-        };
-      } else {
-        return { selectedImg: this.state.img[0] };
-      }
-    });
+  change = () => {
+    const { index } = this.state;
+    if (index === IMAGE.length - 1) {
+      this.setState({
+        index: 0,
+      });
+    } else {
+      this.setState({
+        index: index + 1,
+      });
+    }
   };
 
   componentDidMount() {
-    setInterval(() => this.timeChange(), 1500);
+    setInterval(() => this.change(), 1500);
+    const id = setInterval(() => this.change(), 1500);
+    this.setState({ intervalID: id });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.intervalID);
   }
 
   render() {
-    const { selectedImg } = this.state;
     return (
       <div className="mainImg">
-        <img src={selectedImg} alt="mainFeed" />
+        <img src={IMAGE[this.state.index]} alt="mainFeed" />
       </div>
     );
   }

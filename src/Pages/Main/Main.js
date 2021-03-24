@@ -9,16 +9,18 @@ import "slick-carousel/slick/slick-theme.css";
 class Main extends Component {
   constructor() {
     super();
-    this.state = { list: [] };
+    this.state = { mainList: [] };
   }
 
   componentDidMount() {
-    fetch("/data/mainData.json")
+    fetch("http://10.58.5.223:8000/product?is_new=True")
       .then(res => res.json())
-      .then(res => this.setState({ list: res }));
+      .then(res => this.setState({ mainList: res.new_product_list }))
+      .catch(e => console.log(e));
   }
   render() {
-    const { list } = this.state;
+    const { mainList } = this.state;
+    console.log(mainList);
 
     const settings = {
       dots: true,
@@ -33,14 +35,18 @@ class Main extends Component {
         <div className="itemWrap">
           <h2>나만 알고 싶은 KLUSH</h2>
           <Slider className="myItem" {...settings}>
-            {list.map((el, idx) => (
-              <Link to="/main" key={idx} className="myItemList">
-                <img className="myImg" src={el.src} alt="newLabel" />
-                <div className="imgTitle">{el.imgTitle}</div>
-                <div className="imgHash">{el.imgHash}</div>
-                <div className="cost">${el.cost}</div>
-              </Link>
-            ))}
+            {mainList.map((el, idx) => {
+              return (
+                <Link to="/main" key={idx} className="myItemList">
+                  <img className="myImg" src={el.image_url} alt="newLabel" />
+                  <div className="imgTitle">{el.name}</div>
+                  <div className="imgHash">{el.product_labels}</div>
+                  <div className="cost">
+                    ￦{Math.floor(el.price).toLocaleString()}
+                  </div>
+                </Link>
+              );
+            })}
           </Slider>
         </div>
         <div className="tableWrap">
