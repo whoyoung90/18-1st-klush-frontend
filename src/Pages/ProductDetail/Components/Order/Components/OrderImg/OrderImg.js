@@ -10,14 +10,8 @@ class OrderImg extends Component {
     super();
 
     this.state = {
-      mainImgSrc: "",
-    };
-  }
-
-  componentDidMount() {
-    this.setState({
       mainImgSrc: this.props.mainImgSrc,
-    });
+    };
   }
 
   subImgOnClick = e => {

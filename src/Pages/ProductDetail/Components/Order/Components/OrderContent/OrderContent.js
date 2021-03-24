@@ -12,17 +12,10 @@ class OrderContent extends Component {
     super();
 
     this.state = {
-      price: 0,
-      countNum: "1",
-      totalPrice: "",
-    };
-  }
-
-  componentDidMount() {
-    this.setState({
       price: this.props.productPrice,
+      countNum: "1",
       totalPrice: this.printPrice(String(this.props.productPrice)),
-    });
+    };
   }
 
   //가격 쉼표 추가

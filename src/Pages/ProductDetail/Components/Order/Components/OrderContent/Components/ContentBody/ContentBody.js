@@ -17,19 +17,19 @@ class ContentBody extends Component {
     } = this.props;
 
     return (
-      <div className="contentBody">
+      <main className="contentBody">
         <div className="reviewColumn">{reviewCount}개의 후기 보기</div>
-        <div className="goodToKnow">Good to Know</div>
+        <span className="goodToKnow">Good to Know</span>
         <div className="priceColumn">
-          <div className="columnTitle">판매가</div>
+          <span className="columnTitle">판매가</span>
           <div className="columnRight price">&#8361;{price}</div>
         </div>
         <div className="weightColumn">
-          <div className="columnTitle">상품무게</div>
+          <span className="columnTitle">상품무게</span>
           <div className="columnRight">{weight}</div>
         </div>
-        <div className="buyCountColumn">
-          <div className="columnTitle">구매수량</div>
+        <form className="buyCountColumn">
+          <span className="columnTitle">구매수량</span>
           <div className="countBox">
             <button className="minus btnsElement" onClick={minusBtn}>
               -
@@ -46,8 +46,8 @@ class ContentBody extends Component {
             </button>
           </div>
           <div className="buyPrice price">&#8361;{totalPrice}</div>
-        </div>
-      </div>
+        </form>
+      </main>
     );
   }
 }

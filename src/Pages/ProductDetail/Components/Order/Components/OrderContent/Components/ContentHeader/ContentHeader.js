@@ -7,7 +7,7 @@ class ContentHeader extends Component {
   render() {
     const { hashTags, name } = this.props;
     return (
-      <div className="contentHeader">
+      <header className="contentHeader">
         <div className="headerColumn">
           <div className="columnLeft">{name}</div>
           <div className="columnRight">
@@ -18,7 +18,7 @@ class ContentHeader extends Component {
         <div className="hashTagColumn">
           {hashTags.map(tag => "#" + tag + " ")}
         </div>
-      </div>
+      </header>
     );
   }
 }

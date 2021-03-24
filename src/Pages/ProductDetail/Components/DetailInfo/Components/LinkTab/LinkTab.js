@@ -3,24 +3,11 @@ import React, { Component } from "react";
 import "./LinkTab.scss";
 
 class LinkTab extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      tabObj: {
-        detail: "상품상세정보",
-        review: "상품후기",
-        delivery: "배송/교환 및 반품안내",
-      },
-    };
-  }
-
   render() {
-    const { tabObj } = this.state;
     return (
       this.props.reviewCount !== undefined && (
         <div className="linkTab">
-          {Object.keys(tabObj).map((tab, idx) => {
+          {Object.keys(TAB_OBJ).map((tab, idx) => {
             return (
               <a
                 href={`#${tab}`}
@@ -30,8 +17,8 @@ class LinkTab extends Component {
                 }
               >
                 {tab === "review"
-                  ? tabObj[tab] + ` (${this.props.reviewCount})`
-                  : tabObj[tab]}
+                  ? TAB_OBJ[tab] + ` (${this.props.reviewCount})`
+                  : TAB_OBJ[tab]}
               </a>
             );
           })}
@@ -40,5 +27,11 @@ class LinkTab extends Component {
     );
   }
 }
+
+const TAB_OBJ = {
+  detail: "상품상세정보",
+  review: "상품후기",
+  delivery: "배송/교환 및 반품안내",
+};
 
 export default LinkTab;
