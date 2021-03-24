@@ -30,7 +30,7 @@ class CartItem extends Component {
         <td className="productInfo">
           <span className="productPicture">
             <div>
-              <img src={cartList.img} />
+              <img src={img} />
             </div>
           </span>
           <div className="productItem">
