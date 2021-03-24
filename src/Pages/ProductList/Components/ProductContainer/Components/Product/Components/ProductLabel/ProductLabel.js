@@ -8,11 +8,7 @@ class ProductLabel extends Component {
       <div
         className={
           `${
-            this.props.label === "NEW"
-              ? "newLabel"
-              : this.props.label === "VEGAN"
-              ? "veganLabel"
-              : "soldOutLabel"
+            LABEL[this.props.label] ? LABEL[this.props.label] : "soldOutLabel"
           }` + " labelContainer"
         }
       >
@@ -21,5 +17,10 @@ class ProductLabel extends Component {
     );
   }
 }
+
+const LABEL = {
+  NEW: "newLabel",
+  VEGAN: "veganLabel",
+};
 
 export default ProductLabel;

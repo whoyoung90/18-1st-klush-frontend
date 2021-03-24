@@ -4,11 +4,6 @@ import SubCategory from "./Components/SubCategory/SubCategory";
 import "./ContentHeader.scss";
 
 class ContentHeader extends Component {
-  constructor() {
-    super();
-
-    this.state = {};
-  }
   render() {
     const { categoryName, subCategoryList } = this.props;
     return (

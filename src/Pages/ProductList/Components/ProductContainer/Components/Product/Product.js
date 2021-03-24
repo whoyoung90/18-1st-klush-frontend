@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { BiShoppingBag, BiHeart } from "react-icons/bi";
+import { BiShoppingBag } from "react-icons/bi";
 import ProductLabel from "./Components/ProductLabel/ProductLabel";
 import ProductHashTag from "./Components/ProductHashTag/ProductHashTag";
 
@@ -29,16 +29,21 @@ class Product extends Component {
       <div className="productListContainer" onClick={this.goToDetailPage}>
         <div className="productImgContainer">
           <img
-            className="productImg"
+            className={
+              productInfo.productLabel.includes("품절")
+                ? "disable"
+                : "productImg"
+            }
             src={productInfo.productImg}
             alt={productInfo.productName}
           />
-          <div className="hoverIcons">
-            <BiHeart
-              onClick={e => {
-                clickModal(e, "showGeneralModal", productInfo.id, "찜 리스트");
-              }}
-            />
+          <div
+            className={
+              productInfo.productLabel.includes("품절")
+                ? "noneHoverIcons"
+                : "hoverIcons"
+            }
+          >
             {productInfo.id && (
               <BiShoppingBag
                 onClick={e =>

@@ -42,33 +42,26 @@ class ProductList extends Component {
   }
 
   clickModal = (e, modal, idNum, text) => {
-    console.log(text);
     e.stopPropagation();
     this.setState(
       {
         productId: idNum,
         dataSetName: text,
+        [modal]: !this.state[modal],
+        cartProductPrice:
+          modal === "showCartModal"
+            ? this.state.listData.products.filter(
+                product => product.id === idNum
+              )[0].productPrice
+            : "",
       },
       () => {
-        if (modal === "showCartModal") {
-          this.setState(
-            {
-              cartProductPrice: this.state.listData.products.filter(
-                product => product.id === this.state.productId
-              )[0].productPrice,
-              [modal]: !this.state[modal],
-            },
-            () => {
-              this.setState({
-                cartTotalPrice: this.printPrice(this.state.cartProductPrice),
-              });
-            }
-          );
-        } else {
-          this.setState({
-            [modal]: !this.state[modal],
-          });
-        }
+        this.setState({
+          cartTotalPrice:
+            modal === "showCartModal"
+              ? this.printPrice(Number(this.state.cartProductPrice))
+              : "",
+        });
       }
     );
   };
@@ -100,11 +93,9 @@ class ProductList extends Component {
             },
           ],
         ],
+        cartCountNum: "1",
       },
       () => {
-        this.setState({
-          cartCountNum: "1",
-        });
         this.goToGeneralModal();
       }
     );
@@ -112,21 +103,13 @@ class ProductList extends Component {
 
   //for Count Box productDetail의 countBox와 중복된 코드
   printPrice = a => {
-    let result = a.split("").reverse();
-    if (result.length > 3) {
-      for (let i = 0; i < result.length; i++) {
-        if ((i + 1) % 3 === 0 && i !== result.length - 1) {
-          result[i + 1] += ",";
-        }
-      }
-      return result.reverse().join("");
-    }
+    a = a.toLocaleString();
+    return a;
   };
 
   changePrice = () => {
-    let updatePrice = String(
-      Number(this.state.cartCountNum) * Number(this.state.cartProductPrice)
-    );
+    let updatePrice =
+      Number(this.state.cartCountNum) * Number(this.state.cartProductPrice);
     this.setState({
       cartTotalPrice: this.printPrice(updatePrice),
     });
