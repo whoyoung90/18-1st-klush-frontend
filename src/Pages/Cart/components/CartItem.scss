@@ -1,7 +1,13 @@
 @import "../../../Styles/common.scss";
 
 tr {
-  td {
+  .tableCheck,
+  .productInfo,
+  .itemCount,
+  .itemPrice,
+  .itemBenefits,
+  .itemTotalPrice,
+  .itemShipPrice {
     text-align: center;
     border-bottom: 1px solid #e7e7e7;
     padding: 41px 18px;
@@ -19,7 +25,7 @@ tr {
       img {
         top: 23px;
         position: absolute;
-        width: 115px; 
+        width: 115px;
         height: 115px;
       }
     }

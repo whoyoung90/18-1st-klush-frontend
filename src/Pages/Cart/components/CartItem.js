@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-
 import "./CartItem.scss";
+
 class CartItem extends Component {
   render() {
     const {
@@ -30,7 +30,7 @@ class CartItem extends Component {
         <td className="productInfo">
           <span className="productPicture">
             <div>
-              <img src={img} />
+              <img src={cartList.img} />
             </div>
           </span>
           <div className="productItem">
