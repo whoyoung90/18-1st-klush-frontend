@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import CartList from "./components/CartList";
 import "./Cart.scss";
 
-const MIN_PURCHASE = 30000;
+const MIN_PRICE = 30000;
+const SHIP_PRICE = 2500;
 
 class Cart extends Component {
   constructor() {
@@ -14,7 +15,8 @@ class Cart extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/cartData.json")
+    fetch("/data/cartData.json")
+      // fetch('http://10.58.4.1:8000/cart',
       .then(res => res.json())
       .then(res => {
         const tmpArr = res.cartList.map(item => {
@@ -77,7 +79,7 @@ class Cart extends Component {
       if (check.id === item.id) check.isChecked = !check.isChecked;
       return check;
     });
-
+    console.log(item.id);
     this.setState(
       {
         cartList: changeCheck,
@@ -98,16 +100,19 @@ class Cart extends Component {
       handleCalcPrice,
     } = this;
 
-    let total = 0;
+    const totalPrice =
+      cartList.length > 0 &&
+      cartList.filter(item => item.isChecked === true).length > 0 &&
+      cartList
+        .filter(item => item.isChecked === true)
+        .map(item => item.quantity * item.price)
+        .reduce((acc, cur) => acc + cur);
 
-    for (let i = 0; i < cartList.length; i++) {
-      if (cartList[i].isChecked) {
-        total += Number(cartList[i]["price"] * cartList[i]["quantity"]);
-      }
-    }
+    const deleveryPrice = totalPrice >= MIN_PRICE ? 0 : SHIP_PRICE;
+    const shipPrice =
+      cartList.filter(item => item.isChecked).length === 0 ? 0 : deleveryPrice;
 
-    const deleveryPrice = total < MIN_PURCHASE ? 2500 : 0;
-    const payFee = total + deleveryPrice;
+    const payFee = totalPrice + shipPrice;
     const checkItemCount = cartList.filter(check => check.isChecked === true)
       .length;
 
@@ -147,12 +152,12 @@ class Cart extends Component {
                 <p className="detailCount">
                   총 <p>{checkItemCount}</p> 개의 금액
                 </p>
-                <em> ￦ {Math.floor(total).toLocaleString()}</em>
+                <em> ￦ {Math.floor(payFee).toLocaleString()}</em>
               </span>
               <span className="addIcon">+</span>
               <span className="calcDelivery">
                 <p className="Delivery">배송비 </p>
-                <em> {Math.floor(deleveryPrice).toLocaleString()}</em>
+                <em> {Math.floor(shipPrice).toLocaleString()}</em>
               </span>
               <span className="calcTotal">
                 <p className="resultSign">=</p>

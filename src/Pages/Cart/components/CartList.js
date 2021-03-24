@@ -42,7 +42,7 @@ class CartList extends Component {
             cartList.map((item, idx) => {
               return (
                 <CartItem
-                  rowspan={item.length}
+                  rowspan={idx === 0 ? cartList.length : null}
                   key={idx}
                   cartList={item}
                   handleDecrement={handleDecrement}
