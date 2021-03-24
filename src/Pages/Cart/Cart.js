@@ -9,22 +9,21 @@ class Cart extends Component {
     super();
     this.state = {
       cartList: [],
-      checkList: [],
       isAllChecked: true,
     };
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/cartData.json", {
-      method: "GET",
-    })
+    fetch("http://localhost:3000/data/cartData.json")
       .then(res => res.json())
-      .then(res =>
+      .then(res => {
+        const tmpArr = res.cartList.map(item => {
+          return { ...item, isChecked: true };
+        });
         this.setState({
-          cartList: res,
-          checkList: new Array(res.length).fill(true),
-        })
-      );
+          cartList: tmpArr,
+        });
+      });
   }
 
   handleDecrement = item => {
@@ -43,87 +42,75 @@ class Cart extends Component {
   };
 
   handleDelete = () => {
-    const { cartList, checkList } = this.state;
-    const countItems = checkList.filter(check => check).length;
-    //alert(`선택하신 ${countItems}개상품을 장바구니에서 삭제 하시겠습니까?`);
-    // const tmpArr = cartList.filter((d, idx) => {
-    //   return !checkList[idx];
-    // });
-    // const checkTmpArr = checkList.filter((d, idx) => {
-    //   return !checkList[idx];
-    // });
-    // this.setState(() => {
-    //   ({ cartList= tmpArr });
-    //   checkList = checkTmpArr;
-    // });
-
+    const { cartList } = this.state;
+    //const countItems = cartList.filter(check => check.isChecked).length;
+    //   alert(`선택하신 ${countItems}개상품을 장바구니에서 삭제 하시겠습니까?`);
     this.setState({
-      checkList: checkList.filter((d, idx) => !checkList[idx]),
-      cartList: cartList.filter((d, idx) => !checkList[idx]),
+      cartList: cartList.filter(check => !check.isChecked),
     });
   };
 
   handleSelectAll = () => {
-    const { checkList, isAllChecked } = this.state;
-    const tmpArr = checkList.map(item => {
-      item = isAllChecked ? false : true;
+    const { cartList, isAllChecked } = this.state;
+    const tmpArr = cartList.map(item => {
+      item.isChecked = isAllChecked ? false : true;
       return item;
     });
     this.setState({
-      checkList: tmpArr,
+      cartList: tmpArr,
       isAllChecked: !isAllChecked,
     });
   };
+
   handleCheckbox = () => {
-    const { checkList } = this.state;
+    const { cartList } = this.state;
     let bool = true;
-    for (let i = 0; i < checkList.length; i++) {
-      if (!checkList[i]) bool = false;
+    for (let i = 0; i < cartList.length; i++) {
+      if (!cartList[i].isChecked) bool = false;
       this.setState({ isAllChecked: bool });
     }
   };
 
   handleSelect = item => {
-    const { checkList } = this.state;
-    const tmp = [{ ...this.state.cartList, checked: true }];
-    const changeCheck = checkList.map((check, idx) => {
-      if (idx === item.id - 1) check = !check;
+    const { cartList } = this.state;
+    const changeCheck = cartList.map((check, idx) => {
+      if (check.id === item.id) check.isChecked = !check.isChecked;
       return check;
     });
 
     this.setState(
       {
-        checkList: changeCheck,
-        itemList: tmp,
+        cartList: changeCheck,
       },
       () => this.handleCheckbox()
     );
   };
 
   render() {
-    const { cartList, checkList, isAllChecked } = this.state;
-    console.log(checkList);
-    console.log(cartList);
+    const { cartList, isAllChecked } = this.state;
     const {
       handleDecrement,
       handleIncrement,
       handleDelete,
       handleSelect,
       handleSelectAll,
+      handlePay,
       handleCalcPrice,
     } = this;
 
     let total = 0;
 
     for (let i = 0; i < cartList.length; i++) {
-      if (checkList[i]) {
+      if (cartList[i].isChecked) {
         total += Number(cartList[i]["price"] * cartList[i]["quantity"]);
       }
     }
 
     const deleveryPrice = total < MIN_PURCHASE ? 2500 : 0;
     const payFee = total + deleveryPrice;
-    const checkItemCount = checkList.filter(check => check === true).length;
+    const checkItemCount = cartList.filter(check => check.isChecked === true)
+      .length;
+
     return (
       <div className="cart">
         <div className="container">
@@ -142,15 +129,16 @@ class Cart extends Component {
           <form className="itemCart" method="post">
             <div className="cartContainer">
               <h3 className="cartTitle">제품</h3>
-              <CartList
-                cartList={cartList}
-                checkList={checkList}
-                isAllChecked={isAllChecked}
-                handleDecrement={handleDecrement}
-                handleIncrement={handleIncrement}
-                handleSelect={handleSelect}
-                handleSelectAll={handleSelectAll}
-              />
+              {cartList.length && (
+                <CartList
+                  cartList={cartList}
+                  isAllChecked={isAllChecked}
+                  handleDecrement={handleDecrement}
+                  handleIncrement={handleIncrement}
+                  handleSelect={handleSelect}
+                  handleSelectAll={handleSelectAll}
+                />
+              )}
             </div>
           </form>
           <div className="calcAmount">
@@ -164,7 +152,7 @@ class Cart extends Component {
               <span className="addIcon">+</span>
               <span className="calcDelivery">
                 <p className="Delivery">배송비 </p>
-                <em> ￦ {Math.floor(deleveryPrice).toLocaleString()}</em>
+                <em> {Math.floor(deleveryPrice).toLocaleString()}</em>
               </span>
               <span className="calcTotal">
                 <p className="resultSign">=</p>
@@ -187,7 +175,9 @@ class Cart extends Component {
               >
                 쇼핑 계속하기
               </button>
-              <button className="btnOrder">주문하기</button>
+              <button className="btnOrder" onClick={() => handlePay()}>
+                주문하기
+              </button>
             </div>
           </div>
         </div>

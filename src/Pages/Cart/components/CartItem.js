@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { CHECK_IMG } from "../../../config";
+
 import "./CartItem.scss";
 class CartItem extends Component {
   render() {
@@ -7,7 +7,6 @@ class CartItem extends Component {
       key,
       rowSpan,
       cartList,
-      checkList,
       handleIncrement,
       handleDecrement,
       handleSelect,
@@ -21,9 +20,11 @@ class CartItem extends Component {
             className="checkbox"
             onClick={() => handleSelect(cartList)}
             id="checkbox"
-            checked={checkList[cartList.id - 1]}
+            checked={cartList.isChecked}
           />
-          <label for="checkbox" className="checked "></label>
+          <label for="checkbox" className="checked ">
+            <span></span>
+          </label>
         </td>
 
         <td className="productInfo">

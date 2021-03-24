@@ -5,7 +5,6 @@ import "./CartList.scss";
 class CartList extends Component {
   render() {
     const {
-      checkList,
       cartList,
       isAllChecked,
       handleDecrement,
@@ -14,7 +13,6 @@ class CartList extends Component {
       handleSelectAll,
     } = this.props;
 
-    const tmp = checkList.lenght;
     return (
       <table className="cartTable">
         <thead>
@@ -40,19 +38,19 @@ class CartList extends Component {
           </tr>
         </thead>
         <tbody>
-          {cartList.map(item => {
-            return (
-              <CartItem
-                rowspan={item.length}
-                key={item.id}
-                cartList={item}
-                checkList={checkList}
-                handleDecrement={handleDecrement}
-                handleIncrement={handleIncrement}
-                handleSelect={handleSelect}
-              />
-            );
-          })}
+          {cartList.length &&
+            cartList.map((item, idx) => {
+              return (
+                <CartItem
+                  rowspan={item.length}
+                  key={idx}
+                  cartList={item}
+                  handleDecrement={handleDecrement}
+                  handleIncrement={handleIncrement}
+                  handleSelect={handleSelect}
+                />
+              );
+            })}
         </tbody>
       </table>
     );
