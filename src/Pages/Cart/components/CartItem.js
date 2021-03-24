@@ -7,6 +7,7 @@ class CartItem extends Component {
       key,
       rowSpan,
       cartList,
+      handleItemCounts,
       handleIncrement,
       handleDecrement,
       handleSelect,
@@ -50,7 +51,12 @@ class CartItem extends Component {
               >
                 -
               </button>
-              <input className="quantityCount" value={cartList.quantity} />
+              <input
+                className="quantityCount"
+                name={cartList.id}
+                value={cartList.quantity}
+                onChange={handleItemCounts}
+              />
 
               <button
                 className="btnIncrease"

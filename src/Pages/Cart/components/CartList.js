@@ -7,6 +7,8 @@ class CartList extends Component {
     const {
       cartList,
       isAllChecked,
+      checkEnter,
+      handleItemCounts,
       handleDecrement,
       handleIncrement,
       handleSelect,
@@ -45,6 +47,8 @@ class CartList extends Component {
                   rowspan={idx === 0 ? cartList.length : null}
                   key={idx}
                   cartList={item}
+                  checkEnter={checkEnter}
+                  handleItemCounts={handleItemCounts}
                   handleDecrement={handleDecrement}
                   handleIncrement={handleIncrement}
                   handleSelect={handleSelect}

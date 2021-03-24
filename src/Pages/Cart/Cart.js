@@ -11,14 +11,16 @@ class Cart extends Component {
     this.state = {
       cartList: [],
       isAllChecked: true,
+      deleteModal: false,
     };
   }
 
   componentDidMount() {
     fetch("/data/cartData.json")
-      // fetch('http://10.58.4.1:8000/cart',
+      //fetch("http://10.58.5.223:8000/product?is_new=True")
       .then(res => res.json())
       .then(res => {
+        //const tmpArr = res.new_product_list.map(item => {
         const tmpArr = res.cartList.map(item => {
           return { ...item, isChecked: true };
         });
@@ -32,7 +34,7 @@ class Cart extends Component {
     const cartList = [...this.state.cartList];
     const index = cartList.indexOf(item);
     const quantity = cartList[index].quantity - 1;
-    cartList[index].quantity = quantity < 1 ? 1 : quantity;
+    cartList[index].quantity = quantity < 0 ? 0 : quantity;
     this.setState({ cartList });
   };
 
@@ -88,6 +90,24 @@ class Cart extends Component {
     );
   };
 
+  handleItemCounts = e => {
+    const { cartList } = this.state;
+    const insertNum = /^[0-9]*$/;
+    //const obj = cartList.find(item=>item.id===Number(e.target.value))
+    const idx = cartList.findIndex(item => item.id === Number(e.target.name));
+    const tmpArr = [...cartList];
+    if (!insertNum.test(e.target.value)) return;
+    if (Number(e.target.value) > 20) {
+      alert("최대 선택 가능 수량은 20개 입니다!");
+      e.target.value = 20;
+    }
+    tmpArr[idx] = {
+      ...tmpArr[idx],
+      quantity: Number(e.target.value),
+    };
+    this.setState({ cartList: tmpArr });
+  };
+
   render() {
     const { cartList, isAllChecked } = this.state;
     const {
@@ -96,6 +116,7 @@ class Cart extends Component {
       handleDelete,
       handleSelect,
       handleSelectAll,
+      handleItemCounts,
       handlePay,
       handleCalcPrice,
     } = this;
@@ -138,6 +159,7 @@ class Cart extends Component {
                 <CartList
                   cartList={cartList}
                   isAllChecked={isAllChecked}
+                  handleItemCounts={handleItemCounts}
                   handleDecrement={handleDecrement}
                   handleIncrement={handleIncrement}
                   handleSelect={handleSelect}
@@ -152,6 +174,7 @@ class Cart extends Component {
                 <p className="detailCount">
                   총 <p>{checkItemCount}</p> 개의 금액
                 </p>
+
                 <em> ￦ {Math.floor(payFee).toLocaleString()}</em>
               </span>
               <span className="addIcon">+</span>
@@ -184,6 +207,20 @@ class Cart extends Component {
                 주문하기
               </button>
             </div>
+          </div>
+
+          <div className="modalTotal">
+            <div className="modalTotalcomment">
+              <span className="modalTotalicon">localhost:3000 내용:</span>
+              <span className="modalTotalCash">
+                선택하신 {checkItemCount}개 상품을 장바구니에서 삭제
+                하시겠습니까?
+              </span>
+            </div>
+          </div>
+          <div className="button">
+            <button className="goCancel">취소</button>
+            <button className="goCheck">확인</button>
           </div>
         </div>
       </div>
