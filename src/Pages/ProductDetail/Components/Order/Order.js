@@ -17,6 +17,7 @@ class Order extends Component {
       weight,
       name,
     } = this.props;
+
     return (
       <div className="orderContainer">
         <OrderImg
