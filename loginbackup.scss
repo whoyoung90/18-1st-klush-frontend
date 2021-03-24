@@ -83,33 +83,24 @@
         }
       }
       .textFieldEmail {
-        height: 40px;
         display: flex;
         margin: 20px 15px 0;
 
-        .textEmail {
-          width: 290px;
+        input {
           margin-right: 10px;
+          width: 270px;
         }
-        .label {
-          display: flex;
+        .email {
+          width: 122px;
         }
         .checkBox {
-          margin: auto 0;
+          margin: auto;
           width: 30px;
         }
         .label {
           font-size: 11px;
-          margin: auto 0;
-          display: flex;
-          padding-right: 50px;
+          margin: auto;
         }
-      }
-
-      .emailAlert {
-        color: #cc2020;
-        font-size: 13px;
-        margin-left: 13px;
       }
       .textFieldPhone {
         display: flex;
@@ -125,7 +116,6 @@
         .label {
           font-size: 11px;
           margin: auto;
-          padding-right: 50px;
         }
       }
       .textFieldAddress {
