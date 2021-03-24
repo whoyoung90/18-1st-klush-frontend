@@ -15,7 +15,27 @@
       .formCheck {
         display: absolute;
         padding: 10px 18px;
+        input[type="checkbox"] {
+          display: none;
+          padding-left: 23px;
+          background-repeat: no-repeat;
+        }
+        input[type="checkbox"] + label {
+          display: inline-block;
+          width: 18px;
+          height: 18px;
+          border: 1px solid #bcbcbc;
+        }
+        input[type="checkbox"]:checked + label {
+          background: url("./check.png");
+        }
 
+        label:hover {
+          background: url("./checkhover.png");
+        }
+        label {
+          text-indent: -9999px;
+        }
         label {
           position: relative;
           cursor: pointer;

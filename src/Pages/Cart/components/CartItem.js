@@ -14,7 +14,7 @@ class CartItem extends Component {
     } = this.props;
 
     return (
-      <tr key={key}>
+      <tr key={key} className="tableRow">
         <td className="tableCheck">
           <input
             type="checkbox"
@@ -23,7 +23,7 @@ class CartItem extends Component {
             id="checkbox"
             checked={cartList.isChecked}
           />
-          <label for="checkbox" className="checked ">
+          <label id={cartList.id} for="checkbox" className="checked ">
             <span></span>
           </label>
         </td>
@@ -77,15 +77,11 @@ class CartItem extends Component {
         <td className="itemTotalPrice">
           ￦ {Math.floor(cartList.price * cartList.quantity).toLocaleString()}
         </td>
-        {rowSpan ? (
+        {rowSpan && (
           <td className="itemShipPrice" rowSpan={rowSpan}>
-            기본배송비
-            <br />
-            2,500원
-            <br />
-            (택배-선결제)
+            기본배송비 (택배-선결제)
           </td>
-        ) : null}
+        )}
       </tr>
     );
   }

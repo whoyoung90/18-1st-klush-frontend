@@ -44,7 +44,7 @@ class CartList extends Component {
             cartList.map((item, idx) => {
               return (
                 <CartItem
-                  rowspan={idx === 0 ? cartList.length : null}
+                  rowspan={cartList.length}
                   key={idx}
                   cartList={item}
                   checkEnter={checkEnter}
