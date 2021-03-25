@@ -2,8 +2,8 @@
 
 .cartTable {
   thead {
-    tr {
-      th {
+    .cartTableRow {
+      .cartTableCheck {
         padding: 15px 0;
         color: #969896;
         font-weight: bold;
@@ -30,13 +30,13 @@
           background: url("./check.png");
         }
 
-        label:hover {
+        .allCheckLabel:hover {
           background: url("./checkhover.png");
         }
-        label {
+        .allCheckLabel {
           text-indent: -9999px;
         }
-        label {
+        .allCheckLabel {
           position: relative;
           cursor: pointer;
           text-indent: -9999px;

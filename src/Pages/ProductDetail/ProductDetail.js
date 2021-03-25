@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class ProductDetail extends Component {
   render() {
-    return <div></div>;
+    return <div>id: {this.props.match.params.id}</div>;
   }
 }
 

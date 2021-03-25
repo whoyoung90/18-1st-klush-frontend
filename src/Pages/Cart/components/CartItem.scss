@@ -16,7 +16,7 @@
     input[type="checkbox"] {
       width: 18px;
       height: 18px;
-      border: 1px rgba(0, 0, 0, 0.1 );
+      border: 1px rgba(0, 0, 0, 0.1);
     }
     // input[type="checkbox"] {
     //   display: none;
@@ -89,12 +89,13 @@
         border: 1px solid #e7e7e7;
         display: flex;
         align-items: center;
-        input {
+        .quantityCount {
           font-size: 16px;
           text-align: center;
           width: 33%;
         }
-        button {
+        .btnDecrease,
+        .btnIncrease {
           font-size: 16px;
           width: 33%;
           background: transparent;

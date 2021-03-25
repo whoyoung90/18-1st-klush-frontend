@@ -18,8 +18,8 @@ class CartList extends Component {
     return (
       <table className="cartTable">
         <thead>
-          <tr>
-            <th>
+          <tr className="cartTableRow">
+            <th className="cartTableCheck">
               <span className="formCheck">
                 <input
                   type="checkbox"
@@ -28,7 +28,7 @@ class CartList extends Component {
                   onClick={() => handleSelectAll()}
                   checked={isAllChecked}
                 ></input>
-                <label for="allCheck"></label>
+                <label for="allCheck" className="allCheckLabel"></label>
               </span>
             </th>
             <th className="productDetail">제품 정보</th>

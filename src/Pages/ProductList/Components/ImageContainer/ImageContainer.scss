@@ -1,0 +1,29 @@
+@import "../../../../Styles/common.scss";
+
+.imgContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  background: url("https://images.unsplash.com/photo-1597034058471-9abcc1b40152?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjE0fHxwZXJmdW1lfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  span {
+    font-family: "HelveticaNeue-Bold", "notokrB";
+    color: $lushWhite;
+  }
+  .imgContainerTitle {
+    font-size: 68px;
+    font-weight: 800;
+    letter-spacing: 0.5em;
+  }
+  .imgContainerDesc {
+    margin-top: 30px;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+  }
+}
