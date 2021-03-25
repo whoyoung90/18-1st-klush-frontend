@@ -5,25 +5,21 @@ import "./LinkTab.scss";
 class LinkTab extends Component {
   render() {
     return (
-      this.props.reviewCount !== undefined && (
-        <div className="linkTab">
-          {Object.keys(TAB_OBJ).map((tab, idx) => {
-            return (
-              <a
-                href={`#${tab}`}
-                key={idx}
-                className={
-                  "tabBtn" + `${this.props.tabName === tab ? " focusBtn" : ""}`
-                }
-              >
-                {tab === "review"
-                  ? TAB_OBJ[tab] + ` (${this.props.reviewCount})`
-                  : TAB_OBJ[tab]}
-              </a>
-            );
-          })}
-        </div>
-      )
+      <div className="linkTab">
+        {Object.keys(TAB_OBJ).map((tab, idx) => {
+          return (
+            <a
+              href={`#${tab}`}
+              key={idx}
+              className={
+                "tabBtn" + `${this.props.tabName === tab ? " focusBtn" : ""}`
+              }
+            >
+              {TAB_OBJ[tab]}
+            </a>
+          );
+        })}
+      </div>
     );
   }
 }

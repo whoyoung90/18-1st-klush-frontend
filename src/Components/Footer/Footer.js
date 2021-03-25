@@ -18,7 +18,7 @@ class Footer extends Component {
 
     return (
       <footer className="footerAll">
-        <img src={footerImg} className="icons" />
+        <img src={footerImg} alt="footerImg" className="icons" />
         <ul className="footerLeftWrap">
           <a href="/main" className="footerLogo">
             KLUSH
@@ -31,7 +31,7 @@ class Footer extends Component {
           <ul className="footerWrap">
             {FOOTER.Menu.map(el => (
               <li className="footerLink">
-                <a href="#">{el}</a>
+                <a calssName="footerMenu">{el}</a>
               </li>
             ))}
           </ul>

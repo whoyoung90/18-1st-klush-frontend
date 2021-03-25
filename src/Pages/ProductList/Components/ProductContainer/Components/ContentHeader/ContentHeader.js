@@ -17,12 +17,9 @@ class ContentHeader extends Component {
               className="productShowFilter"
               onChange={this.props.checkSelect}
             >
-              <option value="recommendation">추천순</option>
-              <option value="bestSeller">판매인기순</option>
+              <option value="isNew">신제품순</option>
               <option value="lowerPrice">낮은가격순</option>
               <option value="higherPrice">높은가격순</option>
-              <option value="reviewCount">리뷰많은순</option>
-              <option value="isNew">신제품순</option>
             </select>
           </div>
         </header>

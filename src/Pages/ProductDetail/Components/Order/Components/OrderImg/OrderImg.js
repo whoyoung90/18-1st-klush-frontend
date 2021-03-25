@@ -29,7 +29,7 @@ class OrderImg extends Component {
     const { subImages, mainImgName } = this.props;
     const { mainImgSrc } = this.state;
     return (
-      <div className="imgContainer">
+      <div className="orderimgContainer">
         <img
           className="mainImage"
           src={mainImgSrc && mainImgSrc}

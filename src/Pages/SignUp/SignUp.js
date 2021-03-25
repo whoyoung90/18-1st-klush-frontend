@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import DaumPostcode from "react-daum-postcode";
-import { SIGN_UP_API } from "../../config.js";
 import "./SignUp.scss";
 
 const WIDTH = 595;
@@ -139,7 +138,7 @@ class SignUp extends Component {
 
   signUpFinish = () => {
     const { emailValue, passwordValue, nameValue, phoneVlaue } = this.state;
-    fetch(`${SIGN_UP_API}`, {
+    fetch("http://10.58.3.238:8000/user/signup", {
       method: "POST",
       body: JSON.stringify({
         email: emailValue,

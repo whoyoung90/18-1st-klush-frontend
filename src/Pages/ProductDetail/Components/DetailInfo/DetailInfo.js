@@ -27,8 +27,8 @@ class DetailInfo extends Component {
           <div className="infoMainImgReview">
             <h1 className="reviewHeader">
               미리 써 본 후기&nbsp;
-              {[0, 0, 0, 0, 0].map(x => (
-                <AiFillStar />
+              {[0, 0, 0, 0, 0].map((x, idx) => (
+                <AiFillStar key={idx + 10} />
               ))}
             </h1>
             <article className="reviewContent">
