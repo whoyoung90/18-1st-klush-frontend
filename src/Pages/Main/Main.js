@@ -32,30 +32,32 @@ class Main extends Component {
     return (
       <>
         <Nav />
-        <div className="main">
-          <MainSlide />
-          <div className="itemWrap">
-            <h2>나만 알고 싶은 KLUSH</h2>
-            <Slider className="myItem" {...settings}>
-              {mainList.map((el, idx) => {
-                return (
-                  <Link to="/main" key={idx} className="myItemList">
-                    <img className="myImg" src={el.image} alt="newLabel" />
-                    <div className="imgTitle">{el.name}</div>
-                    <div className="imgHash">{el.product_labels}</div>
-                    <div className="cost">
-                      ￦{Math.floor(el.price).toLocaleString()}
-                    </div>
-                  </Link>
-                );
-              })}
-            </Slider>
-          </div>
-          <div className="tableWrap">
-            <img src="/Images/campaign.jpg" alt="campaign" />
-            <Link to="/main">
-              <img src="/Images/bubbleBar.jpg" alt="bubbleBar" />
-            </Link>
+        <div className="siteWrap">
+          <div className="main">
+            <MainSlide />
+            <div className="itemWrap">
+              <h2>나만 알고 싶은 KLUSH</h2>
+              <Slider className="myItem" {...settings}>
+                {mainList.map((el, idx) => {
+                  return (
+                    <Link to="/main" key={idx} className="myItemList">
+                      <img className="myImg" src={el.images} alt="newLabel" />
+                      <div className="imgTitle">{el.name}</div>
+                      <div className="imgHash">{el.product_labels}</div>
+                      <div className="cost">
+                        ￦{Math.floor(el.price).toLocaleString()}
+                      </div>
+                    </Link>
+                  );
+                })}
+              </Slider>
+            </div>
+            <div className="tableWrap">
+              <img src="/Images/campaign.jpg" alt="campaign" />
+              <Link to="/products">
+                <img src="/Images/bubbleBar.jpg" alt="bubbleBar" />
+              </Link>
+            </div>
           </div>
         </div>
         <Footer />

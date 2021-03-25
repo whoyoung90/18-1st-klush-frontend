@@ -17,11 +17,9 @@ class Cart extends Component {
   }
 
   componentDidMount() {
-    fetch("/data/cartData.json")
-      //    fetch("http://10.58.2.56:8000/order/cart'")
+    fetch("http://10.58.2.56:8000/order/cart'")
       .then(res => res.json())
       .then(res => {
-        //const tmpArr = res.new_product_list.map(item => {
         const tmpArr = res.cartList.map(item => {
           return { ...item, isChecked: true };
         });
