@@ -131,7 +131,7 @@ class Cart extends Component {
     const payList = cartList.filter(item => item.isChecked);
     if (window.confirm(`선택하신  ${countSort}개상품만 주문합니다.`)) {
       this.props.history.push({
-        pathname: "/login",
+        pathname: "/payment",
         cartList: payList,
       });
     }

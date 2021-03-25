@@ -40,11 +40,10 @@ class CartList extends Component {
           </tr>
         </thead>
         <tbody>
-          {cartList.length &&
-            cartList.map((item, idx) => {
-              return (
+          {cartList
+            ? cartList.map((item, idx) => (
                 <CartItem
-                  rowspan={cartList.length}
+                  rowspan={!idx && cartList.length}
                   key={idx}
                   cartList={item}
                   checkEnter={checkEnter}
@@ -53,8 +52,8 @@ class CartList extends Component {
                   handleIncrement={handleIncrement}
                   handleSelect={handleSelect}
                 />
-              );
-            })}
+              ))
+            : null}
         </tbody>
       </table>
     );

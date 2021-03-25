@@ -78,7 +78,7 @@ class CartItem extends Component {
           ￦ {Math.floor(cartList.price * cartList.quantity).toLocaleString()}
         </td>
         {rowSpan && (
-          <td className="itemShipPrice" rowSpan={rowSpan}>
+          <td className="itemShipPrice" rowSpan={cartList.length}>
             기본배송비 (택배-선결제)
           </td>
         )}
