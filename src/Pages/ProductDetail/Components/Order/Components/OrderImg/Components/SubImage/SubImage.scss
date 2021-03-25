@@ -1,0 +1,10 @@
+@import "../../../../../../../../Styles/common.scss";
+
+.eachSubImg {
+  margin: 0px 10px;
+  border: 1px solid $elseGrey;
+  .subImage {
+    width: 70px;
+    height: 100%;
+  }
+}
