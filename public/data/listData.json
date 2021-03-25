@@ -14,7 +14,26 @@
       "is_vegan": true,
       "is_soldout": false,
       "price": "200000",
-      "subCategory": "배쓰 밤"
+      "sub_category": "배쓰 밤",
+      "productDetail": {
+        "category": "베쓰 밤",
+        "name": "험프티 덤프티",
+        "enName": "Humpty Dumpty",
+        "mainImg": "https://images.unsplash.com/photo-1505528638251-3ef301e4988e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60",
+        "mainReview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "reviewAuthor": "썸머",
+        "description": "험프티 덤프티와 멋진 시간을 보낼 시간! 채식주의 험프티는 달콤한 베르가못을 품고 있답니다. 달콤한 꿀 욕조에서 헤어나오지 못하실 걸요?",
+        "middleImg": "Images/subVisual/Klush_bathbomb_subvisual2.jpg",
+        "footerImg": "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        "footerHashTag": [
+          "쓰레기없데이",
+          "이스터에디션",
+          "베쓰밤",
+          "BathBomb",
+          "HumptyDumpty",
+          "험프티덤프티"
+        ]
+      }
     },
     {
       "product_id": 2,
@@ -25,7 +44,26 @@
       "is_vegan": false,
       "is_soldout": false,
       "price": "120000",
-      "subCategory": "배쓰 오일"
+      "subCategory": "배쓰 오일",
+      "productDetail": {
+        "category": "베쓰 밤",
+        "name": "험프티 덤프티",
+        "enName": "Humpty Dumpty",
+        "mainImg": "https://images.unsplash.com/photo-1505528638251-3ef301e4988e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60",
+        "mainReview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "reviewAuthor": "썸머",
+        "description": "험프티 덤프티와 멋진 시간을 보낼 시간! 채식주의 험프티는 달콤한 베르가못을 품고 있답니다. 달콤한 꿀 욕조에서 헤어나오지 못하실 걸요?",
+        "middleImg": "Images/subVisual/Klush_bathbomb_subvisual2.jpg",
+        "footerImg": "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        "footerHashTag": [
+          "쓰레기없데이",
+          "이스터에디션",
+          "베쓰밤",
+          "BathBomb",
+          "HumptyDumpty",
+          "험프티덤프티"
+        ]
+      }
     },
     {
       "product_id": 3,
@@ -36,7 +74,26 @@
       "is_vegan": false,
       "is_soldout": true,
       "price": "3000000",
-      "subCategory": "배쓰 바"
+      "subCategory": "배쓰 바",
+      "productDetail": {
+        "category": "베쓰 밤",
+        "name": "험프티 덤프티",
+        "enName": "Humpty Dumpty",
+        "mainImg": "https://images.unsplash.com/photo-1505528638251-3ef301e4988e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60",
+        "mainReview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "reviewAuthor": "썸머",
+        "description": "험프티 덤프티와 멋진 시간을 보낼 시간! 채식주의 험프티는 달콤한 베르가못을 품고 있답니다. 달콤한 꿀 욕조에서 헤어나오지 못하실 걸요?",
+        "middleImg": "Images/subVisual/Klush_bathbomb_subvisual2.jpg",
+        "footerImg": "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        "footerHashTag": [
+          "쓰레기없데이",
+          "이스터에디션",
+          "베쓰밤",
+          "BathBomb",
+          "HumptyDumpty",
+          "험프티덤프티"
+        ]
+      }
     },
     {
       "product_id": 4,
@@ -47,7 +104,26 @@
       "is_vegan": true,
       "is_soldout": false,
       "price": "200000",
-      "subCategory": "배쓰 오일"
+      "subCategory": "배쓰 오일",
+      "productDetail": {
+        "category": "베쓰 밤",
+        "name": "험프티 덤프티",
+        "enName": "Humpty Dumpty",
+        "mainImg": "https://images.unsplash.com/photo-1505528638251-3ef301e4988e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60",
+        "mainReview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "reviewAuthor": "썸머",
+        "description": "험프티 덤프티와 멋진 시간을 보낼 시간! 채식주의 험프티는 달콤한 베르가못을 품고 있답니다. 달콤한 꿀 욕조에서 헤어나오지 못하실 걸요?",
+        "middleImg": "Images/subVisual/Klush_bathbomb_subvisual2.jpg",
+        "footerImg": "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        "footerHashTag": [
+          "쓰레기없데이",
+          "이스터에디션",
+          "베쓰밤",
+          "BathBomb",
+          "HumptyDumpty",
+          "험프티덤프티"
+        ]
+      }
     },
     {
       "product_id": 5,
@@ -58,7 +134,26 @@
       "is_vegan": false,
       "is_soldout": false,
       "price": "120000",
-      "subCategory": "배쓰 밤"
+      "subCategory": "배쓰 밤",
+      "productDetail": {
+        "category": "베쓰 밤",
+        "name": "험프티 덤프티",
+        "enName": "Humpty Dumpty",
+        "mainImg": "https://images.unsplash.com/photo-1505528638251-3ef301e4988e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60",
+        "mainReview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "reviewAuthor": "썸머",
+        "description": "험프티 덤프티와 멋진 시간을 보낼 시간! 채식주의 험프티는 달콤한 베르가못을 품고 있답니다. 달콤한 꿀 욕조에서 헤어나오지 못하실 걸요?",
+        "middleImg": "Images/subVisual/Klush_bathbomb_subvisual2.jpg",
+        "footerImg": "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        "footerHashTag": [
+          "쓰레기없데이",
+          "이스터에디션",
+          "베쓰밤",
+          "BathBomb",
+          "HumptyDumpty",
+          "험프티덤프티"
+        ]
+      }
     },
     {
       "product_id": 6,
@@ -69,7 +164,26 @@
       "is_vegan": false,
       "is_soldout": true,
       "price": "3000000",
-      "subCategory": "배쓰 바"
+      "subCategory": "배쓰 바",
+      "productDetail": {
+        "category": "베쓰 밤",
+        "name": "험프티 덤프티",
+        "enName": "Humpty Dumpty",
+        "mainImg": "https://images.unsplash.com/photo-1505528638251-3ef301e4988e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60",
+        "mainReview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "reviewAuthor": "썸머",
+        "description": "험프티 덤프티와 멋진 시간을 보낼 시간! 채식주의 험프티는 달콤한 베르가못을 품고 있답니다. 달콤한 꿀 욕조에서 헤어나오지 못하실 걸요?",
+        "middleImg": "Images/subVisual/Klush_bathbomb_subvisual2.jpg",
+        "footerImg": "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        "footerHashTag": [
+          "쓰레기없데이",
+          "이스터에디션",
+          "베쓰밤",
+          "BathBomb",
+          "HumptyDumpty",
+          "험프티덤프티"
+        ]
+      }
     },
     {
       "product_id": 7,
@@ -80,7 +194,26 @@
       "is_vegan": true,
       "is_soldout": false,
       "price": "200000",
-      "subCategory": "펀"
+      "subCategory": "펀",
+      "productDetail": {
+        "category": "베쓰 밤",
+        "name": "험프티 덤프티",
+        "enName": "Humpty Dumpty",
+        "mainImg": "https://images.unsplash.com/photo-1505528638251-3ef301e4988e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60",
+        "mainReview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "reviewAuthor": "썸머",
+        "description": "험프티 덤프티와 멋진 시간을 보낼 시간! 채식주의 험프티는 달콤한 베르가못을 품고 있답니다. 달콤한 꿀 욕조에서 헤어나오지 못하실 걸요?",
+        "middleImg": "Images/subVisual/Klush_bathbomb_subvisual2.jpg",
+        "footerImg": "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        "footerHashTag": [
+          "쓰레기없데이",
+          "이스터에디션",
+          "베쓰밤",
+          "BathBomb",
+          "HumptyDumpty",
+          "험프티덤프티"
+        ]
+      }
     },
     {
       "product_id": 8,
@@ -91,7 +224,26 @@
       "is_vegan": false,
       "is_soldout": false,
       "price": "120000",
-      "sub_category": "배쓰 오일"
+      "sub_category": "배쓰 오일",
+      "productDetail": {
+        "category": "베쓰 밤",
+        "name": "험프티 덤프티",
+        "enName": "Humpty Dumpty",
+        "mainImg": "https://images.unsplash.com/photo-1505528638251-3ef301e4988e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60",
+        "mainReview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "reviewAuthor": "썸머",
+        "description": "험프티 덤프티와 멋진 시간을 보낼 시간! 채식주의 험프티는 달콤한 베르가못을 품고 있답니다. 달콤한 꿀 욕조에서 헤어나오지 못하실 걸요?",
+        "middleImg": "Images/subVisual/Klush_bathbomb_subvisual2.jpg",
+        "footerImg": "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        "footerHashTag": [
+          "쓰레기없데이",
+          "이스터에디션",
+          "베쓰밤",
+          "BathBomb",
+          "HumptyDumpty",
+          "험프티덤프티"
+        ]
+      }
     },
     {
       "product_id": 123,
@@ -102,7 +254,26 @@
       "is_vegan": false,
       "is_soldout": true,
       "price": "3000000",
-      "sub_category": "배쓰 바"
+      "sub_category": "배쓰 바",
+      "productDetail": {
+        "category": "베쓰 밤",
+        "name": "험프티 덤프티",
+        "enName": "Humpty Dumpty",
+        "mainImg": "https://images.unsplash.com/photo-1505528638251-3ef301e4988e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60",
+        "mainReview": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "reviewAuthor": "썸머",
+        "description": "험프티 덤프티와 멋진 시간을 보낼 시간! 채식주의 험프티는 달콤한 베르가못을 품고 있답니다. 달콤한 꿀 욕조에서 헤어나오지 못하실 걸요?",
+        "middleImg": "Images/subVisual/Klush_bathbomb_subvisual2.jpg",
+        "footerImg": "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        "footerHashTag": [
+          "쓰레기없데이",
+          "이스터에디션",
+          "베쓰밤",
+          "BathBomb",
+          "HumptyDumpty",
+          "험프티덤프티"
+        ]
+      }
     }
   ]
 }

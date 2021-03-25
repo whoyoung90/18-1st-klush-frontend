@@ -15,9 +15,7 @@ class ContentHeader extends Component {
             <BiHeart className="icons" />
           </div>
         </div>
-        <div className="hashTagColumn">
-          {hashTags.map(tag => "#" + tag + " ")}
-        </div>
+        <div className="hashTagColumn">{hashTags.map(tag => tag + " ")}</div>
       </header>
     );
   }

@@ -16,7 +16,7 @@ class OrderImg extends Component {
 
   componentDidMount() {
     this.setState({
-      mainImgSrc: this.props.mainImgSrc,
+      mainImgSrc: this.props.mainImgSrc[0],
     });
   }
   subImgOnClick = e => {
@@ -30,11 +30,7 @@ class OrderImg extends Component {
     const { mainImgSrc } = this.state;
     return (
       <div className="orderimgContainer">
-        <img
-          className="mainImage"
-          src={mainImgSrc && mainImgSrc}
-          alt={mainImgName.name && mainImgName.name}
-        />
+        <img className="mainImage" src={mainImgSrc} alt={mainImgName} />
         <div className="subImgContainer">
           <IoIosArrowBack className="sliderArrow" />
           <div className="subImgSlider">
@@ -43,7 +39,7 @@ class OrderImg extends Component {
                 <SubImage
                   key={idx}
                   subImages={img}
-                  name={mainImgName.name}
+                  name={mainImgName}
                   subImgOnClick={this.subImgOnClick}
                 />
               );

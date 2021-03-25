@@ -25,7 +25,7 @@ class ProductList extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/listData.json")
+    fetch("http://10.58.0.66:8000/product")
       .then(res => res.json())
       .then(result =>
         this.setState({
@@ -50,7 +50,7 @@ class ProductList extends Component {
         [modal]: !this.state[modal],
         cartProductPrice:
           modal === "showCartModal"
-            ? this.state.listData.products.filter(
+            ? this.state.listData.product_list_data.filter(
                 product => product.product_id === idNum
               )[0].price
             : "",
@@ -82,7 +82,7 @@ class ProductList extends Component {
 
   putOnCart = () => {
     let token = localStorage.getItem("token");
-    fetch("http://10.58.7.87:8000/order/cart/1", {
+    fetch("http://10.58.0.66:8000/order/cart/2", {
       method: "POST",
       headers: {
         Authorization: token,
@@ -110,9 +110,11 @@ class ProductList extends Component {
   };
 
   //for Count Box productDetail의 countBox와 중복된 코드
-  printPrice = a => {
-    a = a.toLocaleString();
-    return a;
+  printPrice = priceStr => {
+    let priceList = priceStr.split("");
+    let dotIndex = priceList.indexOf(".");
+    priceStr = priceList.splice(0, dotIndex).join("");
+    return priceStr.toLocaleString();
   };
 
   changePrice = () => {
@@ -171,13 +173,9 @@ class ProductList extends Component {
   };
 
   render() {
-    console.log(this.state.queryStr);
-    const {
-      categoryName,
-      categoryDesc,
-      subCategoryList,
-      products,
-    } = this.state.listData;
+    console.log(this.state.listData);
+    const products = this.state.listData.product_list_data;
+    const { categoryName, categoryDesc, subCategoryList } = this.state.listData;
 
     const {
       showGeneralModal,

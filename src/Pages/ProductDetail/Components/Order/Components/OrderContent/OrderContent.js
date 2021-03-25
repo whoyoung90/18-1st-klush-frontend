@@ -27,15 +27,10 @@ class OrderContent extends Component {
 
   //가격 쉼표 추가
   printPrice = priceStr => {
-    let result = priceStr.split("").reverse();
-    if (result.length > 3) {
-      for (let i = 0; i < result.length; i++) {
-        if ((i + 1) % 3 === 0 && i !== result.length - 1) {
-          result[i + 1] += ",";
-        }
-      }
-      return result.reverse().join("");
-    }
+    let priceList = priceStr.split("");
+    let dotIndex = priceList.indexOf(".");
+    priceStr = priceList.splice(0, dotIndex).join("");
+    return priceStr.toLocaleString();
   };
 
   changePrice = () => {

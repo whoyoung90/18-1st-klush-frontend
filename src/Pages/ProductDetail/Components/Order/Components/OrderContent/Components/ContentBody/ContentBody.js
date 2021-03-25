@@ -26,7 +26,7 @@ class ContentBody extends Component {
         </div>
         <div className="weightColumn">
           <span className="columnTitle">상품무게</span>
-          <div className="columnRight">{weight}</div>
+          <div className="columnRight">{weight}g</div>
         </div>
         <div className="buyCountColumn">
           <span className="columnTitle">구매수량</span>

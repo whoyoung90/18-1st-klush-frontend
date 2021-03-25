@@ -32,9 +32,7 @@ class Product extends Component {
   };
 
   goToDetailPage = () => {
-    this.props.history.push(
-      `/product_detail/${this.props.productInfo.product_id}`
-    );
+    this.props.history.push(`/product/${this.props.productInfo.product_id}`);
   };
 
   printPrice = () => {
@@ -58,7 +56,7 @@ class Product extends Component {
           <div className="productImgContainer">
             <img
               className={productInfo.is_soldout ? "disable" : "productImg"}
-              src={productInfo.image_url}
+              src={productInfo.image_url[0]}
               alt={productInfo.name}
             />
             <div
@@ -85,7 +83,7 @@ class Product extends Component {
               return <ProductLabel key={idx + 5} label={label} />;
             })}
           </div>
-          <div className="nameColumn">{productInfo.productName}</div>
+          <div className="nameColumn">{productInfo.name}</div>
           <div className="hashTagColumn">
             {productInfo.product_label &&
               productInfo.product_label.map((hashTag, idx) => {

@@ -23,7 +23,11 @@ class DetailInfo extends Component {
           </span>
         </div>
         <div className="infoImgContainer">
-          <img className="infoMainImg" src={productDetail.mainImg} alt="" />
+          <img
+            className="infoMainImg"
+            src="https://images.unsplash.com/photo-1505528638251-3ef301e4988e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60"
+            alt="main"
+          />
           <div className="infoMainImgReview">
             <h1 className="reviewHeader">
               미리 써 본 후기&nbsp;
@@ -32,7 +36,10 @@ class DetailInfo extends Component {
               ))}
             </h1>
             <article className="reviewContent">
-              {productDetail.mainReview}
+              "Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book."
             </article>
           </div>
         </div>
@@ -41,20 +48,32 @@ class DetailInfo extends Component {
         </div>
         <img
           className="infoMiddleImg"
-          src={productDetail.middleImg}
+          src="https://images.unsplash.com/photo-1505528638251-3ef301e4988e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60"
           alt={productDetail.name}
         />
         <div className="infoFooter">
           <article className="infoFooterUse">
             <h1 className="useTitle">사용방법</h1>
-            <p className="useContent">{productDetail.mainReview}</p>
+            <p className="useContent">
+              "Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book."
+            </p>
             <div className="useHashTags">
-              {productDetail.footerHashTag.map(el => "#" + el + " ")}
+              {[
+                "쓰레기없데이",
+                "이스터에디션",
+                "베쓰밤",
+                "BathBomb",
+                "HumptyDumpty",
+                "험프티덤프티",
+              ].map(el => "#" + el + " ")}
             </div>
           </article>
           <img
             className="infoFooterImg"
-            src={productDetail.footerImg}
+            src="https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
             alt={productDetail.name}
           />
         </div>

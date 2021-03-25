@@ -16,49 +16,51 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
-    fetch("data/detailData.json")
+    fetch(`http://10.58.0.66:8000/product/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(result =>
         this.setState({
-          productData: result,
+          productData: result.product_detail_data[0],
         })
       );
   }
 
   render() {
-    const { productDetail, productOrder } = this.state.productData;
+    console.log("data", this.state.productData);
+    const { productData } = this.state;
 
     return (
-      <div className="productDetailPage">
-        <div className="productDetailContainer">
-          <header className="productDetailHeader">
-            <div className="directionColumn">
-              {this.state.productData &&
-                productOrder.direction.map((folder, idx) => {
-                  return <Direction key={idx} folder={folder} />;
-                })}
-            </div>
-          </header>
-          {productOrder && (
+      productData && (
+        <div className="productDetailPage">
+          <div className="productDetailContainer">
+            <header className="productDetailHeader">
+              <div className="directionColumn">
+                {this.state.productData &&
+                  ["홈", "러쉬", "베쓰", `${productData.sub_category}`].map(
+                    (folder, idx) => {
+                      return <Direction key={idx} folder={folder} />;
+                    }
+                  )}
+              </div>
+            </header>
             <Order
-              name={productOrder.name}
-              mainImgSrc={productOrder.mainImg}
-              mainImgName={productOrder.name}
-              subImages={productOrder.subImages}
-              productPrice={productOrder.price}
-              reviewCount={productOrder.reviewCount}
-              hashTags={productOrder.hashTags}
-              weight={productOrder.weight}
+              name={productData.name}
+              mainImgSrc={productData.image_url}
+              mainImgName={productData.name}
+              subImages={productData.image_url}
+              productPrice={productData.price}
+              reviewCount="0"
+              hashTags={productData.product_label}
+              weight={productData.weight}
             />
-          )}
-          {productDetail && (
+
             <DetailInfo
-              reviewCount={productOrder.reviewCount}
-              productDetail={productDetail}
+              reviewCount={productData.reviewCount}
+              productDetail={productData}
             />
-          )}
+          </div>
         </div>
-      </div>
+      )
     );
   }
 }
