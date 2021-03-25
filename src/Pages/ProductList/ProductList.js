@@ -21,11 +21,12 @@ class ProductList extends Component {
       cartProductPrice: "",
       cartTotalPrice: "",
       cartCountNum: "1",
+      queryStr: "",
     };
   }
 
   componentDidMount() {
-    fetch("data/listData.json")
+    fetch("http://localhost:3000/data/listData.json")
       .then(res => res.json())
       .then(result =>
         this.setState({
@@ -51,8 +52,8 @@ class ProductList extends Component {
         cartProductPrice:
           modal === "showCartModal"
             ? this.state.listData.products.filter(
-                product => product.id === idNum
-              )[0].productPrice
+                product => product.product_id === idNum
+              )[0].price
             : "",
       },
       () => {
@@ -99,6 +100,13 @@ class ProductList extends Component {
         this.goToGeneralModal();
       }
     );
+  };
+
+  //contentHeader select box
+  checkSelect = e => {
+    this.setState({
+      queryStr: e.target.value,
+    });
   };
 
   //for Count Box productDetail의 countBox와 중복된 코드
@@ -163,6 +171,7 @@ class ProductList extends Component {
   };
 
   render() {
+    console.log(this.state.queryStr);
     const {
       categoryName,
       categoryDesc,
@@ -182,16 +191,14 @@ class ProductList extends Component {
     return (
       <div className="productListPage">
         {showGeneralModal && (
-          <GeneralModal
-            productInfo={products}
-            clickClose={this.clickClose}
-            text={dataSetName}
-          />
+          <GeneralModal clickClose={this.clickClose} text={dataSetName} />
         )}
         {showCartModal && Number(productId) && (
           <CartModal
             productInfo={
-              products.filter(product => product.id === Number(productId))[0]
+              products.filter(
+                product => product.product_id === Number(productId)
+              )[0]
             }
             productId={productId}
             cartTotalPrice={cartTotalPrice}
@@ -214,6 +221,7 @@ class ProductList extends Component {
             subCategoryList={subCategoryList}
             products={products}
             clickModal={this.clickModal}
+            checkSelect={this.checkSelect}
           />
         )}
       </div>

@@ -34,14 +34,14 @@ class CartModal extends Component {
             <div className="cartMainContainer">
               <img
                 className="cartMainImg"
-                src={productInfo.productImg}
-                alt={productInfo.productName}
+                src={productInfo.image_url}
+                alt={productInfo.name}
               />
               <div className="mainContent">
                 <div className="contentHeader">
-                  <div className="contentName">{productInfo.productName}</div>
+                  <div className="contentName">{productInfo.name}</div>
                   <div className="contentHash">
-                    {productInfo.productHashTag.map(hash => `#` + hash + " ")}
+                    {productInfo.product_label.map(hash => `#` + hash + " ")}
                   </div>
                 </div>
 

@@ -6,24 +6,25 @@ import ContentHeader from "./Components/ContentHeader/ContentHeader";
 import Product from "./Components/Product/Product";
 
 class ProductContainer extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      productList: [],
-      sortKey: "",
-    };
-  }
-
-  checkSelect = e => {
-    this.setState({
-      sortKey: e.target.value,
-    });
+  state = {
+    productList: this.props.products,
   };
+
+  componentDidMount() {
+    this.setState({
+      productList: this.props.products.sort(a => (a.is_soldout ? 1 : -1)),
+    });
+  }
 
   render() {
     const { productList } = this.state;
-    const { categoryName, subCategoryList, products, clickModal } = this.props;
+    const {
+      categoryName,
+      subCategoryList,
+      products,
+      clickModal,
+      checkSelect,
+    } = this.props;
     return (
       <div className="productContainer">
         <div className="productContent">
@@ -32,7 +33,7 @@ class ProductContainer extends Component {
               categoryName={categoryName}
               subCategoryList={subCategoryList}
               products={products}
-              checkSelect={this.checkSelect}
+              checkSelect={checkSelect}
             />
           )}
           <div className="contentList">
@@ -40,7 +41,7 @@ class ProductContainer extends Component {
               productList.map(product => {
                 return (
                   <Product
-                    key={product.id}
+                    key={product.product_id}
                     productInfo={product}
                     clickModal={clickModal}
                   />
