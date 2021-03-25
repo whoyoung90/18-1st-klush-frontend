@@ -15,8 +15,8 @@ class ProductList extends Component {
         </li>
         {items.map(el => (
           <li>
-            <Link className="items" to="#">
-              {el}
+            <Link className="items" to={el.path}>
+              {el.value}
             </Link>
           </li>
         ))}

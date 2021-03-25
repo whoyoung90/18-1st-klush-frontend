@@ -6,7 +6,7 @@
 
 <br>
 
-## 🔜  FrontEnd
+## 🔜 FrontEnd
 
 - 김우영
 - 김현중 (PM)
@@ -15,12 +15,13 @@
 <br>
 
 ## 🔙 BackEnd
+
 - 정수빈
 - 최인아
 - 한지영
-<br>
-<br>
-  
+  <br>
+  <br>
+
 # 🌟: 팀원 별 작업 현황
 
 - **김우영**
@@ -54,7 +55,6 @@
 - React-daum-postcode
 
 <br>
-
 
 # 🌈 구현 기능
 

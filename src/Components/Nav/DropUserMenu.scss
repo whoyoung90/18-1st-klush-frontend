@@ -1,37 +1,47 @@
 @import "./Nav.scss";
 
+%hover-decoration {
+  color: $lushWhite;
+  text-decoration: none;
+}
+
+%hoverOut-decoration {
+  color: $lushBlack;
+  text-decoration: none;
+}
+
 .dropUser {
   position: relative;
-}
 
-.dropUserMenu {
-  display: none;
-}
-
-.dropUser:hover .dropUserMenu {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 70px;
-  right: 0;
-  width: 200px;
-
-  a {
-    color: $lushBlack;
+  .dropUserMenu {
+    display: none;
   }
 
-  li {
-    padding: 0 10px;
-    text-align: center;
-    border-bottom: 1px solid #eaeaea;
-    line-height: 50px;
-    font-size: 12px;
-    background-color: $lushWhite;
-    &:hover {
-      background-color: $lushBlack;
-      a {
-        color: $lushWhite;
+  &:hover .dropUserMenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+
+    .userList {
+      padding: 0 10px;
+      text-align: center;
+      border-bottom: 1px solid #eaeaea;
+      line-height: 50px;
+      font-size: 12px;
+      background-color: $lushWhite;
+      &:hover {
+        background-color: $lushBlack;
+        .userLink {
+          @extend %hover-decoration;
+        }
       }
+    }
+    .userLink {
+      display: block;
+      @extend %hoverOut-decoration;
     }
   }
 }
