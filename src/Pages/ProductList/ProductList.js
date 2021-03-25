@@ -17,7 +17,6 @@ class ProductList extends Component {
       showCartModal: false,
       dataSetName: "",
       productId: "",
-      cartList: [],
       cartProductPrice: "",
       cartTotalPrice: "",
       cartCountNum: "1",
@@ -82,18 +81,19 @@ class ProductList extends Component {
   };
 
   putOnCart = () => {
+    let token = localStorage.getItem("token");
+    fetch("http://10.58.7.87:8000/order/cart/1", {
+      method: "POST",
+      headers: {
+        Authorization: token,
+      },
+      body: JSON.stringify({
+        quantity: this.state.cartCountNum,
+      }),
+    });
+
     this.setState(
       {
-        cartList: [
-          ...this.state.cartList,
-          ...[
-            {
-              id: this.state.productId,
-              count: this.state.cartCountNum,
-              totalPrice: this.state.cartTotalPrice,
-            },
-          ],
-        ],
         cartCountNum: "1",
       },
       () => {

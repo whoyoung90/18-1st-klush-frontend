@@ -70,7 +70,7 @@ class CartModal extends Component {
             <div className="cartFooter">
               <ModalButtons
                 clickClose={clickClose}
-                putOnCart={putOnCart}
+                rightBtnFunc={putOnCart}
                 modalName="showCartModal"
                 leftBtn="취소하기"
                 rightBtn="담기"
