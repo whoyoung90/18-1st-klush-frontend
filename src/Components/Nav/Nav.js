@@ -1,30 +1,30 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import * as Config from "./Config";
+import * as Config from "../../config";
 import Product from "./NavMenu/Product/Product";
 import LushIntro from "./NavMenu/LushIntro/LushIntro";
 import DropUserMenu from "./DropUserMenu";
 import Modal from "./Modal";
 import "./Nav.scss";
 
+const NAV_MENU = ["매장안내", "스파", "이벤트"];
+
 class Nav extends Component {
   constructor() {
     super();
     this.state = {
-      modalOpen: false,
+      modalSwitch: false,
     };
   }
 
-  openModal = () => {
-    this.setState({ modalOpen: true });
-  };
-
-  closeModal = () => {
-    this.setState({ modalOpen: false });
+  handelModal = () => {
+    this.setState({ modalSwitch: !this.state.modalSwitch });
   };
 
   render() {
-    const NAV_MENU = ["매장안내", "스파", "이벤트"];
+    const { modalSwitch } = this.state;
+    const { handelModal } = this;
+
     return (
       <div className="nav">
         <div className="lushLogo">
@@ -43,24 +43,24 @@ class Nav extends Component {
         </ul>
         <ul className="clickButton">
           <li className="dropUser">
-            <Link onClick={this.openModal} className="dropLink" to="#">
-              <img src={Config.search} alt="search" />
+            <Link onClick={handelModal} className="dropLink" to="#">
+              <img src={Config.SEARCH} alt="search" />
             </Link>
           </li>
           <li className="dropUser">
             <Link className="dropLink" to="/cart">
-              <img src={Config.cart} alt="cart" />
+              <img src={Config.CART} alt="cart" />
               <span className="cartNumber">0</span>
             </Link>
           </li>
           <li className="dropUser">
             <Link className="dropLink" to="/login">
-              <img src={Config.user} alt="user" />
+              <img src={Config.USER} alt="user" />
             </Link>
             <DropUserMenu />
           </li>
         </ul>
-        <Modal open={this.state.modalOpen} close={this.closeModal}>
+        <Modal open={modalSwitch} close={handelModal}>
           <input
             className="modalInput"
             type="text"

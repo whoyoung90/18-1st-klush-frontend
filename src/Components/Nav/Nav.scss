@@ -1,18 +1,12 @@
 @import "../../Styles/common.scss";
 
-// a,
-// .lushLogo {
-//   color: $lushWhite;
-//   text-decoration: none;
-// }
-
 %link-decoration {
   color: $lushWhite;
   text-decoration: none;
 }
 
 .nav {
-  z-index: 1000px;
+  z-index: 1000;
   width: 100%;
   height: 100px;
   margin: 0 auto;

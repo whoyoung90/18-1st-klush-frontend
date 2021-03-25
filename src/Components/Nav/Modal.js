@@ -6,15 +6,15 @@ class Modal extends Component {
     const { open, close, children } = this.props;
 
     return (
-      <div className={open ? "openModal modal" : "modal"}>
-        {open ? (
+      <div className={open && "openModal modal"}>
+        {open && (
           <section>
             <button className="closeBtn" onClick={close}>
               &times;
             </button>
             <main className="innerText">{children}</main>
           </section>
-        ) : null}
+        )}
       </div>
     );
   }
