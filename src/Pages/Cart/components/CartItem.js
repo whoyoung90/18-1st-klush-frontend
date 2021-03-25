@@ -1,43 +1,43 @@
 import React, { Component } from "react";
 import "./CartItem.scss";
+
 class CartItem extends Component {
   render() {
     const {
-      item,
-      category,
-      id,
-      img,
-      name,
-      price,
-      quantity,
+      key,
+      rowSpan,
       cartList,
-      isChecked,
+      handleItemCounts,
       handleIncrement,
       handleDecrement,
       handleSelect,
     } = this.props;
 
     return (
-      <tr>
+      <tr key={key} className="tableRow">
         <td className="tableCheck">
           <input
             type="checkbox"
             className="checkbox"
-            onClick={e => handleSelect(cartList, e)}
+            onClick={() => handleSelect(cartList)}
+            id="checkbox"
+            checked={cartList.isChecked}
           />
-          <label for="checkbox" className="checked on "></label>
+          <label id={cartList.id} for="checkbox" className="checked ">
+            <span></span>
+          </label>
         </td>
 
         <td className="productInfo">
           <span className="productPicture">
             <div>
-              <img src={img} />
+              <img className="productImg" src={cartList.img} />
             </div>
           </span>
           <div className="productItem">
             <div className="productText">
-              <p className="itemName">{name} </p>
-              <p className="itemCategory">{category} </p>
+              <p className="itemName">{cartList.name} </p>
+              <p className="itemCategory">{cartList.category} </p>
             </div>
           </div>
         </td>
@@ -51,7 +51,12 @@ class CartItem extends Component {
               >
                 -
               </button>
-              <input className="quantityCount" value={quantity} />
+              <input
+                className="quantityCount"
+                name={cartList.id}
+                value={cartList.quantity}
+                onChange={handleItemCounts}
+              />
 
               <button
                 className="btnIncrease"
@@ -65,14 +70,18 @@ class CartItem extends Component {
         </td>
         <td className="itemPrice">
           <strong className="price">
-            ￦ {Math.floor(price).toLocaleString()}
+            ￦ {Math.floor(cartList.price).toLocaleString()}
           </strong>
         </td>
         <td className="itemBenefits"></td>
         <td className="itemTotalPrice">
-          ￦ {Math.floor(price * quantity).toLocaleString()}
+          ￦ {Math.floor(cartList.price * cartList.quantity).toLocaleString()}
         </td>
-        <td></td>
+        {rowSpan && (
+          <td className="itemShipPrice" rowSpan={cartList.length}>
+            기본배송비
+          </td>
+        )}
       </tr>
     );
   }
