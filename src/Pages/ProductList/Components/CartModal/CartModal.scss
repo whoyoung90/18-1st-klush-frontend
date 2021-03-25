@@ -1,0 +1,119 @@
+@import "../../../../Styles/common.scss";
+
+.cartMain {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 450px;
+  background-color: $lushWhite;
+  padding: 40px;
+
+  .cartMainHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .headerTitle {
+      font-size: 27px;
+      font-weight: 800;
+    }
+
+    .closeIcon {
+      font-size: 20px;
+      opacity: 0.5;
+    }
+  }
+  .headerBorder {
+    margin-bottom: 30px;
+    border-top: 1px solid $lushBlack;
+  }
+
+  .cartMainContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .cartMainImg {
+      width: 100px;
+      height: 100px;
+      margin-right: 40px;
+    }
+
+    .mainContent {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .contentHeader {
+        display: flex;
+        flex-direction: column;
+
+        .contentName {
+          margin-bottom: 10px;
+          font-size: 20px;
+          color: rgb(63, 63, 63);
+        }
+
+        .contentHash {
+          margin-bottom: 18px;
+          font-size: 14px;
+          color: $elseGrey;
+        }
+      }
+
+      .mainBorder {
+        width: 100%;
+        margin-bottom: 20px;
+        border-top: 1px solid $elseGrey;
+      }
+
+      .countContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 100px;
+
+        .cartCountBox {
+          display: flex;
+          border: 0.5px solid rgb(211, 211, 211);
+
+          .btnsElement {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 35px;
+            padding: 1px 3px;
+            font-size: 15px;
+            border: none;
+            background-color: white;
+          }
+
+          .plus,
+          .minus {
+            width: 40px;
+          }
+
+          .countNumScreen {
+            width: 55px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .footerBorder {
+    margin-bottom: 15px;
+    border-top: 1px solid $elseGrey;
+  }
+
+  .cartFooter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
