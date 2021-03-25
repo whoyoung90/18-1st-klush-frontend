@@ -1,9 +1,15 @@
 @import "../../../Styles/common.scss";
 
 .cartTable {
-  thead {
+  .cartTableHead {
     .cartTableRow {
-      .cartTableCheck {
+      .cartTableCheck,
+      .productDetail,
+      .productCount,
+      .productPrice,
+      .productBenefits,
+      .productTotalPrice,
+      .productShipPrice {
         padding: 15px 0;
         color: #969896;
         font-weight: bold;
@@ -15,34 +21,13 @@
       .formCheck {
         display: absolute;
         padding: 10px 18px;
-        input[type="checkbox"] {
-          display: none;
-          padding-left: 23px;
-          background-repeat: no-repeat;
-        }
-        input[type="checkbox"] + label {
-          display: inline-block;
+
+        .allCheck {
           width: 18px;
           height: 18px;
-          border: 1px solid #bcbcbc;
-        }
-        input[type="checkbox"]:checked + label {
-          background: url("./check.png");
-        }
-
-        .allCheckLabel:hover {
-          background: url("./checkhover.png");
-        }
-        .allCheckLabel {
-          text-indent: -9999px;
-        }
-        .allCheckLabel {
-          position: relative;
-          cursor: pointer;
-          text-indent: -9999px;
+          border: 1px rgba(0, 0, 0, 0.1);
         }
       }
-
       .productDetail {
         width: 440px;
       }

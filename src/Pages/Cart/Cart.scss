@@ -1,7 +1,5 @@
 @import "../../Styles/common.scss";
-img {
-  width: 20px;
-}
+
 .cart {
   .container {
     margin: 160px auto 0;
@@ -12,7 +10,7 @@ img {
         padding: 40px 0 100px;
         text-align: center;
 
-        h2 {
+        .stepTitle {
           font-size: 44px;
           font-weight: 800;
         }
@@ -21,8 +19,11 @@ img {
         display: flex;
         justify-content: center;
         padding: 40px 0 0;
-
-        span {
+        .this,
+        .stepIcon,
+        .order,
+        .stepIcon,
+        .end {
           font-weight: bold;
           font-size: 17px;
           color: $elseGrey;
@@ -49,21 +50,29 @@ img {
     text-align: center;
     font-size: 18px;
 
-    p {
+    .calcInfo,
+    .detailCount,
+    .delivery,
+    .resultSign,
+    .TotalPriceWon {
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
       background-color: #f2f2f2;
-      padding: 13px 0;
+      padding: 19px 0;
 
       .calcDetail,
       .calcDelivery,
+      .detailPrice,
       .calcTotal {
         display: flex;
         align-items: center;
         margin-right: 10px;
-        em {
+
+        .totalPriceResult,
+        .detailPrice,
+        .deliveryPay {
           font-weight: bold;
         }
       }
@@ -80,7 +89,7 @@ img {
         margin: 0 20px;
         font-weight: bold;
       }
-      .Delivery {
+      .delivery {
         margin-right: 23px;
       }
       .calcTotal {

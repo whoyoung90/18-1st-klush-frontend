@@ -63,8 +63,6 @@ class Cart extends Component {
       this.setState({
         cartList: cartList.filter(check => !check.isChecked),
       });
-
-      //      JSON.stringify(cartList.map(item => ({ ...item, isChecked: true })));
     }
   };
 
@@ -103,11 +101,6 @@ class Cart extends Component {
   handleItemCounts = e => {
     const { cartList } = this.state;
     const insertNum = /^[0-9]*$/;
-    //const obj = cartList.find(item=>item.id===Number(e.target.name))
-    // if (Number(e.target.value) > obj.quantity) {
-    //   alert('선택 가능한 수량을 초과했습니다');
-    //   return;
-    // }
     const idx = cartList.findIndex(item => item.id === Number(e.target.name));
     const tmpArr = [...cartList];
     if (!insertNum.test(e.target.value)) return;
@@ -169,7 +162,7 @@ class Cart extends Component {
           <div className="container">
             <div className="content">
               <div className="stepTop">
-                <h2>SHOPPING CART</h2>
+                <h2 className="stepTitle">SHOPPING CART</h2>
                 <div className="stepStage">
                   <span className="this">Cart</span>
                   <span className="stepIcon">></span>
@@ -196,23 +189,29 @@ class Cart extends Component {
               </div>
             </form>
             <div className="calcAmount">
-              <p>
+              <p className="calcInfo">
                 <span className="calcDetail">
                   <p className="detailCount">
                     총 <p>{checkItemCount}</p> 개의 금액
                   </p>
 
-                  <em> ￦ {Math.floor(payFee).toLocaleString()}</em>
+                  <em className="detailPrice">
+                    ￦ {Math.floor(payFee).toLocaleString()}
+                  </em>
                 </span>
                 <span className="addIcon">+</span>
                 <span className="calcDelivery">
-                  <p className="Delivery">배송비 </p>
-                  <em> {Math.floor(shipPrice).toLocaleString()}</em>
+                  <p className="delivery">배송비 </p>
+                  <em className="deliveryPay">
+                    {Math.floor(shipPrice).toLocaleString()}
+                  </em>
                 </span>
                 <span className="calcTotal">
                   <p className="resultSign">=</p>
                   <p className="TotalPriceWon">총 주문금액 </p>
-                  <em> ￦ {Math.floor(payFee).toLocaleString()}</em>
+                  <em className="totalPriceResult">
+                    ￦ {Math.floor(payFee).toLocaleString()}
+                  </em>
                 </span>
               </p>
             </div>

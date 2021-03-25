@@ -17,7 +17,7 @@ class CartList extends Component {
 
     return (
       <table className="cartTable">
-        <thead>
+        <thead className="cartTableHead">
           <tr className="cartTableRow">
             <th className="cartTableCheck">
               <span className="formCheck">

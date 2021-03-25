@@ -31,7 +31,7 @@ class CartItem extends Component {
         <td className="productInfo">
           <span className="productPicture">
             <div>
-              <img src={cartList.img} />
+              <img className="productImg" src={cartList.img} />
             </div>
           </span>
           <div className="productItem">
@@ -79,7 +79,7 @@ class CartItem extends Component {
         </td>
         {rowSpan && (
           <td className="itemShipPrice" rowSpan={cartList.length}>
-            기본배송비 (택배-선결제)
+            기본배송비
           </td>
         )}
       </tr>
