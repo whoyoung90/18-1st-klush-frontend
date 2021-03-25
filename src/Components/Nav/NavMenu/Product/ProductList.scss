@@ -7,9 +7,9 @@
     padding-top: 20px;
 
     .title {
-      color: $lushWhite;
       font-size: 18px;
       font-weight: bold;
+      @extend %link-decoration;
     }
 
     .items {
@@ -17,6 +17,7 @@
       margin: 20px;
       color: #aeaeae;
       font-size: 14px;
+      text-decoration: none;
     }
   }
 }

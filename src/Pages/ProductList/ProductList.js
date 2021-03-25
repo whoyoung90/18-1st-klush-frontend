@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 
+import Nav from "../../Components/Nav/Nav";
 import ImageContainer from "./Components/ImageContainer/ImageContainer";
 import ProductContainer from "./Components/ProductContainer/ProductContainer";
 import GeneralModal from "./Components/GeneralModal/GeneralModal";
 import CartModal from "./Components/CartModal/CartModal";
+import Footer from "../../Components/Footer/Footer";
 
 import "./ProductList.scss";
 
@@ -187,42 +189,46 @@ class ProductList extends Component {
     } = this.state;
 
     return (
-      <div className="productListPage">
-        {showGeneralModal && (
-          <GeneralModal clickClose={this.clickClose} text={dataSetName} />
-        )}
-        {showCartModal && Number(productId) && (
-          <CartModal
-            productInfo={
-              products.filter(
-                product => product.product_id === Number(productId)
-              )[0]
-            }
-            productId={productId}
-            cartTotalPrice={cartTotalPrice}
-            cartCountNum={cartCountNum}
-            plusBtn={this.plusBtn}
-            minusBtn={this.minusBtn}
-            onChangeCountNum={this.onChangeCountNum}
-            checkEnter={this.checkEnter}
-            clickClose={this.clickClose}
-            putOnCart={this.putOnCart}
-          />
-        )}
-        <ImageContainer
-          categoryName={categoryName}
-          categoryDesc={categoryDesc}
-        />
-        {products && (
-          <ProductContainer
+      <>
+        <Nav />
+        <div className="productListPage">
+          {showGeneralModal && (
+            <GeneralModal clickClose={this.clickClose} text={dataSetName} />
+          )}
+          {showCartModal && Number(productId) && (
+            <CartModal
+              productInfo={
+                products.filter(
+                  product => product.product_id === Number(productId)
+                )[0]
+              }
+              productId={productId}
+              cartTotalPrice={cartTotalPrice}
+              cartCountNum={cartCountNum}
+              plusBtn={this.plusBtn}
+              minusBtn={this.minusBtn}
+              onChangeCountNum={this.onChangeCountNum}
+              checkEnter={this.checkEnter}
+              clickClose={this.clickClose}
+              putOnCart={this.putOnCart}
+            />
+          )}
+          <ImageContainer
             categoryName={categoryName}
-            subCategoryList={subCategoryList}
-            products={products}
-            clickModal={this.clickModal}
-            checkSelect={this.checkSelect}
+            categoryDesc={categoryDesc}
           />
-        )}
-      </div>
+          {products && (
+            <ProductContainer
+              categoryName={categoryName}
+              subCategoryList={subCategoryList}
+              products={products}
+              clickModal={this.clickModal}
+              checkSelect={this.checkSelect}
+            />
+          )}
+        </div>
+        <Footer />
+      </>
     );
   }
 }

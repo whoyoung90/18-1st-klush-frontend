@@ -1,14 +1,14 @@
 @import "../../Styles/common.scss";
 
-@mixin aTag {
-  background-color: $lushBlack;
+%footer-decoration {
   color: $lushWhite;
   text-decoration: none;
   list-style: none;
 }
 
 .footerAll {
-  @include aTag;
+  background-color: $lushBlack;
+  @extend %footer-decoration;
 
   .icons {
     width: 100%;
@@ -25,7 +25,7 @@
       font-size: 30px;
       font-family: $lushFont;
       padding-bottom: 16px;
-      @include aTag;
+      @extend %footer-decoration;
     }
 
     .logoInfo {
@@ -50,8 +50,8 @@
         font-size: 14px;
         font-weight: bold;
 
-        .footerMenu {
-          @include aTag;
+        .footerLinkBtn {
+          @extend %footer-decoration;
         }
       }
     }

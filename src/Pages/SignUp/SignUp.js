@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import DaumPostcode from "react-daum-postcode";
+import Nav from "../../Components/Nav/Nav";
+import Footer from "../../Components/Footer/Footer";
 import "./SignUp.scss";
 
 const WIDTH = 595;
@@ -138,7 +140,7 @@ class SignUp extends Component {
 
   signUpFinish = () => {
     const { emailValue, passwordValue, nameValue, phoneVlaue } = this.state;
-    fetch("http://10.58.3.238:8000/user/signup", {
+    fetch("/", {
       method: "POST",
       body: JSON.stringify({
         email: emailValue,
@@ -171,162 +173,167 @@ class SignUp extends Component {
     };
     const { handleInputChange, handleOpenPost, onCheck, handleAddress } = this;
     return (
-      <div className="signUp">
-        <form className="join" method="post">
-          <div className="joinStep">
-            <div className="stepTitle">
-              <h2>JOIN US</h2>
-            </div>
-            <div className="stepStage">
-              <span className="stepOne">약관동의</span>
-              <span className="stepIcon">></span>
-              <span className="stepTwo">정보입력</span>
-              <span className="stepIcon">></span>
-              <span className="stepThree">가입완료</span>
-            </div>
-          </div>
-          <div className="tableTitle">
-            <h3>기본정보</h3>
-            <div className="titleRight">
-              <div className="token">■</div>
-              <div className="titleInfo">
-                표시는 반드시 입력하셔야 하는 항목입니다.
+      <>
+        <Nav />
+
+        <div className="signUp">
+          <form className="join" method="post">
+            <div className="joinStep">
+              <div className="stepTitle">
+                <h2>JOIN US</h2>
+              </div>
+              <div className="stepStage">
+                <span className="stepOne">약관동의</span>
+                <span className="stepIcon">></span>
+                <span className="stepTwo">정보입력</span>
+                <span className="stepIcon">></span>
+                <span className="stepThree">가입완료</span>
               </div>
             </div>
-          </div>
-          <div className="tableSignUp">
-            <table>
-              <colgroup>
-                <col width="25%" />
-                <col width="75%" />
-              </colgroup>
-              <tbody>
-                <tr>
-                  <th className="tableRow ">
-                    <div className="token">■</div>
-                    <div>이메일</div>
-                  </th>
-                  <td>
-                    <div className="textFieldEmail">
-                      <input
-                        type="text"
-                        className="textEmail"
-                        name="emailValue"
-                        onChange={handleInputChange}
-                      />
-
-                      <select className="email">
-                        <option value="insert" selected="selected">
-                          직접입력
-                        </option>
-                        {EMAIL_LIST.map(name => {
-                          return <option value="naver">{name}</option>;
-                        })}
-                      </select>
-                      <input type="checkBox" className="checkBox" />
-                      <label for="checkBox" className="label">
-                        정보/이벤트 메일 수신에 동의합니다.
-                      </label>
-                    </div>
-                  </td>
-                </tr>
-                {TABLE_ROW.data.map(data => {
-                  return (
-                    <tr>
-                      <th className="tableRow">
-                        <div className="token">{data.token}</div>
-                        <div> {data.name}</div>
-                      </th>
-                      <td>
-                        <div className="textField">
-                          <input
-                            type={data.type}
-                            className="text"
-                            name={data.text}
-                            onChange={handleInputChange}
-                          />
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
-                <tr>
-                  <th className="tableRow">
-                    <div className="token">■</div>
-                    <div>휴대폰번호</div>
-                  </th>
-                  <td>
-                    <div className="textFieldPhone">
-                      <input
-                        type="text"
-                        name="phoneVlaue"
-                        className="text"
-                        onChange={handleInputChange}
-                      ></input>
-                      <input type="checkBox" className="checkBox" />
-                      <label for="checkBox" className="label">
-                        정보/이벤트 메일 수신에 동의합니다.
-                      </label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th className="tableRow">
-                    <div className="token"></div>
-                    <div>주소</div>
-                  </th>
-                  <td>
-                    <div className="textFieldAddress">
-                      <div className="textFieldAddressTop">
+            <div className="tableTitle">
+              <h3>기본정보</h3>
+              <div className="titleRight">
+                <div className="token">■</div>
+                <div className="titleInfo">
+                  표시는 반드시 입력하셔야 하는 항목입니다.
+                </div>
+              </div>
+            </div>
+            <div className="tableSignUp">
+              <table>
+                <colgroup>
+                  <col width="25%" />
+                  <col width="75%" />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th className="tableRow ">
+                      <div className="token">■</div>
+                      <div>이메일</div>
+                    </th>
+                    <td>
+                      <div className="textFieldEmail">
                         <input
-                          className="inputAddress"
                           type="text"
-                          value={zoneCode}
+                          className="textEmail"
+                          name="emailValue"
+                          onChange={handleInputChange}
                         />
-                        <input
-                          type="button"
-                          className="inputAddressButton"
-                          onClick={handleOpenPost}
-                          value="우편번호 검색"
-                        />
+
+                        <select className="email">
+                          <option value="insert" selected="selected">
+                            직접입력
+                          </option>
+                          {EMAIL_LIST.map(name => {
+                            return <option value="naver">{name}</option>;
+                          })}
+                        </select>
+                        <input type="checkBox" className="checkBox" />
+                        <label for="checkBox" className="label">
+                          정보/이벤트 메일 수신에 동의합니다.
+                        </label>
                       </div>
-                      <div className="textFieldAddressBottom">
-                        <div>
+                    </td>
+                  </tr>
+                  {TABLE_ROW.data.map(data => {
+                    return (
+                      <tr>
+                        <th className="tableRow">
+                          <div className="token">{data.token}</div>
+                          <div> {data.name}</div>
+                        </th>
+                        <td>
+                          <div className="textField">
+                            <input
+                              type={data.type}
+                              className="text"
+                              name={data.text}
+                              onChange={handleInputChange}
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                  <tr>
+                    <th className="tableRow">
+                      <div className="token">■</div>
+                      <div>휴대폰번호</div>
+                    </th>
+                    <td>
+                      <div className="textFieldPhone">
+                        <input
+                          type="text"
+                          name="phoneVlaue"
+                          className="text"
+                          onChange={handleInputChange}
+                        ></input>
+                        <input type="checkBox" className="checkBox" />
+                        <label for="checkBox" className="label">
+                          정보/이벤트 메일 수신에 동의합니다.
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th className="tableRow">
+                      <div className="token"></div>
+                      <div>주소</div>
+                    </th>
+                    <td>
+                      <div className="textFieldAddress">
+                        <div className="textFieldAddressTop">
                           <input
-                            className="inputAddressBottom"
+                            className="inputAddress"
                             type="text"
-                            value={fullAddress}
-                            onClick={handleInputChange}
+                            value={zoneCode}
+                          />
+                          <input
+                            type="button"
+                            className="inputAddressButton"
+                            onClick={handleOpenPost}
+                            value="우편번호 검색"
                           />
                         </div>
-                        <div className="addressDetail">
-                          <input type="text" className="inputAddressBottom" />
+                        <div className="textFieldAddressBottom">
+                          <div>
+                            <input
+                              className="inputAddressBottom"
+                              type="text"
+                              value={fullAddress}
+                              onClick={handleInputChange}
+                            />
+                          </div>
+                          <div className="addressDetail">
+                            <input type="text" className="inputAddressBottom" />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </form>
+          <div className="dividerBottom"></div>
+          <div className="btn">
+            <button className="btnSignUp" onClick={onCheck}>
+              회원가입
+            </button>
+            {isDaumPost && (
+              <DaumPostcode
+                onComplete={handleAddress}
+                autoClose
+                width={WIDTH}
+                height={HEIGHT}
+                style={modalStyle}
+                isDaumPost={isDaumPost}
+              />
+            )}
           </div>
-        </form>
-        <div className="dividerBottom"></div>
-        <div className="btn">
-          <button className="btnSignUp" onClick={onCheck}>
-            회원가입
-          </button>
-          {isDaumPost && (
-            <DaumPostcode
-              onComplete={handleAddress}
-              autoClose
-              width={WIDTH}
-              height={HEIGHT}
-              style={modalStyle}
-              isDaumPost={isDaumPost}
-            />
-          )}
         </div>
-      </div>
+        <Footer />
+      </>
     );
   }
 }
