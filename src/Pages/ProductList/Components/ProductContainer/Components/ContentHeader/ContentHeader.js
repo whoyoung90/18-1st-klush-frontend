@@ -5,7 +5,7 @@ import "./ContentHeader.scss";
 
 class ContentHeader extends Component {
   render() {
-    const { categoryName, subCategoryList } = this.props;
+    const { categoryName, subCategoryList, checkSelect } = this.props;
     return (
       <div>
         <header className="headerContent">
@@ -15,14 +15,14 @@ class ContentHeader extends Component {
               name="filter"
               id="radio"
               className="productShowFilter"
-              onChange={this.props.checkSelect}
+              onChange={checkSelect}
             >
-              <option value="recommendation">추천순</option>
-              <option value="bestSeller">판매인기순</option>
-              <option value="lowerPrice">낮은가격순</option>
-              <option value="higherPrice">높은가격순</option>
-              <option value="reviewCount">리뷰많은순</option>
-              <option value="isNew">신제품순</option>
+              <option value="" defaultValue>
+                정렬기준을 선택해주세요
+              </option>
+              <option value="?is_new=True">신제품순</option>
+              <option value="?sort=-price">낮은가격순</option>
+              <option value="?sort=price">높은가격순</option>
             </select>
           </div>
         </header>

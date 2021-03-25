@@ -47,7 +47,7 @@ class Login extends Component {
         if (res.token) {
           localStorage.setItem("token", res.token);
           alert("로그인 성공");
-          this.props.history.push("/signup");
+          this.props.history.push("/main");
         } else {
           alert("로그인 실패");
         }

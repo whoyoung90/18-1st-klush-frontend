@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignUp from "./Pages/SignUp/SignUp";
-import Spa from "./Pages/Spa/Spa";
 import ProductList from "./Pages/ProductList/ProductList";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import Main from "./Pages/Main/Main";
@@ -19,7 +18,6 @@ class Routes extends Component {
           <Route exact path="/product/:id" component={ProductDetail} />
           <Route exact path="/products" component={ProductList} />
           <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/spa" component={Spa} />
         </Switch>
       </Router>
     );
