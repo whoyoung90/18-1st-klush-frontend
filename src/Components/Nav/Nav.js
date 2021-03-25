@@ -25,7 +25,6 @@ class Nav extends Component {
 
   render() {
     const NAV_MENU = ["매장안내", "스파", "이벤트"];
-
     return (
       <div className="nav">
         <div className="lushLogo">
@@ -64,8 +63,8 @@ class Nav extends Component {
         <Modal open={this.state.modalOpen} close={this.closeModal}>
           <input
             className="modalInput"
-            placeholder="오늘은 거품입욕 하는 날?"
             type="text"
+            placeholder="오늘은 거품입욕 하는 날?"
           />
         </Modal>
       </div>

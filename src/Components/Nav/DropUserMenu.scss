@@ -1,5 +1,15 @@
 @import "./Nav.scss";
 
+%hover-decoration {
+  color: $lushWhite;
+  text-decoration: none;
+}
+
+%hoverOut-decoration {
+  color: $lushBlack;
+  text-decoration: none;
+}
+
 .dropUser {
   position: relative;
 
@@ -15,11 +25,6 @@
     right: 0;
     width: 200px;
 
-    .userLink {
-      display: block;
-      color: $lushBlack;
-    }
-
     .userList {
       padding: 0 10px;
       text-align: center;
@@ -30,9 +35,13 @@
       &:hover {
         background-color: $lushBlack;
         .userLink {
-          color: $lushWhite;
+          @extend %hover-decoration;
         }
       }
+    }
+    .userLink {
+      display: block;
+      @extend %hoverOut-decoration;
     }
   }
 }

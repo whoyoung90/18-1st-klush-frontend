@@ -1,4 +1,13 @@
 .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.6);
+
   section {
     width: 50%;
     margin: 0 auto;
@@ -23,26 +32,11 @@
       border-bottom: 1px solid #dee2e6;
     }
   }
-  .openModal {
-    display: flex;
-    align-items: center;
-    animation: modal-bg-show 0.3s;
-  }
 }
 .modal.openModal {
   display: flex;
   align-items: center;
   animation: modal-bg-show 0.3s;
-}
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 99;
-  background-color: rgba(0, 0, 0, 0.6);
 }
 
 @keyframes modal-show {
