@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 
+import Nav from "../../Components/Nav/Nav";
 import ImageContainer from "./Components/ImageContainer/ImageContainer";
 import ProductContainer from "./Components/ProductContainer/ProductContainer";
 import GeneralModal from "./Components/GeneralModal/GeneralModal";
 import CartModal from "./Components/CartModal/CartModal";
+import Footer from "../../Components/Footer/Footer";
 
 import "./ProductList.scss";
 
@@ -17,15 +19,15 @@ class ProductList extends Component {
       showCartModal: false,
       dataSetName: "",
       productId: "",
-      cartList: [],
       cartProductPrice: "",
       cartTotalPrice: "",
       cartCountNum: "1",
+      queryStr: "",
     };
   }
 
   componentDidMount() {
-    fetch("data/listData.json")
+    fetch("http://10.58.0.66:8000/product")
       .then(res => res.json())
       .then(result =>
         this.setState({
@@ -50,9 +52,9 @@ class ProductList extends Component {
         [modal]: !this.state[modal],
         cartProductPrice:
           modal === "showCartModal"
-            ? this.state.listData.products.filter(
-                product => product.id === idNum
-              )[0].productPrice
+            ? this.state.listData.product_list_data.filter(
+                product => product.product_id === idNum
+              )[0].price
             : "",
       },
       () => {
@@ -81,18 +83,19 @@ class ProductList extends Component {
   };
 
   putOnCart = () => {
+    let token = localStorage.getItem("token");
+    fetch("http://10.58.0.66:8000/order/cart/2", {
+      method: "POST",
+      headers: {
+        Authorization: token,
+      },
+      body: JSON.stringify({
+        quantity: this.state.cartCountNum,
+      }),
+    });
+
     this.setState(
       {
-        cartList: [
-          ...this.state.cartList,
-          ...[
-            {
-              id: this.state.productId,
-              count: this.state.cartCountNum,
-              totalPrice: this.state.cartTotalPrice,
-            },
-          ],
-        ],
         cartCountNum: "1",
       },
       () => {
@@ -101,10 +104,19 @@ class ProductList extends Component {
     );
   };
 
+  //contentHeader select box
+  checkSelect = e => {
+    this.setState({
+      queryStr: e.target.value,
+    });
+  };
+
   //for Count Box productDetail의 countBox와 중복된 코드
-  printPrice = a => {
-    a = a.toLocaleString();
-    return a;
+  printPrice = priceStr => {
+    let priceList = priceStr.split("");
+    let dotIndex = priceList.indexOf(".");
+    priceStr = priceList.splice(0, dotIndex).join("");
+    return priceStr.toLocaleString();
   };
 
   changePrice = () => {
@@ -163,12 +175,9 @@ class ProductList extends Component {
   };
 
   render() {
-    const {
-      categoryName,
-      categoryDesc,
-      subCategoryList,
-      products,
-    } = this.state.listData;
+    console.log(this.state.listData);
+    const products = this.state.listData.product_list_data;
+    const { categoryName, categoryDesc, subCategoryList } = this.state.listData;
 
     const {
       showGeneralModal,
@@ -180,43 +189,46 @@ class ProductList extends Component {
     } = this.state;
 
     return (
-      <div className="productListPage">
-        {showGeneralModal && (
-          <GeneralModal
-            productInfo={products}
-            clickClose={this.clickClose}
-            text={dataSetName}
-          />
-        )}
-        {showCartModal && Number(productId) && (
-          <CartModal
-            productInfo={
-              products.filter(product => product.id === Number(productId))[0]
-            }
-            productId={productId}
-            cartTotalPrice={cartTotalPrice}
-            cartCountNum={cartCountNum}
-            plusBtn={this.plusBtn}
-            minusBtn={this.minusBtn}
-            onChangeCountNum={this.onChangeCountNum}
-            checkEnter={this.checkEnter}
-            clickClose={this.clickClose}
-            putOnCart={this.putOnCart}
-          />
-        )}
-        <ImageContainer
-          categoryName={categoryName}
-          categoryDesc={categoryDesc}
-        />
-        {products && (
-          <ProductContainer
+      <>
+        <Nav />
+        <div className="productListPage">
+          {showGeneralModal && (
+            <GeneralModal clickClose={this.clickClose} text={dataSetName} />
+          )}
+          {showCartModal && Number(productId) && (
+            <CartModal
+              productInfo={
+                products.filter(
+                  product => product.product_id === Number(productId)
+                )[0]
+              }
+              productId={productId}
+              cartTotalPrice={cartTotalPrice}
+              cartCountNum={cartCountNum}
+              plusBtn={this.plusBtn}
+              minusBtn={this.minusBtn}
+              onChangeCountNum={this.onChangeCountNum}
+              checkEnter={this.checkEnter}
+              clickClose={this.clickClose}
+              putOnCart={this.putOnCart}
+            />
+          )}
+          <ImageContainer
             categoryName={categoryName}
-            subCategoryList={subCategoryList}
-            products={products}
-            clickModal={this.clickModal}
+            categoryDesc={categoryDesc}
           />
-        )}
-      </div>
+          {products && (
+            <ProductContainer
+              categoryName={categoryName}
+              subCategoryList={subCategoryList}
+              products={products}
+              clickModal={this.clickModal}
+              checkSelect={this.checkSelect}
+            />
+          )}
+        </div>
+        <Footer />
+      </>
     );
   }
 }

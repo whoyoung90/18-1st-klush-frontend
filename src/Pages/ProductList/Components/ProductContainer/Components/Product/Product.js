@@ -7,12 +7,36 @@ import ProductHashTag from "./Components/ProductHashTag/ProductHashTag";
 import "./Product.scss";
 
 class Product extends Component {
+  state = {
+    labelList: [],
+  };
+
+  componentDidMount() {
+    this.setState({
+      labelList: this.getLabelList(),
+    });
+  }
+
+  getLabelList = () => {
+    let labels = [];
+    if (this.props.productInfo.is_new) {
+      labels.push("NEW");
+    }
+    if (this.props.productInfo.is_vegan) {
+      labels.push("VEGAN");
+    }
+    if (this.props.productInfo.is_soldout) {
+      labels.push("품절");
+    }
+    return labels;
+  };
+
   goToDetailPage = () => {
-    this.props.history.push(`/product_detail/${this.props.productInfo.id}`);
+    this.props.history.push(`/product/${this.props.productInfo.product_id}`);
   };
 
   printPrice = () => {
-    let result = this.props.productInfo.productPrice.split("").reverse();
+    let result = this.props.productInfo.price.split("").reverse();
     if (result.length > 3) {
       for (let i = 0; i < result.length; i++) {
         if ((i + 1) % 3 === 0 && i !== result.length - 1) {
@@ -24,50 +48,51 @@ class Product extends Component {
   };
 
   render() {
+    const { labelList } = this.state;
     const { productInfo, clickModal } = this.props;
     return (
-      <div className="productListContainer" onClick={this.goToDetailPage}>
-        <div className="productImgContainer">
-          <img
-            className={
-              productInfo.productLabel.includes("품절")
-                ? "disable"
-                : "productImg"
-            }
-            src={productInfo.productImg}
-            alt={productInfo.productName}
-          />
-          <div
-            className={
-              productInfo.productLabel.includes("품절")
-                ? "noneHoverIcons"
-                : "hoverIcons"
-            }
-          >
-            {productInfo.id && (
-              <BiShoppingBag
-                onClick={e =>
-                  clickModal(e, "showCartModal", productInfo.id, "장바구니")
-                }
-              />
-            )}
+      labelList && (
+        <div className="productListContainer" onClick={this.goToDetailPage}>
+          <div className="productImgContainer">
+            <img
+              className={productInfo.is_soldout ? "disable" : "productImg"}
+              src={productInfo.image_url[0]}
+              alt={productInfo.name}
+            />
+            <div
+              className={
+                productInfo.is_soldout ? "noneHoverIcons" : "hoverIcons"
+              }
+            >
+              {productInfo.product_id && (
+                <BiShoppingBag
+                  onClick={e =>
+                    clickModal(
+                      e,
+                      "showCartModal",
+                      productInfo.product_id,
+                      "장바구니"
+                    )
+                  }
+                />
+              )}
+            </div>
           </div>
-        </div>
-        <div className="labelColumn">
-          {productInfo.productLabel &&
-            productInfo.productLabel.map((label, idx) => {
+          <div className="labelColumn">
+            {labelList.map((label, idx) => {
               return <ProductLabel key={idx + 5} label={label} />;
             })}
+          </div>
+          <div className="nameColumn">{productInfo.name}</div>
+          <div className="hashTagColumn">
+            {productInfo.product_label &&
+              productInfo.product_label.map((hashTag, idx) => {
+                return <ProductHashTag key={idx} hashTag={hashTag} />;
+              })}
+          </div>
+          <div className="productPrice">{this.printPrice()} &#8361;</div>
         </div>
-        <div className="nameColumn">{productInfo.productName}</div>
-        <div className="hashTagColumn">
-          {productInfo.productHashTag &&
-            productInfo.productHashTag.map((hashTag, idx) => {
-              return <ProductHashTag key={idx} hashTag={hashTag} />;
-            })}
-        </div>
-        <div className="productPrice">{this.printPrice()} &#8361;</div>
-      </div>
+      )
     );
   }
 }
