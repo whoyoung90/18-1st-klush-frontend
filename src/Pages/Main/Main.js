@@ -36,7 +36,7 @@ class Main extends Component {
           <div className="main">
             <MainSlide />
             <div className="itemWrap">
-              <h2>나만 알고 싶은 KLUSH</h2>
+              <h2>신상품을 부탁해 KLUSH!</h2>
               <Slider className="myItem" {...settings}>
                 {mainList.map((el, idx) => {
                   return (

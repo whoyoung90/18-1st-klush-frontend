@@ -1,7 +1,7 @@
 {
   "data": [
     {
-      "title": "베스트",
+      "title": { "path": "#", "titleName": "베스트" },
       "items": [
         { "path": "#", "value": "주간베스트" },
         { "path": "#", "value": "별다섯개후기" },
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "title": "신제품",
+      "title": { "path": "#", "titleName": "신제품" },
       "items": [
         { "path": "#", "value": "디스커버리키트" },
         { "path": "#", "value": "보디스프레이" },
@@ -24,9 +24,9 @@
       ]
     },
     {
-      "title": "배쓰",
+      "title": { "path": "/products", "titleName": "배쓰" },
       "items": [
-        { "path": "/product", "value": "배쓰밤" },
+        { "path": "#", "value": "배쓰밤" },
         { "path": "#", "value": "버블바" },
         { "path": "#", "value": "배쓰오일" },
         { "path": "#", "value": "펀" },
@@ -34,7 +34,7 @@
       ]
     },
     {
-      "title": "샤워",
+      "title": { "path": "#", "titleName": "샤워" },
       "items": [
         { "path": "#", "value": "솝" },
         { "path": "#", "value": "샤워젤&젤리" },
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "title": "보디",
+      "title": { "path": "#", "titleName": "보디" },
       "items": [
         { "path": "#", "value": "클렌저" },
         { "path": "#", "value": "로션" },
@@ -57,7 +57,7 @@
       ]
     },
     {
-      "title": "페이스",
+      "title": { "path": "#", "titleName": "페이스" },
       "items": [
         { "path": "#", "value": "클렌저" },
         { "path": "#", "value": "페이스마스크" },
@@ -69,7 +69,7 @@
       ]
     },
     {
-      "title": "헤어",
+      "title": { "path": "#", "titleName": "헤어" },
       "items": [
         { "path": "#", "value": "샴푸바" },
         { "path": "#", "value": "샴푸" },
@@ -79,7 +79,7 @@
       ]
     },
     {
-      "title": "메이크업",
+      "title": { "path": "#", "titleName": "메이크업" },
       "items": [
         { "path": "#", "value": "페이스파우더" },
         { "path": "#", "value": "아이메이크업" },
@@ -90,7 +90,7 @@
       ]
     },
     {
-      "title": "퍼퓸",
+      "title": { "path": "#", "titleName": "퍼퓸" },
       "items": [
         { "path": "#", "value": "보디스프레이" },
         { "path": "#", "value": "퍼퓸라이브러리" },
@@ -102,7 +102,7 @@
       ]
     },
     {
-      "title": "기프트",
+      "title": { "path": "#", "titleName": "기프트" },
       "items": [
         { "path": "#", "value": "기프트베스트" },
         { "path": "#", "value": "1-3만원대" },
@@ -115,7 +115,7 @@
       ]
     },
     {
-      "title": "비건",
+      "title": { "path": "#", "titleName": "비건" },
       "items": [
         { "path": "#", "value": "베쓰" },
         { "path": "#", "value": "샤워" },
@@ -129,22 +129,22 @@
   ],
   "intro": [
     {
-      "title": "러쉬소개",
+      "title": { "path": "#", "titleName": "러쉬소개" },
       "items": [
         { "path": "#", "value": "러쉬역사" },
         { "path": "#", "value": "이념과가치" }
       ]
     },
     {
-      "title": "러쉬이야기",
+      "title": { "path": "#", "titleName": "러쉬이야기" },
       "items": []
     },
     {
-      "title": "채러티팟",
+      "title": { "path": "#", "titleName": "채러티팟" },
       "items": []
     },
     {
-      "title": "커뮤니티",
+      "title": { "path": "#", "titleName": "커뮤니티" },
       "items": [
         { "path": "#", "value": "젤러쉬" },
         { "path": "#", "value": "덕찌" }

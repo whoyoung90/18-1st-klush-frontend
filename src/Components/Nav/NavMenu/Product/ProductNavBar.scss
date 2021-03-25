@@ -1,18 +1,18 @@
 @import "./Product.scss";
 
-.productList {
+.productNavBar {
   padding: 30px 15px;
 
   li {
     padding-top: 20px;
 
-    .title {
+    .barTitle {
       font-size: 18px;
       font-weight: bold;
       @extend %link-decoration;
     }
 
-    .items {
+    .barItems {
       display: table-row;
       margin: 20px;
       color: #aeaeae;

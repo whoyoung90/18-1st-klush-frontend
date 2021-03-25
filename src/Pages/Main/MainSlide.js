@@ -17,6 +17,7 @@ class MainSlide extends Component {
   }
   change = () => {
     const { index } = this.state;
+
     if (index === IMAGE.length - 1) {
       this.setState({
         index: 0,

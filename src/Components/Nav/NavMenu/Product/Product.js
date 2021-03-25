@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import ProductList from "./ProductList";
+import ProductNavBar from "./ProductNavBar";
 import "./Product.scss";
 
 class Product extends Component {
@@ -12,7 +12,7 @@ class Product extends Component {
   }
 
   componentDidMount() {
-    fetch("/data/productList.json")
+    fetch("/data/productNavBar.json")
       .then(res => res.json())
       .then(res => this.setState({ dropDown: res.data }));
   }
@@ -27,7 +27,7 @@ class Product extends Component {
         </Link>
         <div className="dropDownMenu">
           {dropDown.map(list => (
-            <ProductList title={list.title} items={list.items} />
+            <ProductNavBar title={list.title} items={list.items} />
           ))}
         </div>
       </li>
