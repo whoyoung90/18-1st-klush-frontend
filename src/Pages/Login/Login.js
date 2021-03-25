@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Member from "./components/Member";
 import NonMember from "./components/NonMember";
-import { SIGN_IN_API } from "../../config.js";
+import Nav from "../../Components/Nav/Nav";
+import Footer from "../../Components/Footer/Footer";
 import "./Login.scss";
 
 class Login extends Component {
@@ -33,7 +34,7 @@ class Login extends Component {
       alert("패스워드를 입력해주세요");
       return;
     }
-    fetch(`${SIGN_IN_API}`, {
+    fetch("http://10.58.3.238:8000/user/signin", {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,
@@ -57,39 +58,43 @@ class Login extends Component {
     const { email, password, currentId } = this.state;
     const { clickHandler } = this;
     return (
-      <div className="login">
-        <section>
-          <div className="loginInfo">
-            <h2>로그인</h2>
-          </div>
-          <div className="loginBox">
-            <div className="loginSort">
-              <ul className="tabs">
-                <li className="Selected" onClick={() => clickHandler(1)}>
-                  <span>회원</span>
-                </li>
-                <li className="nonSelected" onClick={() => clickHandler(2)}>
-                  <span>비회원</span>
-                </li>
-              </ul>
+      <>
+        <Nav />
+        <div className="login">
+          <section>
+            <div className="loginInfo">
+              <h2>로그인</h2>
             </div>
-            <form className="loginForm">
-              {currentId === 1 && (
-                <Member
-                  loginSubmit={this.loginSubmit}
-                  handleOnChange={this.handleOnChange}
-                />
-              )}
-              {currentId === 2 && (
-                <NonMember
-                  loginSubmit={this.loginSubmit}
-                  handleOnChange={this.handleOnChange}
-                />
-              )}
-            </form>
-          </div>
-        </section>
-      </div>
+            <div className="loginBox">
+              <div className="loginSort">
+                <ul className="tabs">
+                  <li className="Selected" onClick={() => clickHandler(1)}>
+                    <span>회원</span>
+                  </li>
+                  <li className="nonSelected" onClick={() => clickHandler(2)}>
+                    <span>비회원</span>
+                  </li>
+                </ul>
+              </div>
+              <form className="loginForm">
+                {currentId === 1 && (
+                  <Member
+                    loginSubmit={this.loginSubmit}
+                    handleOnChange={this.handleOnChange}
+                  />
+                )}
+                {currentId === 2 && (
+                  <NonMember
+                    loginSubmit={this.loginSubmit}
+                    handleOnChange={this.handleOnChange}
+                  />
+                )}
+              </form>
+            </div>
+          </section>
+        </div>
+        <Footer />
+      </>
     );
   }
 }

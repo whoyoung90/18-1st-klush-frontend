@@ -1,1 +1,144 @@
-.
+@import "../../Styles/common.scss";
+
+.cart {
+  .container {
+    margin: 160px auto 0;
+    width: 1180px;
+
+    .content {
+      .stepTop {
+        padding: 40px 0 100px;
+        text-align: center;
+
+        .stepTitle {
+          font-size: 44px;
+          font-weight: 800;
+        }
+      }
+      .stepStage {
+        display: flex;
+        justify-content: center;
+        padding: 40px 0 0;
+        .this,
+        .stepIcon,
+        .order,
+        .stepIcon,
+        .end {
+          font-weight: bold;
+          font-size: 17px;
+          color: $elseGrey;
+          margin-right: 20px;
+        }
+        .this {
+          color: $lushBlack;
+        }
+      }
+    }
+  }
+  .itemCart {
+    .cartContainer {
+      .cartTitle {
+        font-size: 28px;
+        font-weight: 700;
+        padding: 0 0 18px;
+        border-bottom: 1px solid $lushBlack;
+      }
+    }
+  }
+
+  .calcAmount {
+    text-align: center;
+    font-size: 18px;
+
+    .calcInfo,
+    .detailCount,
+    .delivery,
+    .resultSign,
+    .TotalPriceWon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #f2f2f2;
+      padding: 19px 0;
+
+      .calcDetail,
+      .calcDelivery,
+      .detailPrice,
+      .calcTotal {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+
+        .totalPriceResult,
+        .detailPrice,
+        .deliveryPay {
+          font-weight: bold;
+        }
+      }
+
+      .calcDetail {
+        .detailCount {
+          padding-right: 20px;
+        }
+        em {
+          padding-left: 8px;
+        }
+      }
+      .addIcon {
+        margin: 0 20px;
+        font-weight: bold;
+      }
+      .delivery {
+        margin-right: 23px;
+      }
+      .calcTotal {
+        font-weight: bold;
+        .resultSign {
+          margin: 0 23px;
+        }
+        .TotalPriceWon {
+          margin-right: 23px;
+        }
+        em {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+  .bottomButton {
+    .buttonSub {
+      margin-top: 20px;
+
+      button {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #8f8f8f;
+        margin-right: 8px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+    .buttonMain {
+      margin: 50px 0;
+      display: flex;
+      justify-content: center;
+
+      button {
+        padding: 20px 0;
+        width: 280px;
+        margin: 0 12px;
+      }
+      .btnMoreShopping {
+        background: transparent;
+        border: 1px solid $lushBlack;
+      }
+
+      .btnOrder {
+        background-color: $lushBlack;
+        color: white;
+        font-weight: 800;
+      }
+    }
+  }
+}
