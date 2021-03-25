@@ -1,0 +1,24 @@
+@import "../../../../../../../../Styles/common.scss";
+
+.contentFooter {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px;
+
+  .footerPriceColumn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 7px 0px;
+
+    .columnTitle {
+      width: 88px;
+      font-size: 13px;
+      opacity: 0.8;
+    }
+    .columnRight {
+      font-size: 25px;
+      font-weight: 500;
+    }
+  }
+}

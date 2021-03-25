@@ -1,0 +1,13 @@
+@import "../../../../../../../../Styles/common.scss";
+
+.categoryItems {
+  padding: 0px 16px;
+  color: $elseGrey;
+  &:first-child {
+    padding-left: 0px;
+  }
+  &:hover {
+    cursor: pointer;
+    color: $lushBlack;
+  }
+}

@@ -1,1 +1,25 @@
-.
+@import "../../Styles/common.scss";
+
+.productDetailPage {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  width: 100%;
+
+  .productDetailContainer {
+    width: 1180px;
+
+    .productDetailHeader {
+      display: flex;
+      justify-content: flex-end;
+
+      .directionColumn {
+        display: flex;
+        justify-content: flex-start;
+        width: 580px;
+        margin-right: 40px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}

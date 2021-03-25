@@ -1,0 +1,25 @@
+@import "../../../../../../../../Styles/common.scss";
+
+.btnsColumn {
+  display: flex;
+  justify-content: center;
+
+  button {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid $lushBlack;
+    font-weight: 600;
+  }
+
+  .cartBtn {
+    margin-right: 5px;
+    color: $lushBlack;
+    background-color: $lushWhite;
+  }
+
+  .orderBtn {
+    margin-left: 5px;
+    color: $lushWhite;
+    background-color: $lushBlack;
+  }
+}

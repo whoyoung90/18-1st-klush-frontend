@@ -1,0 +1,15 @@
+.eachDirection {
+  display: flex;
+  align-content: center;
+  margin-right: 20px;
+  font-size: 20px;
+  font-weight: 600;
+
+  .arrow {
+    margin: 0px 10px;
+  }
+
+  &:last-child .arrow {
+    display: none;
+  }
+}
