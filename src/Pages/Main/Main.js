@@ -15,7 +15,7 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.5.223:8000/product?is_new=True")
+    fetch("http://54.180.150.98:8000/product?is_new=True")
       .then(res => res.json())
       .then(res => this.setState({ mainList: res.product_list_data }));
   }
@@ -41,9 +41,14 @@ class Main extends Component {
                 {mainList.map((el, idx) => {
                   return (
                     <Link to="/main" key={idx} className="myItemList">
-                      <img className="myImg" src={el.images} alt="newLabel" />
+                      <img
+                        className="myImg"
+                        src={el.image_url}
+                        alt="newLabel"
+                      />
+                      <img src={el.is_new} />
                       <div className="imgTitle">{el.name}</div>
-                      <div className="imgHash">{el.product_labels}</div>
+                      <div className="imgHash">{el.product_label}</div>
                       <div className="cost">
                         ￦{Math.floor(el.price).toLocaleString()}
                       </div>
