@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import ProductList from "../Product/ProductList";
+import ProductNavBar from "../Product/ProductNavBar";
 import "../Product/Product.scss";
 
 class LushIntro extends Component {
@@ -12,7 +12,7 @@ class LushIntro extends Component {
   }
 
   componentDidMount() {
-    fetch("/data/productList.json")
+    fetch("/data/productNavBar.json")
       .then(res => res.json())
       .then(res => this.setState({ dropDown: res.intro }));
   }
@@ -27,7 +27,7 @@ class LushIntro extends Component {
         </Link>
         <div className="dropDownMenu">
           {dropDown.map(list => (
-            <ProductList title={list.title} items={list.items} />
+            <ProductNavBar title={list.title} items={list.items} />
           ))}
         </div>
       </li>

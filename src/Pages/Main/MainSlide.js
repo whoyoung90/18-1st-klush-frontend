@@ -17,6 +17,7 @@ class MainSlide extends Component {
   }
   change = () => {
     const { index } = this.state;
+
     if (index === IMAGE.length - 1) {
       this.setState({
         index: 0,
@@ -41,7 +42,7 @@ class MainSlide extends Component {
   render() {
     return (
       <div className="mainImg">
-        <img src={IMAGE[this.state.index]} alt="mainFeed" />
+        <img className="realImg" src={IMAGE[this.state.index]} alt="mainFeed" />
       </div>
     );
   }
