@@ -5,6 +5,8 @@ import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
 import "./Login.scss";
 
+import { COMMON_API } from "../../config.js";
+
 class Login extends Component {
   state = {
     email: "",
@@ -34,7 +36,7 @@ class Login extends Component {
       alert("패스워드를 입력해주세요");
       return;
     }
-    fetch("http://10.58.3.238:8000/user/signin", {
+    fetch(`${COMMON_API}/user/signin`, {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,

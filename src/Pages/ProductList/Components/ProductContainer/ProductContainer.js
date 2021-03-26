@@ -34,6 +34,7 @@ class ProductContainer extends Component {
               subCategoryList={subCategoryList}
               products={products}
               checkSelect={checkSelect}
+              sortBySubCategory={this.props.sortBySubCategory}
             />
           )}
           <div className="contentList">
