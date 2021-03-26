@@ -4,6 +4,8 @@ import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
 import "./SignUp.scss";
 
+import { COMMON_API } from "../../config.js";
+
 const WIDTH = 595;
 const HEIGHT = 450;
 const EMAIL_LIST = [
@@ -140,7 +142,7 @@ class SignUp extends Component {
 
   signUpFinish = () => {
     const { emailValue, passwordValue, nameValue, phoneVlaue } = this.state;
-    fetch("/", {
+    fetch(`${COMMON_API}/user/signup`, {
       method: "POST",
       body: JSON.stringify({
         email: emailValue,

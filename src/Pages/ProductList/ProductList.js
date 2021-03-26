@@ -9,12 +9,15 @@ import Footer from "../../Components/Footer/Footer";
 
 import "./ProductList.scss";
 
+import { COMMON_API } from "../../config.js";
+
 class ProductList extends Component {
   constructor() {
     super();
 
     this.state = {
       listData: {},
+      subCategoryList: [],
       showGeneralModal: false,
       showCartModal: false,
       dataSetName: "",
@@ -27,7 +30,7 @@ class ProductList extends Component {
   }
 
   componentDidMount() {
-    fetch("http://10.58.0.66:8000/product")
+    fetch(`${COMMON_API}/product`)
       .then(res => res.json())
       .then(result =>
         this.setState({
@@ -35,6 +38,14 @@ class ProductList extends Component {
         })
       )
       .catch(e => console.log(e));
+
+    fetch(`${COMMON_API}/product/subcategory`)
+      .then(res => res.json())
+      .then(result =>
+        this.setState({
+          subCategoryList: result.sub_category_list_data,
+        })
+      );
   }
 
   componentDidUpdate() {
@@ -42,6 +53,17 @@ class ProductList extends Component {
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "unset");
   }
+
+  sortBySubCategory = e => {
+    fetch(`${COMMON_API}/product?sub_category=${e.target.id}`)
+      .then(res => res.json())
+      .then(result =>
+        this.setState({
+          listData: result,
+        })
+      )
+      .catch(e => console.log(e));
+  };
 
   clickModal = (e, modal, idNum, text) => {
     e.stopPropagation();
@@ -54,7 +76,7 @@ class ProductList extends Component {
           modal === "showCartModal"
             ? this.state.listData.product_list_data.filter(
                 product => product.product_id === idNum
-              )[0].price
+              ).price
             : "",
       },
       () => {
@@ -84,7 +106,7 @@ class ProductList extends Component {
 
   putOnCart = () => {
     let token = localStorage.getItem("token");
-    fetch("http://10.58.0.66:8000/order/cart/2", {
+    fetch(`${COMMON_API}/order/cart/${this.state.productId}`, {
       method: "POST",
       headers: {
         Authorization: token,
@@ -113,10 +135,7 @@ class ProductList extends Component {
 
   //for Count Box productDetail의 countBox와 중복된 코드
   printPrice = priceStr => {
-    let priceList = priceStr.split("");
-    let dotIndex = priceList.indexOf(".");
-    priceStr = priceList.splice(0, dotIndex).join("");
-    return priceStr.toLocaleString();
+    return priceStr;
   };
 
   changePrice = () => {
@@ -175,9 +194,10 @@ class ProductList extends Component {
   };
 
   render() {
-    console.log(this.state.listData);
     const products = this.state.listData.product_list_data;
-    const { categoryName, categoryDesc, subCategoryList } = this.state.listData;
+    const categoryName = "배쓰";
+    const categoryDesc = "당신에게 향기로운 입욕을 선물합니다";
+    const { subCategoryList } = this.state;
 
     const {
       showGeneralModal,
@@ -195,7 +215,7 @@ class ProductList extends Component {
           {showGeneralModal && (
             <GeneralModal clickClose={this.clickClose} text={dataSetName} />
           )}
-          {showCartModal && Number(productId) && (
+          {showCartModal && (
             <CartModal
               productInfo={
                 products.filter(
@@ -219,6 +239,7 @@ class ProductList extends Component {
           />
           {products && (
             <ProductContainer
+              sortBySubCategory={this.sortBySubCategory}
               categoryName={categoryName}
               subCategoryList={subCategoryList}
               products={products}

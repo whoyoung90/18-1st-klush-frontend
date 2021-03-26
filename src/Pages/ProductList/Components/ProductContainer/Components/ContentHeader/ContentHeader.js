@@ -28,10 +28,17 @@ class ContentHeader extends Component {
         </header>
         <hr />
         <div className="subCategoryList">
-          <ul>
+          <ul className="listContainer">
             {subCategoryList &&
-              subCategoryList.map((category, idx) => {
-                return <SubCategory key={idx} category={category} />;
+              subCategoryList.map(category => {
+                return (
+                  <SubCategory
+                    id={category.sub_category}
+                    key={category.sub_category}
+                    category={category.name}
+                    sortBySubCategory={this.props.sortBySubCategory}
+                  />
+                );
               })}
           </ul>
         </div>

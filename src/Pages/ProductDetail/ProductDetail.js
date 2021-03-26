@@ -8,6 +8,8 @@ import Footer from "../../Components/Footer/Footer";
 
 import "./ProductDetail.scss";
 
+import { COMMON_API } from "../../config.js";
+
 class ProductDetail extends Component {
   constructor() {
     super();
@@ -18,7 +20,7 @@ class ProductDetail extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.0.66:8000/product/${this.props.match.params.id}`)
+    fetch(`${COMMON_API}/product/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(result =>
         this.setState({
@@ -40,7 +42,7 @@ class ProductDetail extends Component {
               <header className="productDetailHeader">
                 <div className="directionColumn">
                   {this.state.productData &&
-                    ["홈", "러쉬", "베쓰", `${productData.sub_category}`].map(
+                    ["홈", "러쉬", "배쓰", `${productData.sub_category}`].map(
                       (folder, idx) => {
                         return <Direction key={idx} folder={folder} />;
                       }
