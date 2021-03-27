@@ -30,7 +30,7 @@ class ContentBody extends Component {
         </div>
         <div className="buyCountColumn">
           <span className="columnTitle">구매수량</span>
-          <div className="countBox">
+          <form className="countBox">
             <button className="minus btnsElement" onClick={minusBtn}>
               -
             </button>
@@ -44,7 +44,7 @@ class ContentBody extends Component {
             <button className="plus btnsElement" onClick={plusBtn}>
               +
             </button>
-          </div>
+          </form>
           <div className="buyPrice price">&#8361;{totalPrice}</div>
         </div>
       </main>

@@ -19,7 +19,12 @@ class Cart extends Component {
   }
 
   componentDidMount() {
-    fetch(`${COMMON_API}/order/cart`)
+    //   fetch(`${COMMON_API}/order/cart`, {
+    fetch("data/cartData.json")
+      //  headers: {
+      //         Authorization: localStorage.getItem("token"),
+      //       },
+
       .then(res => res.json())
       .then(res => {
         const tmpArr = res.cartList.map(item => {
@@ -225,7 +230,7 @@ class Cart extends Component {
               <div className="buttonMain">
                 <button
                   className="btnMoreShopping"
-                  onClick={() => this.props.history.push("/productlist")}
+                  onClick={() => this.props.history.push("/products")}
                 >
                   쇼핑 계속하기
                 </button>

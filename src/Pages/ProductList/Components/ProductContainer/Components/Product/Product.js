@@ -36,15 +36,9 @@ class Product extends Component {
   };
 
   printPrice = () => {
-    let result = this.props.productInfo.price.split("").reverse();
-    if (result.length > 3) {
-      for (let i = 0; i < result.length; i++) {
-        if ((i + 1) % 3 === 0 && i !== result.length - 1) {
-          result[i + 1] += ",";
-        }
-      }
-      return result.reverse().join("");
-    }
+    let result = this.props.productInfo.price.split(".")[0];
+    result = Number(result).toLocaleString();
+    return result;
   };
 
   render() {

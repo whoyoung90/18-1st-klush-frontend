@@ -2,43 +2,19 @@
   "cartList": [
     {
       "id": 1,
-      "img": "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      "img": "https://github.com/InahChoi/project-klush/blob/main/product_image/bath_bomb/bath_bomb1.jpg?raw=true",
       "name": "험프티 덤프티",
       "category": "배쓰밤",
-      "quantity": 5,
-      "price": "10000"
+      "quantity": 2,
+      "price": "23000"
     },
     {
       "id": 2,
-      "img": "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-      "name": "두번째 덤프티",
+      "img": "https://github.com/InahChoi/project-klush/blob/main/product_image/bath_bomb/bath_bomb2.jpg?raw=true",
+      "name": "블루블루",
       "category": "볼",
-      "quantity": 2,
-      "price": "13000"
-    },
-    {
-      "id": 3,
-      "img": "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-      "name": "세번째 덤프티",
-      "category": "보디컨디셔너",
       "quantity": 1,
-      "price": "9000"
-    },
-    {
-      "id": 4,
-      "img": "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-      "name": "네번째 덤프티",
-      "category": "러쉬",
-      "quantity": 3,
-      "price": "2000"
-    },
-    {
-      "id": 5,
-      "img": "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
-      "name": "다섯번째 덤프티",
-      "category": "비누",
-      "quantity": 4,  
-      "price": "30000"
+      "price": "20000"
     }
   ]
 }

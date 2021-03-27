@@ -21,8 +21,8 @@ class ContentHeader extends Component {
                 정렬기준을 선택해주세요
               </option>
               <option value="?is_new=True">신제품순</option>
-              <option value="?sort=-price">낮은가격순</option>
-              <option value="?sort=price">높은가격순</option>
+              <option value="?sort=price">낮은가격순</option>
+              <option value="?sort=-price">높은가격순</option>
             </select>
           </div>
         </header>

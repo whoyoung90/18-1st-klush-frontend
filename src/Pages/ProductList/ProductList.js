@@ -76,10 +76,11 @@ class ProductList extends Component {
           modal === "showCartModal"
             ? this.state.listData.product_list_data.filter(
                 product => product.product_id === idNum
-              ).price
+              )[0].price
             : "",
       },
       () => {
+        console.log("first", this.state.cartProductPrice);
         this.setState({
           cartTotalPrice:
             modal === "showCartModal"
@@ -128,13 +129,26 @@ class ProductList extends Component {
 
   //contentHeader select box
   checkSelect = e => {
-    this.setState({
-      queryStr: e.target.value,
-    });
+    this.setState(
+      {
+        queryStr: e.target.value,
+      },
+      () => {
+        fetch(`${COMMON_API}/product${this.state.queryStr}`)
+          .then(res => res.json())
+          .then(result =>
+            this.setState({
+              listData: result,
+            })
+          )
+          .catch(e => console.log(e));
+      }
+    );
   };
 
   //for Count Box productDetail의 countBox와 중복된 코드
   printPrice = priceStr => {
+    priceStr = Number(priceStr).toLocaleString();
     return priceStr;
   };
 
