@@ -1,17 +1,20 @@
 import React from "react";
 import "./CartItem.scss";
-import { useSelector, useDispatch } from "react-redux";
-
+import { useDispatch } from "react-redux";
+import {
+  handleIncrement,
+  handleDecrement,
+} from "../../../store/actions/cartAction";
 function CartItem({
+  id,
   key,
   rowSpan,
   cartList,
   handleItemCounts,
-  handleIncrement,
-  handleDecrement,
   handleSelect,
 }) {
   const dispatch = useDispatch();
+
   return (
     <tr key={key} className="tableRow">
       <td className="tableCheck">
@@ -46,7 +49,7 @@ function CartItem({
             <button
               className="btnDecrease"
               type="button"
-              onClick={() => dispatch({ type: "DECREASE" })}
+              onClick={() => dispatch(handleDecrement(cartList))}
             >
               -
             </button>
@@ -60,7 +63,7 @@ function CartItem({
             <button
               className="btnIncrease"
               type="button"
-              onClick={() => handleIncrement(cartList)}
+              onClick={() => dispatch(handleIncrement(cartList))}
             >
               +
             </button>

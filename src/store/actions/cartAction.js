@@ -1,35 +1,32 @@
 export const INCREASE = "INCREASE";
 export const DECREASE = "DECREASE";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const TOGGLE_ITEM = "TOGGLE_ITEM";
+export const HANDLECOUNT = "HANDLECOUNT";
 
-export const handleIncrement = diff => {
-  return {
-    type: "INCREASE",
-    diff,
-  };
-};
+export const handleIncrement = item => ({
+  type: INCREASE,
+  payload: item,
+});
 
-export const handledecrement = diff => {
-  return {
-    type: "DECREASE",
-    diff,
-  };
-};
+// export const handleCheckbox = () =>
 
-export const handleDelete = item => {
-  return {
-    type: "REMOVE_FROM_CART",
-    payload: item,
-  };
-};
+export const handleDecrement = item => ({
+  type: DECREASE,
+  payload: item,
+});
 
-export const handleItemCounts = e => {
-  return {
-    type: "HANDLECOUNT",
-    e,
-  };
-};
+export const handleDelete = item => ({
+  type: REMOVE_FROM_CART,
+  payload: item,
+});
 
-export const handleToggle = id => {
-  return { type: "TOGGLE_ITEM", id };
-};
+export const handleItemCounts = e => ({
+  type: HANDLECOUNT,
+  e,
+});
+
+export const handleToggle = id => ({
+  type: TOGGLE_ITEM,
+  id,
+});

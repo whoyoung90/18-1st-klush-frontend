@@ -1,4 +1,10 @@
-import { INCREASE, DECREASE, REMOVE_FROM_CART } from "../actions/cartaction";
+import {
+  INCREASE,
+  DECREASE,
+  REMOVE_FROM_CART,
+  TOGGLE_ITEM,
+  HANDLECOUNT,
+} from "../actions/cartAction";
 
 const INITIAL_STATE = {
   cartList: [
@@ -53,11 +59,12 @@ const INITIAL_STATE = {
       isChecked: true,
     },
   ],
+  isAllChecked: true,
 };
 
 export default function cartReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case "INCREASE":
+    case INCREASE:
       return {
         ...state,
         cartList: state.cartList.map(item =>
@@ -66,7 +73,8 @@ export default function cartReducer(state = INITIAL_STATE, action) {
             : item
         ),
       };
-    case "DECREASE":
+
+    case DECREASE:
       return {
         ...state,
         cartList: state.cartList.map(item =>
@@ -75,16 +83,19 @@ export default function cartReducer(state = INITIAL_STATE, action) {
             : item
         ),
       };
-    case "REMOVE_FROM_CART":
+    case REMOVE_FROM_CART:
       return {
         // toggle 적용 안 하고 개별 삭제 ver
         ...state,
         cartList: state.cartList.filter(item => item.id !== action.payload.id),
       };
-    case "TOGGLE_ITEM":
+    case TOGGLE_ITEM:
       return state.map(item =>
         item.id === action.id ? { ...item, ischecked: !item.ischecked } : item
       );
+
+    case HANDLECOUNT:
+      return;
     default:
       return state;
   }
