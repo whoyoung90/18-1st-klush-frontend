@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./Main.scss";
 const IMAGE = [
   "/Images/trans1.jpg",
-  "/Images/trans2.png",
-  "/Images/trans3.png",
+  "/Images/trans2.jpg",
+  "/Images/trans3.jpg",
 ];
 
 class MainSlide extends Component {

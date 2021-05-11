@@ -1,10 +1,7 @@
 import React from "react";
 import "./CartItem.scss";
 import { useDispatch } from "react-redux";
-import {
-  handleIncrement,
-  handleDecrement,
-} from "../../../store/actions/cartAction";
+import { handleIncrement, handleDecrement } from "../../../store/actions/index";
 function CartItem({
   id,
   key,

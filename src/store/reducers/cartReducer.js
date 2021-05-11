@@ -1,10 +1,9 @@
-import {
-  INCREASE,
-  DECREASE,
-  REMOVE_FROM_CART,
-  TOGGLE_ITEM,
-  HANDLECOUNT,
-} from "../actions/cartAction";
+const INCREASE = "INCREASE";
+const DECREASE = "DECREASE";
+const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+const TOGGLE_ITEM = "TOGGLE_ITEM";
+const HANDLECOUNT = "HANDLECOUNT";
+const ADDCART = "ADDCART";
 
 const INITIAL_STATE = {
   cartList: [
@@ -64,6 +63,12 @@ const INITIAL_STATE = {
 
 export default function cartReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
+    case ADDCART:
+      return {
+        ...state,
+        cartList: [...state.cartList, action.payload],
+      };
+
     case INCREASE:
       return {
         ...state,

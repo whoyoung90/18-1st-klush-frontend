@@ -21,7 +21,7 @@ class CartModal extends Component {
 
     return (
       productInfo && (
-        <div className="cartModal modal">
+        <div className="cartModal modall">
           <div className="cartMain">
             <div className="cartMainHeader">
               <div className="headerTitle">장바구니 담기</div>
