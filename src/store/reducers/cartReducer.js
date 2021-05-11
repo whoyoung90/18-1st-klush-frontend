@@ -1,9 +1,14 @@
+import { check } from "prettier";
+
 const INCREASE = "INCREASE";
 const DECREASE = "DECREASE";
 const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 const TOGGLE_ITEM = "TOGGLE_ITEM";
 const HANDLECOUNT = "HANDLECOUNT";
 const ADDCART = "ADDCART";
+const HANDLE_CHECKBOX = "HANDLE_CHECKBOX";
+const HANDLE_SELECT = "HANDLE_SELECT";
+const SELECT_ALL = "SELECT_ALL";
 
 const INITIAL_STATE = {
   cartList: [
@@ -84,23 +89,40 @@ export default function cartReducer(state = INITIAL_STATE, action) {
         ...state,
         cartList: state.cartList.map(item =>
           item.id === action.payload.id
-            ? { ...item, quantity: item.quantity - 1 }
+            ? { ...item, quantity: item.quantity <= 1 ? 1 : item.quantity - 1 }
             : item
         ),
       };
     case REMOVE_FROM_CART:
-      return {
-        // toggle 적용 안 하고 개별 삭제 ver
-        ...state,
-        cartList: state.cartList.filter(item => item.id !== action.payload.id),
-      };
+      console.log("s");
+      return state.cartList.filter(item => !item.isChecked);
+
     case TOGGLE_ITEM:
       return state.map(item =>
         item.id === action.id ? { ...item, ischecked: !item.ischecked } : item
       );
+    case HANDLE_CHECKBOX:
+      return (state.isAllChecked = state.every(check => check.isChecked)
+        ? true
+        : false);
+
+    case HANDLE_SELECT:
+      return {
+        ...state,
+        cartList: state.cartList.map(item =>
+          item.id === action.payload.id
+            ? { ...item, isChecked: !item.isChecked }
+            : item
+        ),
+      };
+
+    case SELECT_ALL:
+      console.log("zz");
+      return state.isAllChecked ? console.log("hi") : console.log("zz");
 
     case HANDLECOUNT:
       return;
+
     default:
       return state;
   }
