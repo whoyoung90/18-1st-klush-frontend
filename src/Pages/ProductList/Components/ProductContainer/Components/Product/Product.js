@@ -50,7 +50,7 @@ class Product extends Component {
           <div className="productImgContainer">
             <img
               className={productInfo.is_soldout ? "disable" : "productImg"}
-              src={productInfo.image_url[0]}
+              src={productInfo.image_url}
               alt={productInfo.name}
             />
             <div

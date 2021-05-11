@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import Nav from "../../Components/Nav/Nav";
 import ImageContainer from "./Components/ImageContainer/ImageContainer";
@@ -6,6 +7,8 @@ import ProductContainer from "./Components/ProductContainer/ProductContainer";
 import GeneralModal from "./Components/GeneralModal/GeneralModal";
 import CartModal from "./Components/CartModal/CartModal";
 import Footer from "../../Components/Footer/Footer";
+
+import { addCart } from "../../store/action/actionIndex";
 
 import "./ProductList.scss";
 
@@ -30,7 +33,7 @@ class ProductList extends Component {
   }
 
   componentDidMount() {
-    fetch(`${COMMON_API}/product`)
+    fetch(`${COMMON_API}`)
       .then(res => res.json())
       .then(result =>
         this.setState({
@@ -38,14 +41,6 @@ class ProductList extends Component {
         })
       )
       .catch(e => console.log(e));
-
-    fetch(`${COMMON_API}/product/subcategory`)
-      .then(res => res.json())
-      .then(result =>
-        this.setState({
-          subCategoryList: result.sub_category_list_data,
-        })
-      );
   }
 
   componentDidUpdate() {
@@ -74,13 +69,12 @@ class ProductList extends Component {
         [modal]: !this.state[modal],
         cartProductPrice:
           modal === "showCartModal"
-            ? this.state.listData.product_list_data.filter(
+            ? this.state.listData.products.filter(
                 product => product.product_id === idNum
               )[0].price
             : "",
       },
       () => {
-        console.log("first", this.state.cartProductPrice);
         this.setState({
           cartTotalPrice:
             modal === "showCartModal"
@@ -106,16 +100,30 @@ class ProductList extends Component {
   };
 
   putOnCart = () => {
-    let token = localStorage.getItem("token");
-    fetch(`${COMMON_API}/order/cart/${this.state.productId}`, {
-      method: "POST",
-      headers: {
-        Authorization: token,
-      },
-      body: JSON.stringify({
+    this.props.dispatch(
+      addCart({
+        id: this.state.productId,
+        img: this.state.listData.products.filter(
+          item => item.product_id === this.state.productId
+        )[0].image_url,
+        name: this.state.listData.products.filter(
+          item => item.product_id === this.state.productId
+        )[0].name,
+        category: "배쓰밤",
         quantity: this.state.cartCountNum,
-      }),
-    });
+        price: this.state.cartProductPrice,
+      })
+    );
+    // let token = localStorage.getItem("token");
+    // fetch(`${COMMON_API}/order/cart/${this.state.productId}`, {
+    //   method: "POST",
+    //   headers: {
+    //     Authorization: token,
+    //   },
+    //   body: JSON.stringify({
+    //     quantity: this.state.cartCountNum,
+    //   }),
+    // });
 
     this.setState(
       {
@@ -208,10 +216,10 @@ class ProductList extends Component {
   };
 
   render() {
-    const products = this.state.listData.product_list_data;
+    const products = this.state.listData.products;
     const categoryName = "배쓰";
     const categoryDesc = "당신에게 향기로운 입욕을 선물합니다";
-    const { subCategoryList } = this.state;
+    const { subCategoryList } = this.state.listData;
 
     const {
       showGeneralModal,
@@ -221,7 +229,6 @@ class ProductList extends Component {
       cartCountNum,
       dataSetName,
     } = this.state;
-
     return (
       <>
         <Nav />
@@ -268,4 +275,13 @@ class ProductList extends Component {
   }
 }
 
-export default ProductList;
+const checkDispatch = dispatch => {
+  return { dispatch };
+};
+
+export default connect(
+  state => ({
+    cartList: state.Cart.cartList,
+  }),
+  checkDispatch
+)(ProductList);
