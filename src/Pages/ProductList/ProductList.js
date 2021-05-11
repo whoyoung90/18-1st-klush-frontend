@@ -8,7 +8,7 @@ import GeneralModal from "./Components/GeneralModal/GeneralModal";
 import CartModal from "./Components/CartModal/CartModal";
 import Footer from "../../Components/Footer/Footer";
 
-import { addCart } from "../../store/action/actionIndex";
+import { addCart } from "../../store/actions/index";
 
 import "./ProductList.scss";
 
