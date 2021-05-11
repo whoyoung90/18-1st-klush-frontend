@@ -17,7 +17,7 @@ class Footer extends Component {
   render() {
     return (
       <footer className="footerAll">
-        <img src="/Images/lush-footer.png" className="icons" />
+        <img src="/Images/lush-footer.jpg" className="icons" />
         <ul className="footerLeftWrap">
           <a href="/main" className="footerLogo">
             KLUSH

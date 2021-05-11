@@ -27,10 +27,7 @@ class OrderContent extends Component {
 
   //가격 쉼표 추가
   printPrice = priceStr => {
-    let priceList = priceStr.split("");
-    let dotIndex = priceList.indexOf(".");
-    priceStr = priceList.splice(0, dotIndex).join("");
-    return priceStr.toLocaleString();
+    return Number(priceStr).toLocaleString();
   };
 
   changePrice = () => {

@@ -12,7 +12,7 @@ class GeneralModal extends Component {
   };
   render() {
     return (
-      <div className="GeneralModal modal">
+      <div className="GeneralModal modall">
         <div className="GeneralMain">
           <div className="GeneralMainHeader">
             <GrClose

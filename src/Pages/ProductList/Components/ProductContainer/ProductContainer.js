@@ -6,18 +6,10 @@ import ContentHeader from "./Components/ContentHeader/ContentHeader";
 import Product from "./Components/Product/Product";
 
 class ProductContainer extends Component {
-  state = {
-    productList: this.props.products,
-  };
-
-  componentDidMount() {
-    this.setState({
-      productList: this.props.products.sort(a => (a.is_soldout ? 1 : -1)),
-    });
-  }
+  // this.props.products.sort(a => (a.is_soldout ? 1 : -1));
 
   render() {
-    const { productList } = this.state;
+    const productList = this.props.products;
     const {
       categoryName,
       subCategoryList,
