@@ -4,7 +4,7 @@ import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
 import "./Cart.scss";
 
-import { COMMON_API } from "../../config.js";
+//import { COMMON_API } from "../../config.js";
 
 const MIN_PRICE = 30000;
 const SHIP_PRICE = 2500;
@@ -19,7 +19,7 @@ class Cart extends Component {
   }
 
   componentDidMount() {
-    fetch(`${COMMON_API}/order/cart`)
+    fetch(`data/cartData.json`)
       .then(res => res.json())
       .then(res => {
         const tmpArr = res.cartList.map(item => {
