@@ -24,6 +24,7 @@ function CartList({
                 className="allCheck"
                 onClick={() => dispatch(selectAll())}
                 checked={isAllChecked}
+                readOnly
               ></input>
               <label for="allCheck" className="allCheckLabel"></label>
             </span>

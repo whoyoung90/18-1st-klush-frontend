@@ -6,7 +6,7 @@ import {
   handleDecrement,
   handleSelect,
 } from "../../../store/actions/index";
-function CartItem({ id, key, rowSpan, cartList, handleItemCounts }) {
+function CartItem({ key, rowSpan, cartList, handleItemCounts }) {
   const dispatch = useDispatch();
 
   return (
@@ -18,7 +18,7 @@ function CartItem({ id, key, rowSpan, cartList, handleItemCounts }) {
           onClick={() => dispatch(handleSelect(cartList))}
           id="checkbo
           x"
-          checked={cartList.isChecked}
+          defaultChecked={cartList.isChecked}
         />
         <label id={cartList.id} for="checkbox" className="checked ">
           <span></span>
@@ -49,6 +49,7 @@ function CartItem({ id, key, rowSpan, cartList, handleItemCounts }) {
               -
             </button>
             <input
+              readOnly
               className="quantityCount"
               name={cartList.id}
               value={cartList.quantity}

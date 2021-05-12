@@ -22,7 +22,6 @@ function Cart() {
   const history = useHistory();
   const dispatch = useDispatch();
   const { cartList, isAllChecked } = useSelector(state => state.cartReducer);
-  console.log("전체 체크박스 상태 = ", isAllChecked);
 
   useSelector(state => state.cartReducer);
   // const handleDelete = () => {
@@ -66,7 +65,6 @@ function Cart() {
   // };
 
   useEffect(() => {
-    console.log("시랭");
     handleCheck();
   }, [cartList]);
 

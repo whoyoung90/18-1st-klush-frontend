@@ -95,11 +95,11 @@ export default function cartReducer(state = INITIAL_STATE, action) {
         ),
       };
     case DELETE:
-      // if (
-      //   window.confirm(
-      //     `선택하신  ${state.cartList.length}개 상품을 장바구니에서 삭제 하시겠습니까?`
-      //   )
-      // )
+      if (
+        window.confirm(
+          `선택하신  ${state.cartList.length}개 상품을 장바구니에서 삭제 하시겠습니까?`
+        )
+      );
       return {
         ...state,
         cartList: state.cartList.filter(item => !item.isChecked),
@@ -129,7 +129,6 @@ export default function cartReducer(state = INITIAL_STATE, action) {
     case CHANGE_CHECK:
       return { ...state, isAllChecked: action.payload };
     case SELECT_ALL:
-      console.log("ss");
       return {
         ...state,
         cartList: state.cartList.map(item => {
