@@ -200,7 +200,7 @@ function Cart() {
             <div className="buttonMain">
               <button
                 className="btnMoreShopping"
-                onClick={() => history.push("/productlist")}
+                onClick={() => history.push("/products")}
               >
                 쇼핑 계속하기
               </button>
