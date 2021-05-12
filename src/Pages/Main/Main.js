@@ -36,7 +36,7 @@ export default function Main() {
         <div className="main">
           <MainSlide />
           <div className="itemWrap">
-            <h2>신상품을 부탁해 KLUSH!</h2>
+            <h2>신상품을 부탁해!</h2>
             <Slider className="myItem" {...settings}>
               {mainList.map((el, idx) => (
                 <Link to="/main" key={idx} className="myItemList">
