@@ -1,15 +1,12 @@
 import React from "react";
 import "./CartItem.scss";
 import { useDispatch } from "react-redux";
-import { handleIncrement, handleDecrement } from "../../../store/actions/index";
-function CartItem({
-  id,
-  key,
-  rowSpan,
-  cartList,
-  handleItemCounts,
+import {
+  handleIncrement,
+  handleDecrement,
   handleSelect,
-}) {
+} from "../../../store/actions/index";
+function CartItem({ key, rowSpan, cartList, handleItemCounts }) {
   const dispatch = useDispatch();
 
   return (
@@ -18,9 +15,10 @@ function CartItem({
         <input
           type="checkbox"
           className="checkbox"
-          onClick={() => handleSelect(cartList)}
-          id="checkbox"
-          checked={cartList.isChecked}
+          onClick={() => dispatch(handleSelect(cartList))}
+          id="checkbo
+          x"
+          defaultChecked={cartList.isChecked}
         />
         <label id={cartList.id} for="checkbox" className="checked ">
           <span></span>
@@ -51,6 +49,7 @@ function CartItem({
               -
             </button>
             <input
+              readOnly
               className="quantityCount"
               name={cartList.id}
               value={cartList.quantity}
