@@ -15,17 +15,12 @@ export const handleDecrement = item => ({
 });
 
 export const handleDelete = () => ({
-  type: "REMOVE_FROM_CART",
+  type: "DELETE",
 });
 
 export const handleItemCounts = e => ({
   type: "HANDLECOUNT",
   e,
-});
-
-export const handleToggle = id => ({
-  type: "TOGGLE_ITEM",
-  payload: id,
 });
 
 export const handleCheck = () => ({
@@ -39,4 +34,9 @@ export const handleSelect = item => ({
 
 export const selectAll = () => ({
   type: "SELECT_ALL",
+});
+
+export const changeCheck = bool => ({
+  type: "CHANGE_CHECK",
+  payload: bool,
 });

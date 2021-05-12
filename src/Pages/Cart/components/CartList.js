@@ -22,7 +22,7 @@ function CartList({
                 type="checkbox"
                 id="allCheck"
                 className="allCheck"
-                onClick={() => dispatch(selectAll)}
+                onClick={() => dispatch(selectAll())}
                 checked={isAllChecked}
               ></input>
               <label for="allCheck" className="allCheckLabel"></label>

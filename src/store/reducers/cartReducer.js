@@ -2,13 +2,14 @@ import { check } from "prettier";
 
 const INCREASE = "INCREASE";
 const DECREASE = "DECREASE";
-const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+const DELETE = "DELETE";
 const TOGGLE_ITEM = "TOGGLE_ITEM";
 const HANDLECOUNT = "HANDLECOUNT";
 const ADDCART = "ADDCART";
 const HANDLE_CHECKBOX = "HANDLE_CHECKBOX";
 const HANDLE_SELECT = "HANDLE_SELECT";
 const SELECT_ALL = "SELECT_ALL";
+const CHANGE_CHECK = "CHANGE_CHECK";
 
 const INITIAL_STATE = {
   cartList: [
@@ -93,16 +94,25 @@ export default function cartReducer(state = INITIAL_STATE, action) {
             : item
         ),
       };
-    case REMOVE_FROM_CART:
-      console.log("s");
-      return state.cartList.filter(item => !item.isChecked);
+    case DELETE:
+      // if (
+      //   window.confirm(
+      //     `선택하신  ${state.cartList.length}개 상품을 장바구니에서 삭제 하시겠습니까?`
+      //   )
+      // )
+      return {
+        ...state,
+        cartList: state.cartList.filter(item => !item.isChecked),
+      };
 
     case TOGGLE_ITEM:
       return state.map(item =>
         item.id === action.id ? { ...item, ischecked: !item.ischecked } : item
       );
     case HANDLE_CHECKBOX:
-      return (state.isAllChecked = state.every(check => check.isChecked)
+      return (state.isAllChecked = state.cartList.every(
+        check => check.isChecked
+      )
         ? true
         : false);
 
@@ -116,12 +126,20 @@ export default function cartReducer(state = INITIAL_STATE, action) {
         ),
       };
 
+    case CHANGE_CHECK:
+      return { ...state, isAllChecked: action.payload };
     case SELECT_ALL:
-      console.log("zz");
-      return state.isAllChecked ? console.log("hi") : console.log("zz");
+      console.log("ss");
+      return {
+        ...state,
+        cartList: state.cartList.map(item => {
+          item.isChecked = state.isAllChecked ? false : true;
+          return item;
+        }),
+      };
 
     case HANDLECOUNT:
-      return;
+      return 1;
 
     default:
       return state;

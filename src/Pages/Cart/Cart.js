@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CartList from "./components/CartList";
 import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
 import "./Cart.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { handleDelete } from "../../store/actions/index";
+import { handleDelete, changeCheck } from "../../store/actions/index";
 //import { COMMON_API } from "../../config.js";
 
 const MIN_PRICE = 30000;
@@ -21,13 +21,13 @@ function Cart() {
   // };
   const history = useHistory();
   const dispatch = useDispatch();
-
   const { cartList, isAllChecked } = useSelector(state => state.cartReducer);
+  console.log("전체 체크박스 상태 = ", isAllChecked);
 
   useSelector(state => state.cartReducer);
-  const handleDelete = () => {
-    dispatch(handleDelete);
-  };
+  // const handleDelete = () => {
+  //   dispatch(handleDelete);
+  // };
   // const handleIncrement = item => {
   //   const tmpArr = [...this.state.cartList];
   //   const index = tmpArr.indexOf(item);
@@ -65,34 +65,46 @@ function Cart() {
   //   });
   // };
 
-  const handleSelect = item => {
-    const changeCheck = cartList.map(check => {
-      if (check.id === item.id) check.isChecked = !check.isChecked;
-      return check;
-    });
-    this.setState(
-      {
-        cartList: changeCheck,
-      },
-      () => this.handleCheckbox()
-    );
+  useEffect(() => {
+    console.log("시랭");
+    handleCheck();
+  }, [cartList]);
+
+  // const handleSelect = item => {
+  //   const changeCheck = cartList.map(check => {
+  //     if (check.id === item.id) check.isChecked = !check.isChecked;
+  //     return check;
+  //   });
+  //   this.setState(
+  //     {
+  //       cartList: changeCheck,
+  //     },
+  //     () => this.handleCheckbox()
+  //   );
+  // };
+
+  const handleCheck = () => {
+    let bool = (cartList.isAllChecked = cartList.every(check => check.isChecked)
+      ? true
+      : false);
+    dispatch(changeCheck(bool));
   };
 
-  const handleItemCounts = e => {
-    const insertNum = /^[0-9]*$/;
-    const idx = cartList.findIndex(item => item.id === Number(e.target.name));
-    const tmpArr = [...cartList];
-    if (!insertNum.test(e.target.value)) return;
-    if (Number(e.target.value) > 20) {
-      alert("최대 선택 가능 수량은 20개 입니다!");
-      e.target.value = 20;
-    }
-    tmpArr[idx] = {
-      ...tmpArr[idx],
-      quantity: Number(e.target.value),
-    };
-    this.setState({ cartList: tmpArr });
-  };
+  // const handleItemCounts = e => {
+  //   const insertNum = /^[0-9]*$/;
+  //   const idx = cartList.findIndex(item => item.id === Number(e.target.name));
+  //   const tmpArr = [...cartList];
+  //   if (!insertNum.test(e.target.value)) return;
+  //   if (Number(e.target.value) > 20) {
+  //     alert("최대 선택 가능 수량은 20개 입니다!");
+  //     e.target.value = 20;
+  //   }
+  //   tmpArr[idx] = {
+  //     ...tmpArr[idx],
+  //     quantity: Number(e.target.value),
+  //   };
+  //   this.setState({ cartList: tmpArr });
+  // };
 
   const handlePay = () => {
     const countSort = cartList
@@ -145,8 +157,7 @@ function Cart() {
                 <CartList
                   cartList={cartList}
                   isAllChecked={isAllChecked}
-                  handleItemCounts={handleItemCounts}
-                  handleSelect={handleSelect}
+                  //handleItemCounts={handleItemCounts}
                 />
               )}
             </div>
@@ -180,7 +191,10 @@ function Cart() {
           </div>
           <div className="bottomButton">
             <div className="buttonSub">
-              <button className="btnDelete" onClick={handleDelete}>
+              <button
+                className="btnDelete"
+                onClick={() => dispatch(handleDelete())}
+              >
                 삭제 하기
               </button>
               <button className="btnSave">찜하기</button>
