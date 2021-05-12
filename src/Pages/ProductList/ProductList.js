@@ -23,7 +23,6 @@ class ProductList extends Component {
       subCategoryList: [],
       showGeneralModal: false,
       showCartModal: false,
-      dataSetName: "",
       productId: "",
       cartProductPrice: "",
       cartTotalPrice: "",
@@ -44,9 +43,13 @@ class ProductList extends Component {
   }
 
   componentDidUpdate() {
-    this.state.showHeartModal || this.state.showCartModal
+    this.state.showGeneralModal || this.state.showCartModal
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "unset");
+  }
+
+  componentWillUnmount() {
+    document.body.style.overflow = "unset";
   }
 
   sortBySubCategory = e => {
@@ -97,6 +100,15 @@ class ProductList extends Component {
       showGeneralModal: !this.state.showGeneralModal,
       showCartModal: !this.state.showCartModal,
     });
+  };
+
+  goToCart = () => {
+    this.setState(
+      {
+        showGeneralModal: !this.state.showGeneralModal,
+      },
+      this.props.history.push("/cart")
+    );
   };
 
   putOnCart = () => {
@@ -227,14 +239,16 @@ class ProductList extends Component {
       productId,
       cartTotalPrice,
       cartCountNum,
-      dataSetName,
     } = this.state;
     return (
       <>
         <Nav />
         <div className="productListPage">
           {showGeneralModal && (
-            <GeneralModal clickClose={this.clickClose} text={dataSetName} />
+            <GeneralModal
+              clickClose={this.clickClose}
+              goToCart={this.goToCart}
+            />
           )}
           {showCartModal && (
             <CartModal
@@ -275,13 +289,6 @@ class ProductList extends Component {
   }
 }
 
-const checkDispatch = dispatch => {
-  return { dispatch };
-};
-
-export default connect(
-  state => ({
-    cartList: state.Cart.cartList,
-  }),
-  checkDispatch
-)(ProductList);
+export default connect(state => ({
+  cartList: state.cartReducer.cartList,
+}))(ProductList);

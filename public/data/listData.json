@@ -9,13 +9,14 @@
       "product_id": 1,
       "image_url": "https://images.unsplash.com/photo-1523293182086-7651a899d37f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyZnVtZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
       "name": "Bleu De chanel",
-      "product_label": ["스테디셀러", "재구매가", "숲속자연의향기"],
+      "product_label": ["스테디셀러", "재구매각", "숲속자연의향기"],
       "is_new": true,
       "is_vegan": true,
       "is_soldout": false,
       "price": "200000",
       "sub_category": "배쓰 밤",
       "productDetail": {
+        "weight": "90g",
         "category": "베쓰 밤",
         "name": "험프티 덤프티",
         "enName": "Humpty Dumpty",
@@ -32,6 +33,18 @@
           "BathBomb",
           "HumptyDumpty",
           "험프티덤프티"
+        ],
+        "subImages": [
+          "https://images.unsplash.com/photo-1523293182086-7651a899d37f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyZnVtZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+          "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
         ]
       }
     },
@@ -46,6 +59,7 @@
       "price": "120000",
       "subCategory": "배쓰 오일",
       "productDetail": {
+        "weight": "90g",
         "category": "베쓰 밤",
         "name": "험프티 덤프티",
         "enName": "Humpty Dumpty",
@@ -62,6 +76,18 @@
           "BathBomb",
           "HumptyDumpty",
           "험프티덤프티"
+        ],
+        "subImages": [
+          "https://images.unsplash.com/photo-1561997835-49889d0e0355?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8cGVyZnVtZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+          "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
         ]
       }
     },
@@ -76,6 +102,7 @@
       "price": "3000000",
       "subCategory": "배쓰 바",
       "productDetail": {
+        "weight": "90g",
         "category": "베쓰 밤",
         "name": "험프티 덤프티",
         "enName": "Humpty Dumpty",
@@ -92,6 +119,18 @@
           "BathBomb",
           "HumptyDumpty",
           "험프티덤프티"
+        ],
+        "subImages": [
+          "https://images.unsplash.com/photo-1586821559174-c90d1eba8c1d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzEwfHxwZXJmdW1lfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+          "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
         ]
       }
     },
@@ -106,6 +145,7 @@
       "price": "200000",
       "subCategory": "배쓰 오일",
       "productDetail": {
+        "weight": "90g",
         "category": "베쓰 밤",
         "name": "험프티 덤프티",
         "enName": "Humpty Dumpty",
@@ -122,6 +162,18 @@
           "BathBomb",
           "HumptyDumpty",
           "험프티덤프티"
+        ],
+        "subImages": [
+          "https://images.unsplash.com/photo-1523293182086-7651a899d37f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyZnVtZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+          "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
         ]
       }
     },
@@ -136,6 +188,7 @@
       "price": "120000",
       "subCategory": "배쓰 밤",
       "productDetail": {
+        "weight": "90g",
         "category": "베쓰 밤",
         "name": "험프티 덤프티",
         "enName": "Humpty Dumpty",
@@ -152,6 +205,18 @@
           "BathBomb",
           "HumptyDumpty",
           "험프티덤프티"
+        ],
+        "subImages": [
+          "https://images.unsplash.com/photo-1561997835-49889d0e0355?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8cGVyZnVtZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+          "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
         ]
       }
     },
@@ -166,6 +231,7 @@
       "price": "3000000",
       "subCategory": "배쓰 바",
       "productDetail": {
+        "weight": "90g",
         "category": "베쓰 밤",
         "name": "험프티 덤프티",
         "enName": "Humpty Dumpty",
@@ -182,6 +248,18 @@
           "BathBomb",
           "HumptyDumpty",
           "험프티덤프티"
+        ],
+        "subImages": [
+          "https://images.unsplash.com/photo-1586821559174-c90d1eba8c1d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzEwfHxwZXJmdW1lfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+          "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
         ]
       }
     },
@@ -196,6 +274,7 @@
       "price": "200000",
       "subCategory": "펀",
       "productDetail": {
+        "weight": "90g",
         "category": "베쓰 밤",
         "name": "험프티 덤프티",
         "enName": "Humpty Dumpty",
@@ -212,6 +291,18 @@
           "BathBomb",
           "HumptyDumpty",
           "험프티덤프티"
+        ],
+        "subImages": [
+          "https://images.unsplash.com/photo-1523293182086-7651a899d37f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyZnVtZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+          "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
         ]
       }
     },
@@ -226,6 +317,7 @@
       "price": "120000",
       "sub_category": "배쓰 오일",
       "productDetail": {
+        "weight": "90g",
         "category": "베쓰 밤",
         "name": "험프티 덤프티",
         "enName": "Humpty Dumpty",
@@ -242,6 +334,18 @@
           "BathBomb",
           "HumptyDumpty",
           "험프티덤프티"
+        ],
+        "subImages": [
+          "https://images.unsplash.com/photo-1561997835-49889d0e0355?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8cGVyZnVtZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+          "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
         ]
       }
     },
@@ -256,6 +360,7 @@
       "price": "3000000",
       "sub_category": "배쓰 바",
       "productDetail": {
+        "weight": "90g",
         "category": "베쓰 밤",
         "name": "험프티 덤프티",
         "enName": "Humpty Dumpty",
@@ -272,6 +377,18 @@
           "BathBomb",
           "HumptyDumpty",
           "험프티덤프티"
+        ],
+        "subImages": [
+          "https://images.unsplash.com/photo-1586821559174-c90d1eba8c1d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzEwfHxwZXJmdW1lfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+          "https://images.unsplash.com/photo-1601215451470-87ebe1d9d57d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1612217028533-de1e049eb6a9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTd8fGJhdGglMjBib21ifGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1569383971623-393054ce65c8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8YmF0aCUyMGJvbWJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
         ]
       }
     }

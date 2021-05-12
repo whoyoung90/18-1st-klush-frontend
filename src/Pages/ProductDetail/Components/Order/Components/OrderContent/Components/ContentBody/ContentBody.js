@@ -26,11 +26,11 @@ class ContentBody extends Component {
         </div>
         <div className="weightColumn">
           <span className="columnTitle">상품무게</span>
-          <div className="columnRight">{weight}g</div>
+          <div className="columnRight">{weight}</div>
         </div>
         <div className="buyCountColumn">
           <span className="columnTitle">구매수량</span>
-          <form className="countBox">
+          <div className="countBox">
             <button className="minus btnsElement" onClick={minusBtn}>
               -
             </button>
@@ -44,7 +44,7 @@ class ContentBody extends Component {
             <button className="plus btnsElement" onClick={plusBtn}>
               +
             </button>
-          </form>
+          </div>
           <div className="buyPrice price">&#8361;{totalPrice}</div>
         </div>
       </main>

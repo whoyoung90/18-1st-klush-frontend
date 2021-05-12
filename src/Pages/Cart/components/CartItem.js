@@ -18,7 +18,7 @@ function CartItem({ key, rowSpan, cartList, handleItemCounts }) {
           onClick={() => dispatch(handleSelect(cartList))}
           id="checkbo
           x"
-          defaultChecked={cartList.isChecked}
+          checked={cartList.isChecked}
         />
         <label id={cartList.id} for="checkbox" className="checked ">
           <span></span>

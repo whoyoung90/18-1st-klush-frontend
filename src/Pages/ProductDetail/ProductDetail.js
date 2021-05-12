@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Nav from "../../Components/Nav/Nav";
+import GeneralModal from "../../Pages/ProductList/Components/GeneralModal/GeneralModal";
 import Direction from "./Components/Direction/Direction";
 import Order from "./Components/Order/Order";
 import DetailInfo from "./Components/DetailInfo/DetailInfo";
@@ -15,29 +16,73 @@ class ProductDetail extends Component {
     super();
 
     this.state = {
+      product: "",
       productData: 0,
+      showGeneralModal: false,
     };
   }
 
   componentDidMount() {
-    fetch(`${COMMON_API}/product/${this.props.match.params.id}`)
+    fetch(`${COMMON_API}`)
       .then(res => res.json())
       .then(result =>
         this.setState({
-          productData: result.product_detail_data[0],
+          product: result.products.filter(
+            item => item.product_id === Number(this.props.match.params.id)
+          )[0],
+          productData: result.products.filter(
+            item => item.product_id === Number(this.props.match.params.id)
+          )[0].productDetail,
         })
       );
   }
 
+  componentDidUpdate() {
+    this.state.showGeneralModal
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "unset");
+  }
+
+  componentWillUnmount() {
+    document.body.style.overflow = "unset";
+  }
+
+  goToGeneralModal = () => {
+    this.setState({
+      showGeneralModal: !this.state.showGeneralModal,
+    });
+  };
+
+  goToCart = () => {
+    this.setState(
+      {
+        showGeneralModal: !this.state.showGeneralModal,
+      },
+      this.props.history.push("/cart")
+    );
+  };
+
+  clickClose = modal => {
+    this.setState({
+      [modal]: !this.state[modal],
+      cartCountNum: "1",
+    });
+  };
+
   render() {
-    console.log("data", this.state.productData);
-    const { productData } = this.state;
+    const { productData, product, showGeneralModal } = this.state;
 
     return (
       productData && (
         <>
           <Nav />
           <div className="productDetailPage">
+            {showGeneralModal && (
+              <GeneralModal
+                clickClose={this.clickClose}
+                goToCart={this.goToCart}
+              />
+            )}
             <div className="productDetailContainer">
               <header className="productDetailHeader">
                 <div className="directionColumn">
@@ -50,14 +95,16 @@ class ProductDetail extends Component {
                 </div>
               </header>
               <Order
-                name={productData.name}
-                mainImgSrc={productData.image_url}
+                id={product.produc_id}
+                name={product.name}
+                mainImgSrc={product.image_url}
                 mainImgName={productData.name}
-                subImages={productData.image_url}
-                productPrice={productData.price}
+                subImages={productData.subImages}
+                productPrice={product.price}
                 reviewCount="0"
-                hashTags={productData.product_label}
+                hashTags={product.product_label}
                 weight={productData.weight}
+                goToGeneralModal={this.goToGeneralModal}
               />
 
               <DetailInfo
