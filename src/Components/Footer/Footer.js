@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Footer.scss";
 
 const FOOTER = {
@@ -13,40 +13,36 @@ const FOOTER = {
   ],
 };
 
-class Footer extends Component {
-  render() {
-    return (
-      <footer className="footerAll">
-        <img src="/Images/lush-footer.jpg" className="icons" />
-        <ul className="footerLeftWrap">
-          <a href="/main" className="footerLogo">
-            KLUSH
-          </a>
-          {FOOTER.Info.map(el => (
-            <li className="logoInfo">{el}</li>
+export default function Footer() {
+  return (
+    <footer className="footerAll">
+      <img src="/Images/lush-footer.png" className="icons" />
+      <ul className="footerLeftWrap">
+        <a href="/main" className="footerLogo">
+          KLUSH
+        </a>
+        {FOOTER.Info.map(el => (
+          <li className="logoInfo">{el}</li>
+        ))}
+      </ul>
+      <div className="footerRightWrap">
+        <ul className="footerWrap">
+          {FOOTER.Menu.map(el => (
+            <li className="footerLink">
+              <a className="footerLinkBtn" href="#">
+                {el}
+              </a>
+            </li>
           ))}
         </ul>
-        <div className="footerRightWrap">
-          <ul className="footerWrap">
-            {FOOTER.Menu.map(el => (
-              <li className="footerLink">
-                <a className="footerLinkBtn" href="#">
-                  {el}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <span className="footerLinkInfo">
-            매주 금요일 오후, 구독자님을 위한
-            <br />
-            제품과 브랜드 이야기를 전해드립니다.
-            <br />
-            <li>구독은 언제든지 해지하실 수 있습니다.</li>
-          </span>
-        </div>
-      </footer>
-    );
-  }
+        <span className="footerLinkInfo">
+          매주 금요일 오후, 구독자님을 위한
+          <br />
+          제품과 브랜드 이야기를 전해드립니다.
+          <br />
+          <li>구독은 언제든지 해지하실 수 있습니다.</li>
+        </span>
+      </div>
+    </footer>
+  );
 }
-
-export default Footer;

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./DropUserMenu.scss";
 
@@ -9,21 +9,18 @@ const NAV_USER_LIST = [
   { path: "#", value: "고객센터" },
 ];
 
-class DropUserMenu extends Component {
-  render() {
-    return (
-      <ul className="dropUserMenu">
-        {NAV_USER_LIST.map((obj, idx) => {
-          return (
-            <li key={idx} className="userList">
-              <Link className="userLink" to={obj.path}>
-                {obj.value}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    );
-  }
+export default function DropUserMenu() {
+  return (
+    <ul className="dropUserMenu">
+      {NAV_USER_LIST.map((obj, idx) => {
+        return (
+          <li key={idx} className="userList">
+            <Link className="userLink" to={obj.path}>
+              {obj.value}
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
 }
-export default DropUserMenu;
