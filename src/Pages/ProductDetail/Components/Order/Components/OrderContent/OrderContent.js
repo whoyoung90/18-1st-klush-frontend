@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import ContentHeader from "./Components/ContentHeader/ContentHeader";
 import ContentBody from "./Components/ContentBody/ContentBody";
 import ContentFooter from "./Components/ContentFooter/ContentFooter";
 import Buttons from "./Components/Buttons/Buttons";
+
+import { addCart } from "../../../../../../store/actions/index";
 
 import "./OrderContent.scss";
 
@@ -24,6 +27,38 @@ class OrderContent extends Component {
       totalPrice: this.printPrice(String(this.props.productPrice)),
     });
   }
+
+  putOnCart = () => {
+    this.props.dispatch(
+      addCart({
+        id: this.props.id,
+        img: this.props.mainImgSrc,
+        name: this.props.name,
+        category: "배쓰밤",
+        quantity: this.state.countNum,
+        price: this.props.productPrice,
+      })
+    );
+    // let token = localStorage.getItem("token");
+    // fetch(`${COMMON_API}/order/cart/${this.state.productId}`, {
+    //   method: "POST",
+    //   headers: {
+    //     Authorization: token,
+    //   },
+    //   body: JSON.stringify({
+    //     quantity: this.state.cartCountNum,
+    //   }),
+    // });
+
+    this.setState(
+      {
+        cartCountNum: "1",
+      },
+      () => {
+        this.props.goToGeneralModal();
+      }
+    );
+  };
 
   //가격 쉼표 추가
   printPrice = priceStr => {
@@ -109,10 +144,12 @@ class OrderContent extends Component {
         />
         <div className="devideLine" />
         <ContentFooter totalPrice={totalPrice} />
-        <Buttons />
+        <Buttons onClickEvent={this.putOnCart} />
       </div>
     );
   }
 }
 
-export default OrderContent;
+export default connect(state => ({
+  cartList: state.cartReducer.cartList,
+}))(OrderContent);

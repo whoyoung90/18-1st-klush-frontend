@@ -16,6 +16,8 @@ class Order extends Component {
       hashTags,
       weight,
       name,
+      id,
+      goToGeneralModal,
     } = this.props;
 
     return (
@@ -26,6 +28,9 @@ class Order extends Component {
           subImages={subImages}
         />
         <OrderContent
+          goToGeneralModal={goToGeneralModal}
+          id={id}
+          mainImgSrc={mainImgSrc}
           productPrice={productPrice}
           reviewCount={reviewCount}
           hashTags={hashTags}
