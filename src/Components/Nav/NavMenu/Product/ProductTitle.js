@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import ProductContent from "./ProductContent";
 import "./ProductTitle.scss";
+import { NAV_BAR_API } from "../../../../config";
 
 export default function ProductTitle() {
   const [title, setTitle] = useState([]);
 
   const getProductTitle = () => {
-    axios.get("/data/productNavBar.json").then(res => setTitle(res.data.data));
+    axios.get(`${NAV_BAR_API}`).then(res => setTitle(res.data.data));
   };
 
   useEffect(() => {
