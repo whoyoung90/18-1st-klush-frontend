@@ -9,16 +9,13 @@ export const addCart = item => {
   };
 };
 
-// export const handleCheckbox = () =>
-
 export const handleDecrement = item => ({
   type: "DECREASE",
   payload: item,
 });
 
-export const handleDelete = item => ({
-  type: "REMOVE_FROM_CART",
-  payload: item,
+export const handleDelete = () => ({
+  type: "DELETE",
 });
 
 export const handleItemCounts = e => ({
@@ -26,7 +23,20 @@ export const handleItemCounts = e => ({
   e,
 });
 
-export const handleToggle = id => ({
-  type: "TOGGLE_ITEM",
-  id,
+export const handleCheck = () => ({
+  type: "HANDLE_CHECKBOX",
+});
+
+export const handleSelect = item => ({
+  type: "HANDLE_SELECT",
+  payload: item,
+});
+
+export const selectAll = () => ({
+  type: "SELECT_ALL",
+});
+
+export const changeCheck = bool => ({
+  type: "CHANGE_CHECK",
+  payload: bool,
 });
