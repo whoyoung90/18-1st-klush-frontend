@@ -1,9 +1,15 @@
+import { check } from "prettier";
+
 const INCREASE = "INCREASE";
 const DECREASE = "DECREASE";
-const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+const DELETE = "DELETE";
 const TOGGLE_ITEM = "TOGGLE_ITEM";
 const HANDLECOUNT = "HANDLECOUNT";
 const ADDCART = "ADDCART";
+const HANDLE_CHECKBOX = "HANDLE_CHECKBOX";
+const HANDLE_SELECT = "HANDLE_SELECT";
+const SELECT_ALL = "SELECT_ALL";
+const CHANGE_CHECK = "CHANGE_CHECK";
 
 const INITIAL_STATE = {
   cartList: [
@@ -84,23 +90,56 @@ export default function cartReducer(state = INITIAL_STATE, action) {
         ...state,
         cartList: state.cartList.map(item =>
           item.id === action.payload.id
-            ? { ...item, quantity: item.quantity - 1 }
+            ? { ...item, quantity: item.quantity <= 1 ? 1 : item.quantity - 1 }
             : item
         ),
       };
-    case REMOVE_FROM_CART:
+    case DELETE:
+      if (
+        window.confirm(
+          `선택하신  ${state.cartList.length}개 상품을 장바구니에서 삭제 하시겠습니까?`
+        )
+      );
       return {
-        // toggle 적용 안 하고 개별 삭제 ver
         ...state,
-        cartList: state.cartList.filter(item => item.id !== action.payload.id),
+        cartList: state.cartList.filter(item => !item.isChecked),
       };
+
     case TOGGLE_ITEM:
       return state.map(item =>
         item.id === action.id ? { ...item, ischecked: !item.ischecked } : item
       );
+    case HANDLE_CHECKBOX:
+      return (state.isAllChecked = state.cartList.every(
+        check => check.isChecked
+      )
+        ? true
+        : false);
+
+    case HANDLE_SELECT:
+      return {
+        ...state,
+        cartList: state.cartList.map(item =>
+          item.id === action.payload.id
+            ? { ...item, isChecked: !item.isChecked }
+            : item
+        ),
+      };
+
+    case CHANGE_CHECK:
+      return { ...state, isAllChecked: action.payload };
+    case SELECT_ALL:
+      return {
+        ...state,
+        cartList: state.cartList.map(item => {
+          item.isChecked = state.isAllChecked ? false : true;
+          return item;
+        }),
+      };
 
     case HANDLECOUNT:
-      return;
+      return 1;
+
     default:
       return state;
   }
