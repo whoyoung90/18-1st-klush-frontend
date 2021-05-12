@@ -1,38 +1,32 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ProductNavBar from "../Product/ProductNavBar";
-import "../Product/Product.scss";
+import axios from "axios";
+import ProductContent from "../Product/ProductContent";
+import "../Product/ProductTitle.scss";
 
-class LushIntro extends Component {
-  constructor() {
-    super();
-    this.state = {
-      dropDown: [],
-    };
-  }
+export default function LushIntro() {
+  const [dropDown, setDropDown] = useState([]);
 
-  componentDidMount() {
-    fetch("/data/productNavBar.json")
-      .then(res => res.json())
-      .then(res => this.setState({ dropDown: res.intro }));
-  }
+  const getLushIntro = () => {
+    axios
+      .get("/data/productNavBar.json")
+      .then(res => setDropDown(res.data.intro));
+  };
 
-  render() {
-    const { dropDown } = this.state;
+  useEffect(() => {
+    getLushIntro();
+  }, []);
 
-    return (
-      <li className="dropDown">
-        <Link className="navIntro" to="#">
-          러쉬 소개
-        </Link>
-        <div className="dropDownMenu">
-          {dropDown.map(list => (
-            <ProductNavBar title={list.title} items={list.items} />
-          ))}
-        </div>
-      </li>
-    );
-  }
+  return (
+    <li className="dropDown">
+      <Link className="navIntro" to="#">
+        러쉬 소개
+      </Link>
+      <div className="dropDownMenu">
+        {dropDown.map(list => (
+          <ProductContent title={list.title} items={list.items} />
+        ))}
+      </div>
+    </li>
+  );
 }
-
-export default LushIntro;
