@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import * as Config from "../../config";
-import ProductTitle from "./NavMenu/Product/ProductTitle";
-import LushIntro from "./NavMenu/LushIntro/LushIntro";
-import DropUserMenu from "./DropUserMenu";
+import ProductContent from "./ProductMenu/ProductContent";
+import DropUserMenu from "./ProductMenu/DropUserMenu";
 import SearchModal from "./SearchModal";
+import { NAV_BAR_API } from "../../config";
+import axios from "axios";
 import { useSelector } from "react-redux";
 import "./Nav.scss";
-
-const NAV_MENU = ["매장안내", "스파", "이벤트"];
 
 export default function Nav() {
   const items = useSelector(store => store.cartReducer);
   const [isModalView, setModalView] = useState(false);
+  const [dropList, setDropList] = useState([]);
+
+  const getProductTitle = () => {
+    axios.get(`${NAV_BAR_API}`).then(res => setDropList(res.data.category));
+  };
+
+  useEffect(() => {
+    getProductTitle();
+  }, []);
 
   const handleModal = () => {
     setModalView(!isModalView);
@@ -24,17 +32,18 @@ export default function Nav() {
         <div className="lushLogo">
           <Link to="/main">KLUSH</Link>
         </div>
+        {/* 배열 데이터가 나타날때마다 map함수 */}
         <ul className="clickMenu">
-          <ProductTitle />
-          <LushIntro />
-          {NAV_MENU.map(name => (
+          {dropList.map(el => (
             <li className="dropDown">
               <Link className="navIntro" to="#">
-                {name}
+                {el.navTitle}
               </Link>
+              <ProductContent data={el.data} />
             </li>
           ))}
         </ul>
+
         <ul className="clickButton">
           <li className="dropUser">
             <Link onClick={handleModal} className="dropLink">
