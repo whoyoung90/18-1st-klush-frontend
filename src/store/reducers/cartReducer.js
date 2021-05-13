@@ -78,7 +78,7 @@ export default function cartReducer(state = INITIAL_STATE, action) {
         ...state,
         cartList: state.cartList.map(item =>
           item.id === action.payload.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: Number(item.quantity + 1) }
             : item
         ),
       };

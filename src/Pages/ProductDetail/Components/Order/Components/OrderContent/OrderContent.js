@@ -16,7 +16,7 @@ class OrderContent extends Component {
 
     this.state = {
       price: 0,
-      countNum: "1",
+      countNum: 1,
       totalPrice: "",
     };
   }
@@ -35,7 +35,7 @@ class OrderContent extends Component {
         img: this.props.mainImgSrc,
         name: this.props.name,
         category: "배쓰밤",
-        quantity: this.state.countNum,
+        quantity: Number(this.state.countNum),
         price: this.props.productPrice,
         isChecked: true,
       })
