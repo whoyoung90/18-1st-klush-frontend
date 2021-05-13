@@ -37,6 +37,7 @@ class OrderContent extends Component {
         category: "배쓰밤",
         quantity: this.state.countNum,
         price: this.props.productPrice,
+        isChecked: true,
       })
     );
     // let token = localStorage.getItem("token");

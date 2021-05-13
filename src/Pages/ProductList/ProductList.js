@@ -124,6 +124,7 @@ class ProductList extends Component {
         category: "배쓰밤",
         quantity: this.state.cartCountNum,
         price: this.state.cartProductPrice,
+        isChecked: true,
       })
     );
     // let token = localStorage.getItem("token");
