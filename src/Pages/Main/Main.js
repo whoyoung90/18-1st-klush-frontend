@@ -36,11 +36,15 @@ export default function Main() {
         <div className="main">
           <MainSlide />
           <div className="itemWrap">
-            <h2>신상품을 부탁해!</h2>
+            <h2>KLUSH 이주의 핫템!</h2>
             <Slider className="myItem" {...settings}>
               {mainList.map((el, idx) => (
                 <Link to="/main" key={idx} className="myItemList">
                   <img className="myImg" src={el.image_url} alt="newLabel" />
+                  <section className="isLabels">
+                    {el.is_new && <div class="isNew">NEW</div>}
+                    {el.is_vegan && <div class="isVegan">VEGAN</div>}
+                  </section>
                   <div className="imgTitle">{el.name}</div>
                   <div className="imgHash">{el.product_label}</div>
                   <div className="cost">

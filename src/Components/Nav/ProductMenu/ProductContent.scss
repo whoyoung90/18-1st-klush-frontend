@@ -1,0 +1,42 @@
+@import "../Nav.scss";
+
+.dropDown {
+  &:hover .dropDownMenu {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0 30px;
+    text-align: left;
+    background-color: #333333;
+
+    .productNavBar {
+      display: flex;
+      padding: 30px 15px;
+
+      li {
+        padding: 15px;
+
+        .barTitle {
+          font-size: 18px;
+          font-weight: bold;
+          @extend %link-decoration;
+        }
+
+        .barItems {
+          display: table-row;
+          margin: 20px;
+          color: #aeaeae;
+          font-size: 14px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .dropDownMenu {
+    display: none;
+  }
+}

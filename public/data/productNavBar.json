@@ -1,154 +1,165 @@
 {
-  "data": [
+  "category": [
     {
-      "title": { "path": "#", "titleName": "베스트" },
-      "items": [
-        { "path": "#", "value": "주간베스트" },
-        { "path": "#", "value": "별다섯개후기" },
-        { "path": "#", "value": "온라인전용" },
-        { "path": "#", "value": "국내제조" },
-        { "path": "#", "value": "네이키드" },
-        { "path": "#", "value": "홈스파" }
+      "navTitle": "제품",
+      "data": [
+        {
+          "title": { "path": "/products", "titleName": "배쓰" },
+          "items": [
+            { "path": "#", "value": "배쓰밤" },
+            { "path": "#", "value": "버블바" },
+            { "path": "#", "value": "배쓰오일" },
+            { "path": "#", "value": "펀" },
+            { "path": "#", "value": "젤리밤" }
+          ]
+        },
+        {
+          "title": { "path": "#", "titleName": "베스트" },
+          "items": [
+            { "path": "#", "value": "주간베스트" },
+            { "path": "#", "value": "별다섯개후기" },
+            { "path": "#", "value": "온라인전용" },
+            { "path": "#", "value": "국내제조" },
+            { "path": "#", "value": "네이키드" },
+            { "path": "#", "value": "홈스파" }
+          ]
+        },
+        {
+          "title": { "path": "#", "titleName": "신제품" },
+          "items": [
+            { "path": "#", "value": "디스커버리키트" },
+            { "path": "#", "value": "보디스프레이" },
+            { "path": "#", "value": "이스터" },
+            { "path": "#", "value": "버블바큐레이션" },
+            { "path": "#", "value": "발렌타인에디션" },
+            { "path": "#", "value": "비건메이크업" },
+            { "path": "#", "value": "퍼퓸보틀&북" }
+          ]
+        },
+        {
+          "title": { "path": "#", "titleName": "샤워" },
+          "items": [
+            { "path": "#", "value": "솝" },
+            { "path": "#", "value": "샤워젤&젤리" },
+            { "path": "#", "value": "보디컨디셔너" },
+            { "path": "#", "value": "샤워밤" },
+            { "path": "#", "value": "샤워오일" },
+            { "path": "#", "value": "스크럽&버터" },
+            { "path": "#", "value": "펀" }
+          ]
+        },
+        {
+          "title": { "path": "#", "titleName": "보디" },
+          "items": [
+            { "path": "#", "value": "클렌저" },
+            { "path": "#", "value": "로션" },
+            { "path": "#", "value": "핸드앤풋" },
+            { "path": "#", "value": "마사지바" },
+            { "path": "#", "value": "더스팅파우더" },
+            { "path": "#", "value": "쉐이빙크림" }
+          ]
+        },
+        {
+          "title": { "path": "#", "titleName": "페이스" },
+          "items": [
+            { "path": "#", "value": "클렌저" },
+            { "path": "#", "value": "페이스마스크" },
+            { "path": "#", "value": "토너" },
+            { "path": "#", "value": "모이스춰라이저" },
+            { "path": "#", "value": "프라이머" },
+            { "path": "#", "value": "립" },
+            { "path": "#", "value": "쉐이빙크림" }
+          ]
+        },
+        {
+          "title": { "path": "#", "titleName": "헤어" },
+          "items": [
+            { "path": "#", "value": "샴푸바" },
+            { "path": "#", "value": "샴푸" },
+            { "path": "#", "value": "컨디셔너" },
+            { "path": "#", "value": "트리트먼트" },
+            { "path": "#", "value": "스타일링" }
+          ]
+        },
+        {
+          "title": { "path": "#", "titleName": "메이크업" },
+          "items": [
+            { "path": "#", "value": "페이스파우더" },
+            { "path": "#", "value": "아이메이크업" },
+            { "path": "#", "value": "립" },
+            { "path": "#", "value": "파운데이션" },
+            { "path": "#", "value": "스킨틴트" },
+            { "path": "#", "value": "비건브러쉬" }
+          ]
+        },
+        {
+          "title": { "path": "#", "titleName": "퍼퓸" },
+          "items": [
+            { "path": "#", "value": "보디스프레이" },
+            { "path": "#", "value": "퍼퓸라이브러리" },
+            { "path": "#", "value": "코어레인지" },
+            { "path": "#", "value": "솔리드퍼퓸" },
+            { "path": "#", "value": "위시카드" },
+            { "path": "#", "value": "퍼퓸낫랩" },
+            { "path": "#", "value": "르네상스퍼퓸" }
+          ]
+        },
+        {
+          "title": { "path": "#", "titleName": "기프트" },
+          "items": [
+            { "path": "#", "value": "기프트베스트" },
+            { "path": "#", "value": "1-3만원대" },
+            { "path": "#", "value": "4-6만원대" },
+            { "path": "#", "value": "7만원이상" },
+            { "path": "#", "value": "낫랩" },
+            { "path": "#", "value": "스웨그" },
+            { "path": "#", "value": "악세서리" },
+            { "path": "#", "value": "북" }
+          ]
+        },
+        {
+          "title": { "path": "#", "titleName": "비건" },
+          "items": [
+            { "path": "#", "value": "베쓰" },
+            { "path": "#", "value": "샤워" },
+            { "path": "#", "value": "보디" },
+            { "path": "#", "value": "페이스" },
+            { "path": "#", "value": "헤어" },
+            { "path": "#", "value": "메이크업" },
+            { "path": "#", "value": "퍼퓸" }
+          ]
+        }
       ]
     },
     {
-      "title": { "path": "#", "titleName": "신제품" },
-      "items": [
-        { "path": "#", "value": "디스커버리키트" },
-        { "path": "#", "value": "보디스프레이" },
-        { "path": "#", "value": "이스터" },
-        { "path": "#", "value": "버블바큐레이션" },
-        { "path": "#", "value": "발렌타인에디션" },
-        { "path": "#", "value": "비건메이크업" },
-        { "path": "#", "value": "퍼퓸보틀&북" }
+      "navTitle": "러쉬 소개",
+      "data": [
+        {
+          "title": { "path": "#", "titleName": "러쉬소개" },
+          "items": [
+            { "path": "#", "value": "러쉬역사" },
+            { "path": "#", "value": "이념과가치" }
+          ]
+        },
+        {
+          "title": { "path": "#", "titleName": "러쉬이야기" },
+          "items": []
+        },
+        {
+          "title": { "path": "#", "titleName": "채러티팟" },
+          "items": []
+        },
+        {
+          "title": { "path": "#", "titleName": "커뮤니티" },
+          "items": [
+            { "path": "#", "value": "젤러쉬" },
+            { "path": "#", "value": "덕찌" }
+          ]
+        }
       ]
     },
-    {
-      "title": { "path": "/products", "titleName": "배쓰" },
-      "items": [
-        { "path": "#", "value": "배쓰밤" },
-        { "path": "#", "value": "버블바" },
-        { "path": "#", "value": "배쓰오일" },
-        { "path": "#", "value": "펀" },
-        { "path": "#", "value": "젤리밤" }
-      ]
-    },
-    {
-      "title": { "path": "#", "titleName": "샤워" },
-      "items": [
-        { "path": "#", "value": "솝" },
-        { "path": "#", "value": "샤워젤&젤리" },
-        { "path": "#", "value": "보디컨디셔너" },
-        { "path": "#", "value": "샤워밤" },
-        { "path": "#", "value": "샤워오일" },
-        { "path": "#", "value": "스크럽&버터" },
-        { "path": "#", "value": "펀" }
-      ]
-    },
-    {
-      "title": { "path": "#", "titleName": "보디" },
-      "items": [
-        { "path": "#", "value": "클렌저" },
-        { "path": "#", "value": "로션" },
-        { "path": "#", "value": "핸드앤풋" },
-        { "path": "#", "value": "마사지바" },
-        { "path": "#", "value": "더스팅파우더" },
-        { "path": "#", "value": "쉐이빙크림" }
-      ]
-    },
-    {
-      "title": { "path": "#", "titleName": "페이스" },
-      "items": [
-        { "path": "#", "value": "클렌저" },
-        { "path": "#", "value": "페이스마스크" },
-        { "path": "#", "value": "토너" },
-        { "path": "#", "value": "모이스춰라이저" },
-        { "path": "#", "value": "프라이머" },
-        { "path": "#", "value": "립" },
-        { "path": "#", "value": "쉐이빙크림" }
-      ]
-    },
-    {
-      "title": { "path": "#", "titleName": "헤어" },
-      "items": [
-        { "path": "#", "value": "샴푸바" },
-        { "path": "#", "value": "샴푸" },
-        { "path": "#", "value": "컨디셔너" },
-        { "path": "#", "value": "트리트먼트" },
-        { "path": "#", "value": "스타일링" }
-      ]
-    },
-    {
-      "title": { "path": "#", "titleName": "메이크업" },
-      "items": [
-        { "path": "#", "value": "페이스파우더" },
-        { "path": "#", "value": "아이메이크업" },
-        { "path": "#", "value": "립" },
-        { "path": "#", "value": "파운데이션" },
-        { "path": "#", "value": "스킨틴트" },
-        { "path": "#", "value": "비건브러쉬" }
-      ]
-    },
-    {
-      "title": { "path": "#", "titleName": "퍼퓸" },
-      "items": [
-        { "path": "#", "value": "보디스프레이" },
-        { "path": "#", "value": "퍼퓸라이브러리" },
-        { "path": "#", "value": "코어레인지" },
-        { "path": "#", "value": "솔리드퍼퓸" },
-        { "path": "#", "value": "위시카드" },
-        { "path": "#", "value": "퍼퓸낫랩" },
-        { "path": "#", "value": "르네상스퍼퓸" }
-      ]
-    },
-    {
-      "title": { "path": "#", "titleName": "기프트" },
-      "items": [
-        { "path": "#", "value": "기프트베스트" },
-        { "path": "#", "value": "1-3만원대" },
-        { "path": "#", "value": "4-6만원대" },
-        { "path": "#", "value": "7만원이상" },
-        { "path": "#", "value": "낫랩" },
-        { "path": "#", "value": "스웨그" },
-        { "path": "#", "value": "악세서리" },
-        { "path": "#", "value": "북" }
-      ]
-    },
-    {
-      "title": { "path": "#", "titleName": "비건" },
-      "items": [
-        { "path": "#", "value": "베쓰" },
-        { "path": "#", "value": "샤워" },
-        { "path": "#", "value": "보디" },
-        { "path": "#", "value": "페이스" },
-        { "path": "#", "value": "헤어" },
-        { "path": "#", "value": "메이크업" },
-        { "path": "#", "value": "퍼퓸" }
-      ]
-    }
-  ],
-  "intro": [
-    {
-      "title": { "path": "#", "titleName": "러쉬소개" },
-      "items": [
-        { "path": "#", "value": "러쉬역사" },
-        { "path": "#", "value": "이념과가치" }
-      ]
-    },
-    {
-      "title": { "path": "#", "titleName": "러쉬이야기" },
-      "items": []
-    },
-    {
-      "title": { "path": "#", "titleName": "채러티팟" },
-      "items": []
-    },
-    {
-      "title": { "path": "#", "titleName": "커뮤니티" },
-      "items": [
-        { "path": "#", "value": "젤러쉬" },
-        { "path": "#", "value": "덕찌" }
-      ]
-    }
+    { "navTitle": "매장 안내" },
+    { "navTitle": "스파" },
+    { "navTitle": "이벤트" }
   ]
 }
