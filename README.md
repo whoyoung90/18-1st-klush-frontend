@@ -65,7 +65,7 @@
 
 ### NAV bar
 
-- productNavBar.json를 이용한 navBar 단일 목데이터 구축
+- axios함수와 productNavBar.json를 이용한 navBar 단일 목데이터 구축
 - 순수 SASS를 이용한 모달 검색창 구현
 - Redux의 UseSelector를 이용하여 장바구니에 담긴 수량을 실시간으로 받아오기
 
