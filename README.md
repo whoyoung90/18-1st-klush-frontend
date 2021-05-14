@@ -71,7 +71,7 @@
 
 ### 메인 페이지
 
-- setInterval 함수를 이용하여 메인 슬라이드 구현
+- setInterval, clearInterval 함수간 관계를 활용하여 슬라이더 구현
 - 캐러셀 라이브러리로 상품 데이터 받아오기 ( NEW, VEGAN 라벨링 추가 구현)
 
 ### Footer
