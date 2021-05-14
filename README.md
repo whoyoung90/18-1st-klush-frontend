@@ -65,14 +65,14 @@
 
 ### NAV bar
 
-- Nav bar : axios 함수와 단일 Mock data를 이용한 nav바 구현
-- 모달 검색 창 : Reack hooks와 순수 SASS를 이용한 모달창 구현
-- 장바구니 품목 : Redux의 UseSelector를 이용하여 장바구니에 담긴 수량을 실시간으로 구현
+- axios 함수와 단일 Mock data를 이용한 nav바 구현
+- Reack hooks와 순수 SASS를 이용한 모달창 구현
+- Redux의 UseSelector를 이용하여 장바구니에 담긴 수량을 실시간으로 구현
 
 ### 메인 페이지
 
-- 슬라이더 구현 : setInterval, clearInterval 함수간 관계를 활용하여 슬라이더 구현
-- 캐러셀 활용 : slick-carousel 라이브러리와 axios함수를 통한 상품 데이터 구현
+- setInterval, clearInterval 함수간 관계를 활용하여 슬라이더 구현
+- slick-carousel 라이브러리와 axios함수를 통한 상품 데이터 구현
 
 ### Footer
 
