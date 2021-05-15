@@ -39,6 +39,9 @@
 > 
 > 주요 기능을 구현한 TEAM PROJECT <br>  
 > <br>
+ - 프로젝트 동영상 링크 : [프로젝트 동영상 링크](https://www.youtube.com/watch?v=5bo_7Ud_IBE)
+ - 프로젝트 Trello 링크 : [프로젝트 Trello 링크](https://trello.com/b/bNzAH2dM/klush)
+ - 리팩토링 Trello 링크 : [리팩토링 Trello 링크](https://trello.com/b/L2vKUOjF/klush-front-refactoring)
 
 ## Goals :
 
@@ -86,5 +89,3 @@
 - 김현중 : [김현중 GitHub](https://github.com/hyjoong)
 - 김우영 : [김우영 GitHub](https://github.com/whoyoung90)
 - 정재욱 : [정재욱 GitHub](https://github.com/stich9208)
-
-# ‼️ Reference
