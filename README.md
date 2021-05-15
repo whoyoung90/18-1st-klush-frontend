@@ -35,9 +35,9 @@
 
 # 🌟프로젝트 소개
 
-> 영국 핸드메이드 화장품 '러쉬'의 국내 사이트인 **러쉬 코리아**의 
+> 영국의 화장품 회사 LUSH KOREA를 모티브로 하여
 > 
-> 주요 기능을 구현한 TEAM PROJECT <br>  
+> 주요 기능을 구현한 팀 프로젝트  <br>  
 > <br>
  - 프로젝트 동영상 링크 : [프로젝트 동영상 링크](https://www.youtube.com/watch?v=5bo_7Ud_IBE)
  - 프로젝트 Trello 링크 : [프로젝트 Trello 링크](https://trello.com/b/bNzAH2dM/klush)
