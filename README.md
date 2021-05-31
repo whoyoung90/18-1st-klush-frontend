@@ -50,7 +50,7 @@
 
 ## FrontEnd 기술 스택
 
-- Java Script
+- Java Script(ES6+)
 - React
 - React Hooks
 - Redux
